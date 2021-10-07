@@ -18,6 +18,8 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+#include <stdio.h>
+#include <string.h>
 #include "main.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -113,7 +115,12 @@ int main(void)
   MX_TIM4_Init();
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_PWM_Start();
+  HAL_TIM_PWM_Start(&htim1, 4 * 3);
+  HAL_TIM_PWM_Start(&htim2, 4 * 3);
+
+  uint8_t pDataTx[] = {0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99};
+  uint8_t pDataRx[10];
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -121,7 +128,41 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+    memset(pDataRx, 0, sizeof(pDataRx));
+    for(int i = 0; i < 10; i++)
+    {
+      HAL_UART_Transmit(&huart1, &pDataTx[i], 1, 500);
+      HAL_UART_Receive(&huart1, &pDataRx[i], 1, 500);
+    }
+    
+    memset(pDataRx, 0, sizeof(pDataRx));
+    for(int i = 0; i < 10; i++)
+    {
+      HAL_UART_Transmit(&huart3, &pDataTx[i], 1, 500);
+      HAL_UART_Receive(&huart3, &pDataRx[i], 1, 500);
+    }
+    
+    memset(pDataRx, 0, sizeof(pDataRx));
+    HAL_SPI_TransmitReceive(&hspi2, pDataTx, pDataRx, sizeof(pDataTx), 500);
 
+    //memset(pDataRx, 0, sizeof(pDataRx));
+    //for(int i = 0; i < 10; i++)
+    //{
+    //  HAL_SPI_Transmit(&hspi2, &pDataTx[i], 1, 500);
+    //  HAL_SPI_Receive(&hspi2, &pDataRx[i], 1, 500);
+    //}
+    
+    //memset(pDataRx, 0, sizeof(pDataRx));
+    //HAL_SPI_Transmit(&hspi2, pDataTx, sizeof(pDataTx), 500);
+    //HAL_SPI_Receive(&hspi2, pDataRx, sizeof(pDataRx), 500);
+
+    //memset(pDataRx, 0, sizeof(pDataRx));
+    //HAL_UART_Transmit(&huart1, pDataTx, sizeof(pDataTx), 500);
+    //HAL_UART_Receive(&huart1, pDataRx, sizeof(pDataRx), 500);
+    
+    //memset(pDataRx, 0, sizeof(pDataRx));
+    //HAL_UART_Transmit(&huart3, pDataTx, sizeof(pDataTx), 500);
+    //HAL_UART_Receive(&huart3, pDataRx, sizeof(pDataRx), 500);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -381,7 +422,7 @@ static void MX_TIM2_Init(void)
   htim2.Instance = TIM2;
   htim2.Init.Prescaler = 0;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 64000;
+  htim2.Init.Period = 640000;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_PWM_Init(&htim2) != HAL_OK)
@@ -395,7 +436,7 @@ static void MX_TIM2_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 32000;
+  sConfigOC.Pulse = 320000;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4) != HAL_OK)
