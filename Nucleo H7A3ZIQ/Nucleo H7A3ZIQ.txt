@@ -1,0 +1,190 @@
+Configuration	Nucleo H7A3ZIQ
+STM32CubeMX 	6.2.1
+Date	06/02/2021
+MCU	STM32H7A3ZITxQ
+
+
+
+PERIPHERALS	MODES	FUNCTIONS	PINS
+ADC2	IN1 Differential	ADC2_INP1	PC3_C
+ADC2	IN1 Differential	ADC2_INN1	PC2_C
+ADC2	IN3 Differential	ADC2_INP3	PA6
+ADC2	IN3 Differential	ADC2_INN3	PA7
+ADC2	IN4 Differential	ADC2_INP4	PC4
+ADC2	IN4 Differential	ADC2_INN4	PC5
+ADC2	IN5 Differential	ADC2_INP5	PB1
+ADC2	IN5 Differential	ADC2_INN5	PB0
+DEBUG	Serial Wire	DEBUG_JTCK-SWCLK	PA14
+DEBUG	Serial Wire	DEBUG_JTMS-SWDIO	PA13
+SPI2	Full-Duplex Master	SPI2_MISO	PB14
+SPI2	Full-Duplex Master	SPI2_MOSI	PC1
+SPI2	Full-Duplex Master	SPI2_SCK	PB13
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+TIM4	PWM Generation CH1	TIM4_CH1	PD12
+TIM13	Enable_Timer	TIM13_VS_ClockSourceINT	VP_TIM13_VS_ClockSourceINT
+TIM13	PWM Generation CH1	TIM13_CH1	PF8
+USART1	Asynchronous	USART1_RX	PB15
+USART1	Asynchronous	USART1_TX	PA9
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+22	PF8	TIM13_CH1	
+29	PC1	SPI2_MOSI	
+30	PC2_C	ADC2_INN1	
+31	PC3_C	ADC2_INP1	
+38	PA1	GPIO_Output	
+39	PA2	GPIO_Output	
+40	PA3	GPIO_Output	
+45	PA6	ADC2_INP3	
+46	PA7	ADC2_INN3	
+47	PC4	ADC2_INP4	
+48	PC5	ADC2_INN4	
+49	PB0	ADC2_INN5	
+50	PB1	ADC2_INP5	
+51	PB2	GPIO_Output	
+52	PF11	GPIO_Output	
+54	PF15	GPIO_Output	
+57	PE7	GPIO_Output	
+58	PE8	GPIO_Output	
+59	PE9	GPIO_Output	
+60	PE10	GPIO_Output	
+61	PE11	GPIO_Output	
+62	PE12	GPIO_Output	
+63	PE13	GPIO_Output	
+64	PE14	GPIO_Output	
+65	PE15	GPIO_Output	
+66	PB10	GPIO_Output	
+67	PB11	GPIO_Output	
+72	PB12	GPIO_Output	
+73	PB13	SPI2_SCK	
+74	PB14	SPI2_MISO	
+75	PB15	USART1_RX	
+82	PD12	TIM4_CH1	
+98	PA9	USART1_TX	
+102	PA13	DEBUG_JTMS-SWDIO	
+107	PA14	DEBUG_JTCK-SWCLK	
+109	PC10	GPIO_Input	
+110	PC11	GPIO_Input	
+111	PC12	GPIO_Input	
+112	PD0	GPIO_Input	
+113	PD1	GPIO_Input	
+114	PD2	GPIO_Input	
+115	PD3	GPIO_Input	
+116	PD4	GPIO_Input	
+117	PD5	GPIO_Input	
+120	PD6	GPIO_Input	
+121	PD7	GPIO_Input	
+122	PG9	GPIO_Input	
+123	PG10	GPIO_Input	
+124	PG11	GPIO_Input	
+125	PG12	GPIO_Input	
+126	PG13	GPIO_Input	
+127	PG14	GPIO_Input	
+132	PB5	GPIO_Input	
+134	PB7	GPIO_Input	
+PERIPHERALS	MODES	FUNCTIONS	PINS
+ADC2	IN1 Differential	ADC2_INP1	PC3_C
+ADC2	IN1 Differential	ADC2_INN1	PC2_C
+ADC2	IN3 Differential	ADC2_INP3	PA6
+ADC2	IN3 Differential	ADC2_INN3	PA7
+ADC2	IN4 Differential	ADC2_INP4	PC4
+ADC2	IN4 Differential	ADC2_INN4	PC5
+ADC2	IN5 Differential	ADC2_INP5	PB1
+ADC2	IN5 Differential	ADC2_INN5	PB0
+DEBUG	Serial Wire	DEBUG_JTCK-SWCLK	PA14
+DEBUG	Serial Wire	DEBUG_JTMS-SWDIO	PA13
+SPI2	Full-Duplex Master	SPI2_MISO	PB14
+SPI2	Full-Duplex Master	SPI2_MOSI	PC1
+SPI2	Full-Duplex Master	SPI2_SCK	PB13
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+TIM4	PWM Generation CH1	TIM4_CH1	PD12
+TIM13	Enable_Timer	TIM13_VS_ClockSourceINT	VP_TIM13_VS_ClockSourceINT
+TIM13	PWM Generation CH1	TIM13_CH1	PF8
+USART1	Asynchronous	USART1_RX	PB15
+USART1	Asynchronous	USART1_TX	PA9
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+22	PF8	TIM13_CH1	
+29	PC1	SPI2_MOSI	
+30	PC2_C	ADC2_INN1	
+31	PC3_C	ADC2_INP1	
+38	PA1	GPIO_Output	
+39	PA2	GPIO_Output	
+40	PA3	GPIO_Output	
+45	PA6	ADC2_INP3	
+46	PA7	ADC2_INN3	
+47	PC4	ADC2_INP4	
+48	PC5	ADC2_INN4	
+49	PB0	ADC2_INN5	
+50	PB1	ADC2_INP5	
+51	PB2	GPIO_Output	
+52	PF11	GPIO_Output	
+54	PF15	GPIO_Output	
+57	PE7	GPIO_Output	
+58	PE8	GPIO_Output	
+59	PE9	GPIO_Output	
+60	PE10	GPIO_Output	
+61	PE11	GPIO_Output	
+62	PE12	GPIO_Output	
+63	PE13	GPIO_Output	
+64	PE14	GPIO_Output	
+65	PE15	GPIO_Output	
+66	PB10	GPIO_Output	
+67	PB11	GPIO_Output	
+72	PB12	GPIO_Output	
+73	PB13	SPI2_SCK	
+74	PB14	SPI2_MISO	
+75	PB15	USART1_RX	
+82	PD12	TIM4_CH1	
+98	PA9	USART1_TX	
+102	PA13	DEBUG_JTMS-SWDIO	
+107	PA14	DEBUG_JTCK-SWCLK	
+109	PC10	GPIO_Input	
+110	PC11	GPIO_Input	
+111	PC12	GPIO_Input	
+112	PD0	GPIO_Input	
+113	PD1	GPIO_Input	
+114	PD2	GPIO_Input	
+115	PD3	GPIO_Input	
+116	PD4	GPIO_Input	
+117	PD5	GPIO_Input	
+120	PD6	GPIO_Input	
+121	PD7	GPIO_Input	
+122	PG9	GPIO_Input	
+123	PG10	GPIO_Input	
+124	PG11	GPIO_Input	
+125	PG12	GPIO_Input	
+126	PG13	GPIO_Input	
+127	PG14	GPIO_Input	
+132	PB5	GPIO_Input	
+134	PB7	GPIO_Input	
+
+
+
+SOFTWARE PROJECT
+
+Project Settings : 
+Project Name : Nucleo H7A3ZIQ
+Project Folder : C:\Users\yael\source\repos\EcoMilk\Nucleo H7A3ZIQ
+Toolchain / IDE : EWARM V8.32
+Firmware Package Name and Version : STM32Cube FW_H7 V1.9.0
+
+
+Code Generation Settings : 
+STM32Cube MCU packages and embedded software packs : Copy all used libraries into the project folder
+Generate peripheral initialization as a pair of '.c/.h' files per peripheral : No
+Backup previously generated files when re-generating : No
+Delete previously generated files when not re-generated : Yes
+Set all free pins as analog (to optimize the power consumption) : No
+
+
+Toolchains Settings : 
+Compiler Optimizations : 
+
+
+
+
+

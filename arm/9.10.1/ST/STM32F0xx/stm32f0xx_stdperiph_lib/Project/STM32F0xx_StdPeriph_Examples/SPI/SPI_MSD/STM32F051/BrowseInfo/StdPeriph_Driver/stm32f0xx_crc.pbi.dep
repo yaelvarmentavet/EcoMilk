@@ -1,0 +1,39 @@
+C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\STM32F051\BrowseInfo\StdPeriph_Driver\stm32f0xx_crc.pbi: \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Libraries\STM32F0xx_StdPeriph_Driver\src\stm32f0xx_crc.c \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_crc.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\CMSIS\Core\Include\core_cm0.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdint.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ycheck.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\yvals.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Config_Full.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Product.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\CMSIS\Core\Include/cmsis_version.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\CMSIS\Core\Include/cmsis_compiler.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\CMSIS\Core\Include\cmsis_iccarm.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\aarch32\iccarm_builtin.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\CMSIS\Device\ST\STM32F0xx\Include/system_stm32f0xx.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\stm32f0xx_conf.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_adc.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_can.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_cec.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_crs.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_comp.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_dac.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_dbgmcu.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_dma.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_exti.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_flash.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_gpio.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_syscfg.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_i2c.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_iwdg.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_pwr.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_rcc.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_rtc.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_spi.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_tim.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_usart.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_wwdg.h \
+  C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\SPI\SPI_MSD\..\..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_misc.h

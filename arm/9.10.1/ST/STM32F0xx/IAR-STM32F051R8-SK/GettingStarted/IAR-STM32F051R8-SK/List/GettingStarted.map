@@ -1,0 +1,349 @@
+###############################################################################
+#
+# IAR ELF Linker V9.10.1.308/W64 for ARM                  19/May/2021  09:33:40
+# Copyright 2007-2021 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Exe\GettingStarted.out
+#    Map file     =
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\List\GettingStarted.map
+#    Command line =
+#        -f
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Exe\GettingStarted.out.rsp
+#        (C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\IAR-STM32F0xx-SK\Acc\accl_drv.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\IAR-STM32F0xx-SK\LCD\drv_hd44780.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\IAR-STM32F0xx-SK\LCD\drv_hd44780_l.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\IAR-STM32F0xx-SK\i2c2_drv.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\User\main.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\EWARM\startup_stm32f0xx.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\IAR-STM32F0xx-SK\stm320Fxx_ksk.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\StdPeriph_Driver\stm32f0xx_adc.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\StdPeriph_Driver\stm32f0xx_cec.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\StdPeriph_Driver\stm32f0xx_comp.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\StdPeriph_Driver\stm32f0xx_crc.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\StdPeriph_Driver\stm32f0xx_dac.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\StdPeriph_Driver\stm32f0xx_dbgmcu.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\StdPeriph_Driver\stm32f0xx_dma.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\StdPeriph_Driver\stm32f0xx_exti.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\StdPeriph_Driver\stm32f0xx_flash.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\StdPeriph_Driver\stm32f0xx_gpio.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\StdPeriph_Driver\stm32f0xx_i2c.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\User\stm32f0xx_it.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\StdPeriph_Driver\stm32f0xx_iwdg.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\StdPeriph_Driver\stm32f0xx_misc.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\StdPeriph_Driver\stm32f0xx_pwr.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\StdPeriph_Driver\stm32f0xx_rcc.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\StdPeriph_Driver\stm32f0xx_rtc.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\StdPeriph_Driver\stm32f0xx_spi.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\StdPeriph_Driver\stm32f0xx_syscfg.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\StdPeriph_Driver\stm32f0xx_tim.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\StdPeriph_Driver\stm32f0xx_usart.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\StdPeriph_Driver\stm32f0xx_wwdg.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\CMSIS\system_stm32f0xx.o
+#        --redirect _Printf=_PrintfFull --redirect _Scanf=_ScanfFull
+#        --no_out_extension -o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Exe\GettingStarted.out
+#        --map
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\List\GettingStarted.map
+#        --config
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\config\stm32f0xx_flash.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x800'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block HEAP with size = 512, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'1fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address   Size  Object
+  -------            ----         -------   ----  ------
+"A0":                                       0xc0
+  .intvec            ro code   0x800'0000   0xc0  startup_stm32f0xx.o [2]
+                             - 0x800'00c0   0xc0
+
+"P1":                                      0xe3c
+  .text              ro code   0x800'00c0  0x3a0  drv_hd44780.o [5]
+  .text              ro code   0x800'0460  0x1a0  drv_hd44780_l.o [5]
+  .text              ro code   0x800'0600  0x198  main.o [7]
+  .text              ro code   0x800'0798  0x230  stm32f0xx_rcc.o [6]
+  .text              ro code   0x800'09c8   0xd6  stm32f0xx_gpio.o [6]
+  .text              ro code   0x800'0a9e   0xae  I32DivModFast.o [9]
+  .text              ro code   0x800'0b4c   0xa8  stm320Fxx_ksk.o [3]
+  .text              ro code   0x800'0bf4    0x2  IntDivZer.o [9]
+  .text              ro code   0x800'0bf6    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0bf8  0x174  system_stm32f0xx.o [1]
+  .text              ro code   0x800'0d6c   0x30  copy_init3.o [9]
+  .text              ro code   0x800'0d9c   0x28  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0dc4   0x28  data_init.o [9]
+  Initializer bytes  const     0x800'0dec   0x28  <for P2-1>
+  .iar.init_table    const     0x800'0e14   0x14  - Linker created -
+  .text              ro code   0x800'0e28    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0e2c   0x1e  cmain.o [9]
+  .text              ro code   0x800'0e4a    0x4  low_level_init.o [8]
+  .text              ro code   0x800'0e4e    0x8  exit.o [8]
+  .text              ro code   0x800'0e56    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0e58    0xa  cexit.o [9]
+  .text              ro code   0x800'0e62    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0e64   0x14  exit.o [10]
+  .text              ro code   0x800'0e78   0x1c  cstartup_M.o [9]
+  .text              ro code   0x800'0e94   0x12  stm32f0xx_it.o [7]
+  .text              ro code   0x800'0ea6    0x2  startup_stm32f0xx.o [2]
+  .rodata            const     0x800'0ea8   0x10  stm320Fxx_ksk.o [3]
+  .rodata            const     0x800'0eb8    0xc  main.o [7]
+  .rodata            const     0x800'0ec4    0x8  stm320Fxx_ksk.o [3]
+  .text              ro code   0x800'0ecc    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0ece    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0ed0    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0ed2    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0ed4    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0ed6    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0ed8    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0eda    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0edc    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0ede    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0ee0    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0ee2    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0ee4    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0ee6    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0ee8    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0eea    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0eec    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0eee    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0ef0    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0ef2    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0ef4    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0ef6    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0ef8    0x2  startup_stm32f0xx.o [2]
+  .text              ro code   0x800'0efa    0x2  startup_stm32f0xx.o [2]
+  .rodata            const     0x800'0efc    0x0  copy_init3.o [9]
+                             - 0x800'0efc  0xe3c
+
+"P2", part 1 of 2:                          0x28
+  P2-1                        0x2000'0000   0x26  <Init block>
+    .data            inited   0x2000'0000   0x10  stm320Fxx_ksk.o [3]
+    .data            inited   0x2000'0010   0x10  stm32f0xx_rcc.o [6]
+    .bss             inited   0x2000'0020    0x4  main.o [7]
+    .data            inited   0x2000'0024    0x2  drv_hd44780.o [5]
+                            - 0x2000'0026   0x26
+
+"P2", part 2 of 2:                         0x400
+  CSTACK                      0x2000'0028  0x400  <Block>
+    CSTACK           uninit   0x2000'0028  0x400  <Block tail>
+                            - 0x2000'0428  0x400
+
+Unused ranges:
+
+         From           To    Size
+         ----           --    ----
+   0x800'0efc   0x800'ffff  0xf104
+  0x2000'0428  0x2000'1fff  0x1bd8
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Copy (__iar_copy_init3)
+    1 source range, total size 0x28 (105% of destination):
+           0x800'0dec  0x28
+    1 destination range, total size 0x26:
+          0x2000'0000  0x26
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module               ro code  ro data  rw data
+    ------               -------  -------  -------
+command line/config:
+    ----------------------------------------------
+    Total:
+
+C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\CMSIS: [1]
+    system_stm32f0xx.o       372
+    ----------------------------------------------
+    Total:                   372
+
+C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\EWARM: [2]
+    startup_stm32f0xx.o      290
+    ----------------------------------------------
+    Total:                   290
+
+C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\IAR-STM32F0xx-SK: [3]
+    stm320Fxx_ksk.o          168       40       16
+    ----------------------------------------------
+    Total:                   168       40       16
+
+C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\IAR-STM32F0xx-SK\Acc: [4]
+    ----------------------------------------------
+    Total:
+
+C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\IAR-STM32F0xx-SK\LCD: [5]
+    drv_hd44780.o            928        2        2
+    drv_hd44780_l.o          416
+    ----------------------------------------------
+    Total:                 1'344        2        2
+
+C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\StdPeriph_Driver: [6]
+    stm32f0xx_gpio.o         214
+    stm32f0xx_rcc.o          560       16       16
+    ----------------------------------------------
+    Total:                   774       16       16
+
+C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\User: [7]
+    main.o                   408       16        4
+    stm32f0xx_it.o            18
+    ----------------------------------------------
+    Total:                   426       16        4
+
+dl6M_tlf.a: [8]
+    exit.o                     8
+    low_level_init.o           4
+    ----------------------------------------------
+    Total:                    12
+
+rt6M_tl.a: [9]
+    I32DivModFast.o          174
+    IntDivZer.o                2
+    cexit.o                   10
+    cmain.o                   30
+    copy_init3.o              48
+    cstartup_M.o              28
+    data_init.o               40
+    ----------------------------------------------
+    Total:                   332
+
+shb_l.a: [10]
+    exit.o                    20
+    ----------------------------------------------
+    Total:                    20
+
+    Gaps                       2
+    Linker created                     22    1'024
+--------------------------------------------------
+    Grand Total:           3'740       96    1'062
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base    0x800'0e14          --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'0e28          --   Gb  - Linker created -
+?main                    0x800'0e2d         Code  Gb  cmain.o [9]
+APBAHBPrescTable        0x2000'0010   0x10  Data  Lc  stm32f0xx_rcc.o [6]
+CSTACK$$Base            0x2000'0028          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'0428          --   Gb  - Linker created -
+Delay                    0x800'0753   0x12  Code  Gb  main.o [7]
+DelayResolution100us     0x800'06c1   0x18  Code  Gb  main.o [7]
+GPIO_CLK                 0x800'0ea8   0x10  Data  Gb  stm320Fxx_ksk.o [3]
+GPIO_Init                0x800'09c9   0xbc  Code  Gb  stm32f0xx_gpio.o [6]
+GPIO_PIN                 0x800'0ec4    0x8  Data  Gb  stm320Fxx_ksk.o [3]
+GPIO_PORT               0x2000'0000   0x10  Data  Gb  stm320Fxx_ksk.o [3]
+GPIO_ReadInputData       0x800'0a85    0x4  Code  Gb  stm32f0xx_gpio.o [6]
+GPIO_WriteBit            0x800'0a89   0x16  Code  Gb  stm32f0xx_gpio.o [6]
+HD44780RdIO              0x800'0593   0x5e  Code  Gb  drv_hd44780_l.o [5]
+HD44780RdStatus          0x800'0109   0x1c  Code  Gb  drv_hd44780.o [5]
+HD44780SetE              0x800'04f5   0x1c  Code  Gb  drv_hd44780_l.o [5]
+HD44780SetRS             0x800'04d9   0x1c  Code  Gb  drv_hd44780_l.o [5]
+HD44780SetRW             0x800'0577   0x1c  Code  Gb  drv_hd44780_l.o [5]
+HD44780WrComm            0x800'00e5   0x24  Code  Gb  drv_hd44780.o [5]
+HD44780WrData            0x800'00c1   0x24  Code  Gb  drv_hd44780.o [5]
+HD44780WrIO              0x800'0511   0x66  Code  Gb  drv_hd44780_l.o [5]
+HD44780_BusyCheck        0x800'01d9   0x58  Code  Gb  drv_hd44780.o [5]
+HD44780_CheckVisual      0x800'0157   0x82  Code  Gb  drv_hd44780.o [5]
+HD44780_ClearDisplay     0x800'0387   0x18  Code  Gb  drv_hd44780.o [5]
+HD44780_GetDDRamAdd      0x800'0125   0x32  Code  Gb  drv_hd44780.o [5]
+HD44780_IO_Init          0x800'0461   0x78  Code  Gb  drv_hd44780_l.o [5]
+HD44780_PowerUpInit      0x800'0231   0xf8  Code  Gb  drv_hd44780.o [5]
+HD44780_SetMode          0x800'0329   0x5e  Code  Gb  drv_hd44780.o [5]
+HD44780_StrShow          0x800'03a5   0xbc  Code  Gb  drv_hd44780.o [5]
+HD4478_Ctrl             0x2000'0024    0x2  Data  Gb  drv_hd44780.o [5]
+HardFault_Handler        0x800'0e97    0x4  Code  Gb  stm32f0xx_it.o [7]
+LEDInit                  0x800'0b4d   0x6a  Code  Gb  stm320Fxx_ksk.o [3]
+LEDToggle                0x800'0bb7   0x30  Code  Gb  stm320Fxx_ksk.o [3]
+NMI_Handler              0x800'0e95    0x2  Code  Gb  stm32f0xx_it.o [7]
+PendSV_Handler           0x800'0e9d    0x2  Code  Gb  stm32f0xx_it.o [7]
+RCC_AHBPeriphClockCmd    0x800'0959   0x22  Code  Gb  stm32f0xx_rcc.o [6]
+RCC_AHBPeriphResetCmd    0x800'0981   0x22  Code  Gb  stm32f0xx_rcc.o [6]
+RCC_GetClocksFreq        0x800'0799  0x1bc  Code  Gb  stm32f0xx_rcc.o [6]
+Region$$Table$$Base      0x800'0e14          --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'0e28          --   Gb  - Linker created -
+SVC_Handler              0x800'0e9b    0x2  Code  Gb  stm32f0xx_it.o [7]
+SetSysClock              0x800'0c67   0xd0  Code  Lc  system_stm32f0xx.o [1]
+SysTick_Config           0x800'068f   0x32  Code  Lc  main.o [7]
+SysTick_Handler          0x800'0e9f    0x8  Code  Gb  stm32f0xx_it.o [7]
+SystemInit               0x800'0bf9   0x6e  Code  Gb  system_stm32f0xx.o [1]
+TimingDelay             0x2000'0020    0x4  Data  Lc  main.o [7]
+TimingDelay_Decrement    0x800'0765   0x16  Code  Gb  main.o [7]
+__ICFEDIT_region_RAM_end__ {Abs}
+                        0x2000'1fff         Data  Gb  <internal module>
+__ICFEDIT_region_RAM_start__ {Abs}
+                        0x2000'0000         Data  Gb  <internal module>
+__NVIC_SetPriority       0x800'0601   0x8e  Code  Lc  main.o [7]
+__aeabi_idiv0            0x800'0bf5         Code  Gb  IntDivZer.o [9]
+__aeabi_uidiv            0x800'0a9f         Code  Gb  I32DivModFast.o [9]
+__aeabi_uidivmod         0x800'0a9f         Code  Gb  I32DivModFast.o [9]
+__cmain                  0x800'0e2d         Code  Gb  cmain.o [9]
+__exit                   0x800'0e65   0x14  Code  Gb  exit.o [10]
+__iar_copy_init3         0x800'0d6d   0x30  Code  Gb  copy_init3.o [9]
+__iar_data_init3         0x800'0dc5   0x28  Code  Gb  data_init.o [9]
+__iar_program_start      0x800'0e79         Code  Gb  cstartup_M.o [9]
+__low_level_init         0x800'0e4b    0x4  Code  Gb  low_level_init.o [8]
+__vector_table           0x800'0000         Data  Gb  startup_stm32f0xx.o [2]
+_call_main               0x800'0e39         Code  Gb  cmain.o [9]
+_exit                    0x800'0e59         Code  Gb  cexit.o [9]
+exit                     0x800'0e4f    0x8  Code  Gb  exit.o [8]
+main                     0x800'06d9   0x7a  Code  Gb  main.o [7]
+
+
+[1] = C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\CMSIS
+[2] = C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\EWARM
+[3] = C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\IAR-STM32F0xx-SK
+[4] = C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\IAR-STM32F0xx-SK\Acc
+[5] = C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\IAR-STM32F0xx-SK\LCD
+[6] = C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\StdPeriph_Driver
+[7] = C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\IAR-STM32F051R8-SK\GettingStarted\IAR-STM32F051R8-SK\Obj\User
+[8] = dl6M_tlf.a
+[9] = rt6M_tl.a
+[10] = shb_l.a
+
+  3'740 bytes of readonly  code memory
+     96 bytes of readonly  data memory
+  1'062 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

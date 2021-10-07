@@ -1,0 +1,279 @@
+###############################################################################
+#
+# IAR ELF Linker V9.10.1.308/W64 for ARM                  18/May/2021  11:41:07
+# Copyright 2007-2021 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Exe\Project.out
+#    Map file     =
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\List\Project.map
+#    Command line =
+#        -f
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Exe\Project.out.rsp
+#        (C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\User\main.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\CMSIS\startup_stm32f051.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\STM320518_EVAL\stm320518_eval.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\STM320518_EVAL\stm320518_eval_lcd.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\StdPeriph_Driver\stm32f0xx_adc.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\StdPeriph_Driver\stm32f0xx_cec.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\StdPeriph_Driver\stm32f0xx_comp.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\StdPeriph_Driver\stm32f0xx_crc.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\StdPeriph_Driver\stm32f0xx_dac.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\StdPeriph_Driver\stm32f0xx_dbgmcu.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\StdPeriph_Driver\stm32f0xx_dma.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\StdPeriph_Driver\stm32f0xx_exti.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\StdPeriph_Driver\stm32f0xx_flash.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\StdPeriph_Driver\stm32f0xx_gpio.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\StdPeriph_Driver\stm32f0xx_i2c.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\User\stm32f0xx_it.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\StdPeriph_Driver\stm32f0xx_iwdg.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\StdPeriph_Driver\stm32f0xx_misc.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\StdPeriph_Driver\stm32f0xx_pwr.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\StdPeriph_Driver\stm32f0xx_rcc.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\StdPeriph_Driver\stm32f0xx_rtc.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\StdPeriph_Driver\stm32f0xx_spi.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\StdPeriph_Driver\stm32f0xx_syscfg.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\StdPeriph_Driver\stm32f0xx_tim.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\StdPeriph_Driver\stm32f0xx_usart.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\StdPeriph_Driver\stm32f0xx_wwdg.o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\CMSIS\system_stm32f0xx.o
+#        --redirect _Printf=_PrintfSmall --redirect _Scanf=_ScanfSmall
+#        --no_out_extension -o
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Exe\Project.out
+#        --map
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\List\Project.map
+#        --config
+#        C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\..\..\..\..\Libraries\CMSIS\Device\ST\STM32F0xx\Source\Templates\iar\stm32f051_flash.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x800'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block HEAP with size = 512, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'1fff] {
+          rw, block CSTACK, block HEAP };
+
+  Section          Kind         Address   Size  Object
+  -------          ----         -------   ----  ------
+"A0":                                     0xc0
+  .intvec          ro code   0x800'0000   0xc0  startup_stm32f051.o [1]
+                           - 0x800'00c0   0xc0
+
+"P1":                                    0x472
+  .text            ro code   0x800'00c0  0x160  system_stm32f0xx.o [1]
+  .text            ro code   0x800'0220   0xe8  main.o [4]
+  .text            ro code   0x800'0308   0x28  stm32f0xx_rcc.o [3]
+  .text            ro code   0x800'0330   0xbc  stm32f0xx_gpio.o [3]
+  .text            ro code   0x800'03ec   0x3c  zero_init3.o [7]
+  .text            ro code   0x800'0428   0x28  startup_stm32f051.o [1]
+  .text            ro code   0x800'0450   0x28  data_init.o [7]
+  .iar.init_table  const     0x800'0478   0x10  - Linker created -
+  .text            ro code   0x800'0488   0x1e  cmain.o [7]
+  .text            ro code   0x800'04a6    0x4  low_level_init.o [5]
+  .text            ro code   0x800'04aa    0x8  exit.o [5]
+  .text            ro code   0x800'04b2    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'04b4    0xa  cexit.o [7]
+  .text            ro code   0x800'04be    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'04c0   0x14  exit.o [8]
+  .text            ro code   0x800'04d4   0x1c  cstartup_M.o [7]
+  .text            ro code   0x800'04f0    0xc  stm32f0xx_it.o [4]
+  .text            ro code   0x800'04fc    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'04fe    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'0500    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'0502    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'0504    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'0506    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'0508    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'050a    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'050c    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'050e    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'0510    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'0512    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'0514    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'0516    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'0518    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'051a    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'051c    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'051e    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'0520    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'0522    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'0524    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'0526    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'0528    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'052a    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'052c    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'052e    0x2  startup_stm32f051.o [1]
+  .text            ro code   0x800'0530    0x2  startup_stm32f051.o [1]
+  .rodata          const     0x800'0532    0x0  zero_init3.o [7]
+                           - 0x800'0532  0x472
+
+"P2", part 1 of 2:                         0x8
+  .bss             zero     0x2000'0000    0x8  main.o [4]
+                          - 0x2000'0008    0x8
+
+"P2", part 2 of 2:                       0x400
+  CSTACK                    0x2000'0008  0x400  <Block>
+    CSTACK         uninit   0x2000'0008  0x400  <Block tail>
+                          - 0x2000'0408  0x400
+
+Unused ranges:
+
+         From           To    Size
+         ----           --    ----
+   0x800'0532   0x800'ffff  0xface
+  0x2000'0408  0x2000'1fff  0x1bf8
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x8:
+          0x2000'0000   0x8
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module               ro code  ro data  rw data
+    ------               -------  -------  -------
+command line/config:
+    ----------------------------------------------
+    Total:
+
+C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\CMSIS: [1]
+    startup_stm32f051.o      290
+    system_stm32f0xx.o       352
+    ----------------------------------------------
+    Total:                   642
+
+C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\STM320518_EVAL: [2]
+    ----------------------------------------------
+    Total:
+
+C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\StdPeriph_Driver: [3]
+    stm32f0xx_gpio.o         188
+    stm32f0xx_rcc.o           40
+    ----------------------------------------------
+    Total:                   228
+
+C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\User: [4]
+    main.o                   232                 8
+    stm32f0xx_it.o            12
+    ----------------------------------------------
+    Total:                   244                 8
+
+dl6M_tln.a: [5]
+    exit.o                     8
+    low_level_init.o           4
+    ----------------------------------------------
+    Total:                    12
+
+m6M_tl.a: [6]
+    ----------------------------------------------
+    Total:
+
+rt6M_tl.a: [7]
+    cexit.o                   10
+    cmain.o                   30
+    cstartup_M.o              28
+    data_init.o               40
+    zero_init3.o              60
+    ----------------------------------------------
+    Total:                   168
+
+shb_l.a: [8]
+    exit.o                    20
+    ----------------------------------------------
+    Total:                    20
+
+    Linker created                     16    1'024
+--------------------------------------------------
+    Grand Total:           1'314       16    1'032
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address  Size  Type      Object
+-----                       -------  ----  ----      ------
+.iar.init_table$$Base    0x800'0478         --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'0488         --   Gb  - Linker created -
+?main                    0x800'0489        Code  Gb  cmain.o [7]
+CSTACK$$Base            0x2000'0008         --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'0408         --   Gb  - Linker created -
+GPIO_Init                0x800'0331  0xbc  Code  Gb  stm32f0xx_gpio.o [3]
+GPIO_InitStructure      0x2000'0000   0x8  Data  Gb  main.o [4]
+HardFault_Handler        0x800'04f3   0x4  Code  Gb  stm32f0xx_it.o [4]
+NMI_Handler              0x800'04f1   0x2  Code  Gb  stm32f0xx_it.o [4]
+PendSV_Handler           0x800'04f9   0x2  Code  Gb  stm32f0xx_it.o [4]
+RCC_AHBPeriphClockCmd    0x800'0309  0x22  Code  Gb  stm32f0xx_rcc.o [3]
+Region$$Table$$Base      0x800'0478         --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'0488         --   Gb  - Linker created -
+SVC_Handler              0x800'04f7   0x2  Code  Gb  stm32f0xx_it.o [4]
+SetSysClock              0x800'012f  0xbe  Code  Lc  system_stm32f0xx.o [1]
+SysTick_Handler          0x800'04fb   0x2  Code  Gb  stm32f0xx_it.o [4]
+SystemInit               0x800'00c1  0x6e  Code  Gb  system_stm32f0xx.o [1]
+__ICFEDIT_region_RAM_end__ {Abs}
+                        0x2000'1fff        Data  Gb  <internal module>
+__ICFEDIT_region_RAM_start__ {Abs}
+                        0x2000'0000        Data  Gb  <internal module>
+__cmain                  0x800'0489        Code  Gb  cmain.o [7]
+__exit                   0x800'04c1  0x14  Code  Gb  exit.o [8]
+__iar_data_init3         0x800'0451  0x28  Code  Gb  data_init.o [7]
+__iar_program_start      0x800'04d5        Code  Gb  cstartup_M.o [7]
+__iar_zero_init3         0x800'03ed  0x3c  Code  Gb  zero_init3.o [7]
+__low_level_init         0x800'04a7   0x4  Code  Gb  low_level_init.o [5]
+__vector_table           0x800'0000        Data  Gb  startup_stm32f051.o [1]
+_call_main               0x800'0495        Code  Gb  cmain.o [7]
+_exit                    0x800'04b5        Code  Gb  cexit.o [7]
+exit                     0x800'04ab   0x8  Code  Gb  exit.o [5]
+main                     0x800'0221  0xe8  Code  Gb  main.o [4]
+
+
+[1] = C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\CMSIS
+[2] = C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\STM320518_EVAL
+[3] = C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\StdPeriph_Driver
+[4] = C:\Users\yael\source\repos\EcoMilk\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\GPIO\IOToggle\STM32F051\Obj\User
+[5] = dl6M_tln.a
+[6] = m6M_tl.a
+[7] = rt6M_tl.a
+[8] = shb_l.a
+
+  1'314 bytes of readonly  code memory
+     16 bytes of readonly  data memory
+  1'032 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
