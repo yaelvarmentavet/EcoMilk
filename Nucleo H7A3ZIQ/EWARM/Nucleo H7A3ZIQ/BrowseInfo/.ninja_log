@@ -1,161 +1,149 @@
 # ninja log v5
-2601	5605	6552964978659543	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_hsem.pbi	f37e70444c8af570
-28	323	6438073910000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_dma_ex.xcl	3fb7566dce9d14a5
-1842	2643	6553101385322757	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+2881	4340	6555821147602037	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
 3823	4126	6438074030000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_spi_ex.xcl	c2ccf618a560b15
 9	370	6438073910000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_dma.xcl	dcee1203a35706c4
+2601	5605	6552964978659543	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_hsem.pbi	f37e70444c8af570
+28	323	6438073910000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_dma_ex.xcl	3fb7566dce9d14a5
 13	2558	6552964948200420	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_exti.pbi	a66c9ea85cc48701
 1260	1717	6438073920000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_rcc.xcl	8eea7f1702cc5dff
 754	1148	6438073920000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_i2c.xcl	57606614b649fdc0
 22	280	6438073910000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal.xcl	aa9f9a5f4d4318a2
-17	2582	6552964948350442	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_adc_ex.pbi	8e1e1403fa72b100
-6	208	6443312690000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_adc_ex.xcl	d5b341f766230bb1
 317	661	6438073910000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_exti.xcl	f875f44d53dcfcb
-16	239	6438073910000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/CMSIS/system_stm32h7xx.xcl	cd0d53815c834c4
+6	208	6443312690000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_adc_ex.xcl	d5b341f766230bb1
+17	2582	6552964948350442	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_adc_ex.pbi	8e1e1403fa72b100
 1200	1590	6438073920000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_mdma.xcl	ff1d458922cf73ed
+16	239	6438073910000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/CMSIS/system_stm32h7xx.xcl	cd0d53815c834c4
 274	614	6438073910000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_cortex.xcl	d3957d190b06eefd
-21	182	6443312690000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_adc.xcl	99a488edbcf7224e
-703	1209	6438073920000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_flash_ex.xcl	cfeca35d71397e65
-1322	1772	6438073920000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_rcc_ex.xcl	6e0369811c8f82fc
 5624	9452	6552965017112485	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_mdma.pbi	3a7ae8dc4df53869
+1322	1772	6438073920000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_rcc_ex.xcl	6e0369811c8f82fc
+703	1209	6438073920000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_flash_ex.xcl	cfeca35d71397e65
+21	182	6443312690000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_adc.xcl	99a488edbcf7224e
 364	710	6438073910000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_hsem.xcl	1c56846e8a5593c8
 411	761	6438073910000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_gpio.xcl	b348fd0304c94c1f
 655	1076	6438073920000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_flash.xcl	e0504f6c6273b594
-1645	2075	6438073930000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_pwr_ex.xcl	b0f52c3cccf8de2f
 2476	5568	6552964978289593	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_flash.pbi	9b518494548587e3
+1645	2075	6438073930000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_pwr_ex.xcl	b0f52c3cccf8de2f
 807	1269	6438073920000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_i2c_ex.xcl	5c1b360b0b026c20
-16	1877	6552964852798605	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_adc.pbi	f751510059191b84
+876	2859	6555821132780838	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
 1129	1654	6438073920000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_pwr.xcl	a38933ec96bb0432
-806	1830	6553101377196569	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-3182	3495	6438074030000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/stm32h7xx_hal_msp.xcl	f07accf2ce31db5f
-3066	3393	6438074020000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.xcl	1d44f965f14e1129
+16	1877	6552964852798605	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_adc.pbi	f751510059191b84
 4547	4856	6438074040000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_uart.xcl	d3c9442e643d9092
-3325	3649	6438074030000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/stm32h7xx_it.xcl	b85fbc3ffda2605c
+3066	3393	6438074020000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.xcl	1d44f965f14e1129
+3182	3495	6438074030000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/stm32h7xx_hal_msp.xcl	f07accf2ce31db5f
 9397	12123	6552965043869207	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_flash_ex.pbi	75a88f3caf1f5a24
-4182	4490	6438074040000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_tim.xcl	36fd45665dd7e187
-5656	9379	6552965016402435	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_gpio.pbi	4daf3e20ef792fa0
+3325	3649	6438074030000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/stm32h7xx_it.xcl	b85fbc3ffda2605c
 2662	6031	6552964982920391	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_i2c.pbi	1a4280383012aca
-3472	3772	6438074030000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_spi.xcl	faef08afc79f41b2
-6052	9657	6552965019172517	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_i2c_ex.pbi	dcee319ba127bf75
+5656	9379	6552965016402435	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_gpio.pbi	4daf3e20ef792fa0
+4182	4490	6438074040000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_tim.xcl	36fd45665dd7e187
 17281	20221	6552965124867511	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part3.pbi	975eb76916c63144
+6052	9657	6552965019172517	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_i2c_ex.pbi	dcee319ba127bf75
+3472	3772	6438074030000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_spi.xcl	faef08afc79f41b2
 4910	5238	6438074040000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_uart_ex.xcl	81dba43e6da1526d
-5296	5621	6438074050000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_tim_ex.xcl	76c4adda2b9a1b7f
 16946	19924	6552965121881254	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part1.pbi	6e8f2848dc695a84
+5296	5621	6438074050000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_tim_ex.xcl	76c4adda2b9a1b7f
 5	1844	6552964852468582	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/CMSIS/system_stm32h7xx.pbi	51519c8eff63c250
 41	3576	6552964655707526	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/stm32h7xx_hal_msp.pbi	fb943b1ca65d9ae7
-8	1853	6552964852488594	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal.pbi	7ad1737689fb9200
 15186	18125	6552965103890222	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part4.pbi	52419b4607573cab
-12	799	6553101366887308	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-10	2458	6552964947210437	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_cortex.pbi	d9a69d65116428
+8	1853	6552964852488594	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal.pbi	7ad1737689fb9200
+4	869	6555821112849167	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
 14657	16931	6552965091938391	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_uart_ex.pbi	17b8cad02a17dd11
+10	2458	6552964947210437	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_cortex.pbi	d9a69d65116428
 27	3533	6552964655311321	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/stm32h7xx_it.pbi	23f152fb4bd24d94
 6	2643	6552964949030490	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_dma.pbi	fe3ab34326fdc785
 2576	5635	6552964978969619	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_dma_ex.pbi	e96dd580285c988c
 5587	9403	6552965016462430	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_pwr.pbi	49946b58c6cc6289
 9472	12142	6552965043919207	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_pwr_ex.pbi	99f892299295cdc
-9678	12372	6552965046349213	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_rcc_ex.pbi	55726a7d6f3b8dc2
 18158	20026	6552965122911240	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part5.pbi	d37c57f92623adde
-9423	12177	6552965044389240	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_rcc.pbi	2018a3527a5e05c7
-12137	14839	6552965071016038	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_spi.pbi	f061f7a72a5900a3
+9678	12372	6552965046349213	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_rcc_ex.pbi	55726a7d6f3b8dc2
 12191	14889	6552965071506032	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_tim_ex.pbi	49cf228340865e88
+12137	14839	6552965071016038	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_spi.pbi	f061f7a72a5900a3
+9423	12177	6552965044389240	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_rcc.pbi	2018a3527a5e05c7
 14905	17267	6552965095298386	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_uart.pbi	ad148dcdaea9194f
 12156	14642	6552965069055081	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_spi_ex.pbi	cc0bc2779194da57
 12389	15169	6552965074316819	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_tim.pbi	f58ca545931a90a7
 17785	20556	6552965128220044	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part2.pbi	ef424c7173629b24
-2655	5425	6553101412258588	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-9	810	6553101523390108	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-818	1856	6553101533861410	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-1868	2630	6553101541606092	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-2642	6721	6553101581349273	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-18	1079	6553102463453701	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-1086	2331	6553102475962573	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-2348	3889	6553102491532640	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-3918	9986	6553102551361288	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-8	1637	6553102620018468	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-1652	3748	6553102641147975	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-3767	5013	6553102653796667	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-5031	10194	6553102704483214	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-8	2632	6553102865059117	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-2650	5895	6553102897711028	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-5936	7933	6553102918119280	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-7962	13466	6553102972298719	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-21	854	6553103390455939	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-860	1964	6553103401565003	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-1976	2851	6553103410436108	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-9	4976	6553103537008458	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-5	791	6553103749584236	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-11	3552	6553103845454715	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-3586	5612	6553103866065885	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-5645	13382	6553103942543624	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-5	890	6553104670491375	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-897	1988	6553104681479158	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-2002	3017	6553104691770082	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-7	7369	6553104879840463	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-17	779	6553106626382675	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-786	1811	6553106636717656	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-1823	2597	6553106644590733	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-2610	5331	6553106670883896	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-12	786	6553107190515163	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-793	1883	6553107201486379	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-1896	2701	6553107209677574	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-2714	5593	6553107237576844	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-12	794	6553107859464975	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-801	1811	6553107869647276	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-1823	2670	6553107878229058	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-10	7778	6553108084215155	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-18	888	6553108401763219	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-894	1913	6553108412039453	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-1924	2692	6553108419812670	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-2704	5553	6553108447425764	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-17	865	6553108610597746	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-872	1933	6553108621277693	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-1947	2731	6553108629258597	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-2744	7620	6553108676746122	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-16	1086	6553108790700854	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-1092	2174	6553108801602728	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-2186	2975	6553108809610688	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-2988	7282	6553108851527172	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-11	779	6553109065125813	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-785	1822	6553109075559089	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-1833	2662	6553109083958683	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-12	8292	6553109314749933	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-12	869	6553136130327620	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-7	2249	6553136212779692	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-2273	3987	6553136230160635	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-4012	9851	6553136287651301	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-8	1046	6553144170843397	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-1051	2082	6553144181217000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-2093	2870	6553144189098770	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-2882	5723	6553144216632603	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-19	824	6553158038384612	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-831	1896	6553158049114995	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-1908	2674	6553158056895545	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-2685	5445	6553158083555675	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-7	831	6553158245688960	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-837	1983	6553158257213922	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-5	1062	6553158320049741	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-6	8907	6553158464485955	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-21	850	6553158832114969	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-856	1885	6553158842474336	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-1896	2672	6553158850344976	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-2683	5647	6553158879105651	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-14	825	6553160372006363	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-831	1844	6553160382198467	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-1857	2608	6553160389838588	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-2620	5370	6553160416428916	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-5	850	6553161037049651	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-858	1914	6553161047702676	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-1926	2793	6553161056490906	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-7	6352	6553161230029066	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-5	912	6553162621142581	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-5	1617	6553162691689477	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-1640	3141	6553162706921451	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-3168	10066	6553162774579798	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-4	908	6553163602431182	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-915	2007	6553163613431128	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-2020	2844	6553163621801553	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-16	8191	6553163827607528	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-11	784	6553164399742862	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-791	1841	6553164410327641	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-1853	2699	6553164418893723	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-7	6538	6553164612970752	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+4365	10822	6555821209825080	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+4	964	6555821629853385	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+973	3071	6555821650970094	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+3095	4728	6555821667542739	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+4753	11918	6555821738201587	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+16	1093	6555821904072972	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+1100	2380	6555821916993910	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+2398	3737	6555821930551742	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+3758	9802	6555821989873220	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+20	1057	6555823077244388	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+1063	2219	6555823088913257	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+2231	3093	6555823097662708	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+3105	8647	6555823151990655	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+18	964	6555823316279784	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+970	2167	6555823328356782	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+2184	3536	6555823342047639	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+3558	9660	6555823401971848	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+25	915	6555823770373738	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+921	2119	6555823782434586	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+2130	3005	6555823791308160	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+3016	8476	6555823844836361	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+9	990	6555824571774433	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+999	2127	6555824583196920	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+2138	2918	6555824591111149	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+2929	8897	6555824649677668	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+19	883	6555825017481228	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+890	2011	6555825028813991	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+2024	2901	6555825037713337	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+2913	8361	6555825091021855	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+13	1054	6555825205020620	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+1059	2124	6555825215776255	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+2136	3297	6555825227482361	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+3322	11655	6555825309800531	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+18	1293	6555826092379601	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+1301	2418	6555826103707239	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+2430	3295	6555826112483062	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+3306	6941	6555826147780012	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+17	907	6555826463945373	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+913	2051	6555826475426838	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+2064	2938	6555826484295425	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+2954	9887	6555826552528977	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+5	1180	6555826616329758	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+1189	3108	6555826635718674	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+3125	4688	6555826651504401	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+4708	11758	6555826719949402	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+18	1176	6555826939090123	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+1183	2405	6555826951408682	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+2421	3859	6555826965939288	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+3883	10087	6555827026963493	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+19	903	6555827343825056	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+909	2029	6555827355147853	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+2043	2949	6555827364348319	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+2961	8302	6555827416500622	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+18	1171	6555827480708792	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+1178	3317	6555827502214017	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+3342	4998	6555827519026374	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+5025	11637	6555827583991466	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+9	967	6555827902563223	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+974	2145	6555827914384813	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+2157	3283	6555827925758690	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+3303	10055	6555827992178572	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+15	1506	6555828110603388	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+1519	4170	6555828137334714	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+4199	6538	6555828161012532	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+6572	18658	6555828280202546	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+10	1818	6555828657161229	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+1830	3983	6555828678919126	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+4005	5452	6555828693599244	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+5473	11169	6555828749685330	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+19	1012	6555829783566123	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+1018	2176	6555829795269698	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+2190	3222	6555829805710123	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+3240	9680	6555829868902303	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+18	911	6555830646009714	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+917	2519	6555830662136707	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+2536	4027	6555830677209680	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+4051	10468	6555830740431277	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+7	930	6555831211093855	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+937	2169	6555831223539337	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+2182	3076	6555831232605367	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+6	6227	6555831351950409	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+21	1192	6555831467251325	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+1199	2976	6555831485062397	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+2990	5094	6555831506306920	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+5150	13116	6555831585282319	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac

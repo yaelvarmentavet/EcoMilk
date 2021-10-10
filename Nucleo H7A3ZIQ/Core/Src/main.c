@@ -39,6 +39,46 @@
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
 
+//Inputs
+#define	ACTUATOR_BACKWARD_COM_PORT      GPIOE
+#define	ACTUATOR_BACKWARD_COM_PIN       GPIO_PIN_12
+#define	ACTUATOR_FORWARD_COM_PORT       GPIOE
+#define	ACTUATOR_FORWARD_COM_PIN        GPIO_PIN_11
+#define	ROTATE_Z_CW_COM_PORT            GPIOE
+#define	ROTATE_Z_CW_COM_PIN             GPIO_PIN_10
+#define	ROTATE_Z_CCW_COM_PORT           GPIOE
+#define	ROTATE_Z_CCW_COM_PIN            GPIO_PIN_9
+#define	TILT_CCW_COM_PORT               GPIOE
+#define	TILT_CCW_COM_PIN                GPIO_PIN_8
+#define	TILT_CW_COM_PORT                GPIOE
+#define	TILT_CW_COM_PIN                 GPIO_PIN_7
+
+//Outputs
+#define	CS_N_PORT                       GPIOB
+#define	CS_N_PIN                        GPIO_PIN_8
+
+#define DIR_MOTOR_Z                             1
+#define DIR_MOTOR_TILT                          2
+#define DIR_MOTOR_ROTATE                        3
+#define DIR_MOTOR_X                             4
+#define DIR_MOTOR_1                             5
+#define DIR_MOTOR_2                             6
+#define DIR_MOTOR_Y                             7
+#define DIR_MOTOR_SP_1                          8
+#define DIR_MOTOR_END_AFFECTO                   9
+#define DIR_MOTOR_END_AFFECTO_A_1_2_3_4         10
+
+#define LIN_MOTOR_Y                             1
+#define LIN_MOTOR_SP_1                          2
+#define LIN_MOTOR_END_AFFECTO                   3
+#define LIN_MOTOR_END_AFFECTO_2                 4
+#define LIN_MOTOR_END_AFFECTO_3                 5
+#define LIN_MOTOR_END_AFFECTO_4                 6
+
+#define DEC0                                    13
+#define DEC1                                    14
+#define DEC2                                    15
+
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -118,8 +158,8 @@ int main(void)
   HAL_TIM_PWM_Start(&htim1, 4 * 3);
   HAL_TIM_PWM_Start(&htim2, 4 * 3);
 
-  uint8_t pDataTx[] = {0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99};
-  uint8_t pDataRx[10];
+  //uint8_t pDataTx[] = {0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99};
+  //uint8_t pDataRx[10];
 
   /* USER CODE END 2 */
 
@@ -127,42 +167,183 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
-    memset(pDataRx, 0, sizeof(pDataRx));
-    for(int i = 0; i < 10; i++)
+    //if(HAL_GPIO_ReadPin(ACTUATOR_BACKWARD_COM_PORT, ACTUATOR_BACKWARD_COM_PIN) == GPIO_PIN_SET)
     {
-      HAL_UART_Transmit(&huart1, &pDataTx[i], 1, 500);
-      HAL_UART_Receive(&huart1, &pDataRx[i], 1, 500);
+      uint16_t data[2];
+      memset(data, 0, sizeof(data));
+      data[0] |= 1 << DEC0;
+      data[1] |= 1 << LIN_MOTOR_SP_1;
+      data[1] |= 1 << DEC0;
+      data[1] |= 1 << DEC1;
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_RESET);
+      HAL_SPI_TransmitReceive(&hspi2, (uint8_t*)data, (uint8_t*)data, sizeof(data), 500);
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
+    }
+    //else
+    {
+      uint16_t data[1];
+      memset(data, 0, sizeof(data));
+      data[0] |= 1 << DEC0;
+      data[0] |= 1 << DEC1;
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_RESET);
+      HAL_SPI_TransmitReceive(&hspi2, (uint8_t*)data, (uint8_t*)data, sizeof(data), 500);
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
     }
     
-    memset(pDataRx, 0, sizeof(pDataRx));
-    for(int i = 0; i < 10; i++)
+    //if(HAL_GPIO_ReadPin(ACTUATOR_FORWARD_COM_PORT, ACTUATOR_FORWARD_COM_PIN) == GPIO_PIN_SET)
     {
-      HAL_UART_Transmit(&huart3, &pDataTx[i], 1, 500);
-      HAL_UART_Receive(&huart3, &pDataRx[i], 1, 500);
+      uint16_t data[2];
+      memset(data, 0, sizeof(data));
+      data[0] |= 1 << DIR_MOTOR_SP_1;
+      data[0] |= 1 << DEC0;
+      data[1] |= 1 << LIN_MOTOR_SP_1;
+      data[1] |= 1 << DEC0;
+      data[1] |= 1 << DEC1;
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_RESET);
+      HAL_SPI_TransmitReceive(&hspi2, (uint8_t*)data, (uint8_t*)data, sizeof(data), 500);
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
     }
-    
-    memset(pDataRx, 0, sizeof(pDataRx));
-    HAL_SPI_TransmitReceive(&hspi2, pDataTx, pDataRx, sizeof(pDataTx), 500);
+    //else
+    {
+      uint16_t data[1];
+      memset(data, 0, sizeof(data));
+      data[0] |= 1 << DEC0;
+      data[0] |= 1 << DEC1;
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_RESET);
+      HAL_SPI_TransmitReceive(&hspi2, (uint8_t*)data, (uint8_t*)data, sizeof(data), 500);
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
+    }
 
-    //memset(pDataRx, 0, sizeof(pDataRx));
-    //for(int i = 0; i < 10; i++)
+    //if(HAL_GPIO_ReadPin(ROTATE_Z_CW_COM_PORT, ROTATE_Z_CW_COM_PIN) == GPIO_PIN_SET)
+    {
+      uint16_t data[2];
+      memset(data, 0, sizeof(data));
+      data[0] |= 1 << DIR_MOTOR_ROTATE;
+      data[0] |= 1 << DEC0;
+      data[1] |= 1 << DIR_MOTOR_ROTATE;
+      data[1] |= 1 << DEC1;
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_RESET);
+      HAL_SPI_TransmitReceive(&hspi2, (uint8_t*)data, (uint8_t*)data, sizeof(data), 500);
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
+    }
+    //else
+    {
+      uint16_t data[1];
+      memset(data, 0, sizeof(data));
+      data[0] |= 1 << DEC1;
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_RESET);
+      HAL_SPI_TransmitReceive(&hspi2, (uint8_t*)data, (uint8_t*)data, sizeof(data), 500);
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
+    }
+
+    //if(HAL_GPIO_ReadPin(ROTATE_Z_CCW_COM_PORT, ROTATE_Z_CCW_COM_PIN) == GPIO_PIN_SET)
+    {
+      uint16_t data[2];
+      memset(data, 0, sizeof(data));
+      data[0] |= 1 << DEC0;
+      data[1] |= 1 << DIR_MOTOR_ROTATE;
+      data[1] |= 1 << DEC1;
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_RESET);
+      HAL_SPI_TransmitReceive(&hspi2, (uint8_t*)data, (uint8_t*)data, sizeof(data), 500);
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
+    }
+    //else
+    {
+      uint16_t data[1];
+      memset(data, 0, sizeof(data));
+      data[0] |= 1 << DEC1;
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_RESET);
+      HAL_SPI_TransmitReceive(&hspi2, (uint8_t*)data, (uint8_t*)data, sizeof(data), 500);
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
+    }
+
+    //if(HAL_GPIO_ReadPin(TILT_CCW_COM_PORT, TILT_CCW_COM_PIN) == GPIO_PIN_SET)
+    {
+      uint16_t data[2];
+      memset(data, 0, sizeof(data));
+      data[0] |= 1 << DEC0;
+      data[1] |= 1 << DIR_MOTOR_TILT;
+      data[1] |= 1 << DEC1;
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_RESET);
+      HAL_SPI_TransmitReceive(&hspi2, (uint8_t*)data, (uint8_t*)data, sizeof(data), 500);
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
+    }
+    //else
+    {
+      uint16_t data[1];
+      memset(data, 0, sizeof(data));
+      data[0] |= 1 << DEC1;
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_RESET);
+      HAL_SPI_TransmitReceive(&hspi2, (uint8_t*)data, (uint8_t*)data, sizeof(data), 500);
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
+    }
+
+    //if(HAL_GPIO_ReadPin(TILT_CW_COM_PORT, TILT_CW_COM_PIN) == GPIO_PIN_SET)
+    {
+      uint16_t data[2];
+      memset(data, 0, sizeof(data));
+      data[0] |= 1 << 2;
+      data[0] |= 1 << 13;
+      data[1] |= 1 << 2;
+      data[1] |= 1 << 14;
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_RESET);
+      HAL_SPI_TransmitReceive(&hspi2, (uint8_t*)data, (uint8_t*)data, sizeof(data), 500);
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
+    }
+    //else
+    {
+      uint16_t data[1];
+      memset(data, 0, sizeof(data));
+      data[0] |= 1 << 14;
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_RESET);
+      HAL_SPI_TransmitReceive(&hspi2, (uint8_t*)data, (uint8_t*)data, sizeof(data), 500);
+      HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
+    }
+
+    //Working
     //{
-    //  HAL_SPI_Transmit(&hspi2, &pDataTx[i], 1, 500);
-    //  HAL_SPI_Receive(&hspi2, &pDataRx[i], 1, 500);
+    //  memset(pDataRx, 0, sizeof(pDataRx));
+    //  for(int i = 0; i < 10; i++)
+    //  {
+    //    HAL_UART_Transmit(&huart1, &pDataTx[i], 1, 500);
+    //    HAL_UART_Receive(&huart1, &pDataRx[i], 1, 500);
+    //  }
+    //  
+    //  memset(pDataRx, 0, sizeof(pDataRx));
+    //  for(int i = 0; i < 10; i++)
+    //  {
+    //    HAL_UART_Transmit(&huart3, &pDataTx[i], 1, 500);
+    //    HAL_UART_Receive(&huart3, &pDataRx[i], 1, 500);
+    //  }
+    //  
+    //  memset(pDataRx, 0, sizeof(pDataRx));
+    //  HAL_SPI_TransmitReceive(&hspi2, pDataTx, pDataRx, sizeof(pDataTx), 500);
     //}
     
-    //memset(pDataRx, 0, sizeof(pDataRx));
-    //HAL_SPI_Transmit(&hspi2, pDataTx, sizeof(pDataTx), 500);
-    //HAL_SPI_Receive(&hspi2, pDataRx, sizeof(pDataRx), 500);
+    //Not working
+    //{
+    //  memset(pDataRx, 0, sizeof(pDataRx));
+    //  for(int i = 0; i < 10; i++)
+    //  {
+    //    HAL_SPI_Transmit(&hspi2, &pDataTx[i], 1, 500);
+    //    HAL_SPI_Receive(&hspi2, &pDataRx[i], 1, 500);
+    //  }
+    //  
+    //  memset(pDataRx, 0, sizeof(pDataRx));
+    //  HAL_SPI_Transmit(&hspi2, pDataTx, sizeof(pDataTx), 500);
+    //  HAL_SPI_Receive(&hspi2, pDataRx, sizeof(pDataRx), 500);
+    //
+    //  memset(pDataRx, 0, sizeof(pDataRx));
+    //  HAL_UART_Transmit(&huart1, pDataTx, sizeof(pDataTx), 500);
+    //  HAL_UART_Receive(&huart1, pDataRx, sizeof(pDataRx), 500);
+    //  
+    //  memset(pDataRx, 0, sizeof(pDataRx));
+    //  HAL_UART_Transmit(&huart3, pDataTx, sizeof(pDataTx), 500);
+    //  HAL_UART_Receive(&huart3, pDataRx, sizeof(pDataRx), 500);
+    //}
 
-    //memset(pDataRx, 0, sizeof(pDataRx));
-    //HAL_UART_Transmit(&huart1, pDataTx, sizeof(pDataTx), 500);
-    //HAL_UART_Receive(&huart1, pDataRx, sizeof(pDataRx), 500);
+    /* USER CODE END WHILE */
     
-    //memset(pDataRx, 0, sizeof(pDataRx));
-    //HAL_UART_Transmit(&huart3, pDataTx, sizeof(pDataTx), 500);
-    //HAL_UART_Receive(&huart3, pDataRx, sizeof(pDataRx), 500);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
