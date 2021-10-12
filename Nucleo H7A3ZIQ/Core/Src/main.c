@@ -196,8 +196,8 @@ int main(void)
   MX_TIM4_Init();
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_PWM_Start(&htim1, 4 * 3);
-  HAL_TIM_PWM_Start(&htim2, 4 * 3);
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 
   //uint8_t pDataTx[] = {0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99};
   //uint8_t pDataRx[10];
@@ -438,28 +438,33 @@ int main(void)
       }
     }
     for(int i = 0; i < 1000; i++);
-#if 0
-#endif
-    //Working
-    //{
-    //  memset(pDataRx, 0, sizeof(pDataRx));
-    //  for(int i = 0; i < 10; i++)
-    //  {
-    //    HAL_UART_Transmit(&huart1, &pDataTx[i], 1, 500);
-    //    HAL_UART_Receive(&huart1, &pDataRx[i], 1, 500);
-    //  }
-    //  
-    //  memset(pDataRx, 0, sizeof(pDataRx));
-    //  for(int i = 0; i < 10; i++)
-    //  {
-    //    HAL_UART_Transmit(&huart3, &pDataTx[i], 1, 500);
-    //    HAL_UART_Receive(&huart3, &pDataRx[i], 1, 500);
-    //  }
-    //  
-    //  memset(pDataRx, 0, sizeof(pDataRx));
-    //  HAL_SPI_TransmitReceive(&hspi2, pDataTx, pDataRx, sizeof(pDataTx), 500);
-    //}
     
+    
+    
+    for(int i = 0; i < 2000; i++);
+    
+#if 0
+
+    // Working
+    {
+      memset(pDataRx, 0, sizeof(pDataRx));
+      for(int i = 0; i < 10; i++)
+      {
+        HAL_UART_Transmit(&huart1, &pDataTx[i], 1, 500);
+        HAL_UART_Receive(&huart1, &pDataRx[i], 1, 500);
+      }
+      
+      memset(pDataRx, 0, sizeof(pDataRx));
+      for(int i = 0; i < 10; i++)
+      {
+        HAL_UART_Transmit(&huart3, &pDataTx[i], 1, 500);
+        HAL_UART_Receive(&huart3, &pDataRx[i], 1, 500);
+      }
+      
+      memset(pDataRx, 0, sizeof(pDataRx));
+      HAL_SPI_TransmitReceive(&hspi2, pDataTx, pDataRx, sizeof(pDataTx), 500);
+    }
+#endif    
     //Not working
     //{
     //  memset(pDataRx, 0, sizeof(pDataRx));
