@@ -16,6 +16,9 @@
   *
   ******************************************************************************
   */
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -36,6 +39,58 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
+
+//Inputs
+#define	ACTUATOR_BACKWARD_COM_PORT      GPIOE
+#define	ACTUATOR_BACKWARD_COM_PIN       GPIO_PIN_12
+#define	ACTUATOR_FORWARD_COM_PORT       GPIOE
+#define	ACTUATOR_FORWARD_COM_PIN        GPIO_PIN_11
+#define	ROTATE_Z_CW_COM_PORT            GPIOE
+#define	ROTATE_Z_CW_COM_PIN             GPIO_PIN_10
+#define	ROTATE_Z_CCW_COM_PORT           GPIOE
+#define	ROTATE_Z_CCW_COM_PIN            GPIO_PIN_9
+#define	TILT_CCW_COM_PORT               GPIOE
+#define	TILT_CCW_COM_PIN                GPIO_PIN_8
+#define	TILT_CW_COM_PORT                GPIOE
+#define	TILT_CW_COM_PIN                 GPIO_PIN_7
+#define	MOTOR_Z_DOWN_COM_PORT           GPIOE
+#define	MOTOR_Z_DOWN_COM_PIN            GPIO_PIN_6
+#define	MOTOR_Z_UP_COM_PORT             GPIOE
+#define	MOTOR_Z_UP_COM_PIN              GPIO_PIN_5
+#define	ACTUATOR_Y_BACKWARD_COM_PORT    GPIOE
+#define	ACTUATOR_Y_BACKWARD_COM_PIN     GPIO_PIN_4
+#define	ACTUATOR_Y_FORWARD_COM_PORT     GPIOE
+#define	ACTUATOR_Y_FORWARD_COM_PIN      GPIO_PIN_3
+#define	X_BACKWARD_COM_PORT             GPIOE
+#define	X_BACKWARD_COM_PIN              GPIO_PIN_2
+#define	X_FORWARD_COM_PORT              GPIOE
+#define	X_FORWARD_COM_PIN               GPIO_PIN_1
+
+//Outputs
+#define	CS_N_PORT                       GPIOB
+#define	CS_N_PIN                        GPIO_PIN_8
+
+#define DIR_MOTOR_Z                             1
+#define DIR_MOTOR_TILT                          2
+#define DIR_MOTOR_ROTATE                        3
+#define DIR_MOTOR_X                             4
+#define DIR_MOTOR_1                             5
+#define DIR_MOTOR_2                             6
+#define DIR_MOTOR_Y                             7
+#define DIR_MOTOR_SP_1                          0
+#define DIR_MOTOR_END_AFFECTO                   1
+#define DIR_MOTOR_END_AFFECTO_A_1_2_3_4         2
+
+#define LIN_MOTOR_Y                             1
+#define LIN_MOTOR_SP_1                          2
+#define LIN_MOTOR_END_AFFECTO                   3
+#define LIN_MOTOR_END_AFFECTO_2                 4
+#define LIN_MOTOR_END_AFFECTO_3                 5
+#define LIN_MOTOR_END_AFFECTO_4                 6
+
+#define DEC0                                    5
+#define DEC1                                    6
+#define DEC2                                    7
 
 /* USER CODE END PM */
 
@@ -73,6 +128,34 @@ static void MX_USART3_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+void cmd_send_32(uint8_t dir_0, uint8_t dir_1, uint8_t cmd_0, uint8_t cmd_1)
+{
+  uint8_t data[4];
+  uint8_t rdata[4];
+  memset(data, 0, sizeof(data));
+  data[0] = dir_1;
+  data[1] = dir_0;
+  data[2] = cmd_1;
+  data[3] = cmd_0;
+  HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_RESET);
+  HAL_SPI_TransmitReceive(&hspi2, data, rdata, sizeof(data), 500);
+  //HAL_SPI_Transmit(&hspi2, data, sizeof(data), 500);
+  HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
+}
+
+void cmd_send_16(uint8_t cmd_0, uint8_t cmd_1)
+{
+  uint8_t data[2];
+  uint8_t rdata[2];
+  memset(data, 0, sizeof(data));
+  data[0] = cmd_1;
+  data[1] = cmd_0;
+  HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_RESET);
+  HAL_SPI_TransmitReceive(&hspi2, data, rdata, sizeof(data), 500);
+  //HAL_SPI_Transmit(&hspi2, data, sizeof(data), 500);
+  HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
+}
 
 /* USER CODE END 0 */
 
@@ -114,12 +197,296 @@ int main(void)
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
 
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
+
+#if 0  
+  uint8_t pDataTx[] = {0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99};
+  uint8_t pDataRx[10];
+#endif  
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
+  bool actuator_backward = false;
+  bool actuator_forward = false;
+  bool rotate_z_cw = false;
+  bool rotate_z_ccw = false;
+  bool tilt_ccw = false;
+  bool tilt_cw = false;
+  bool motor_z_down = false;
+  bool motor_z_up = false;
+  bool actuator_y_backward = false;
+  bool actuator_y_forward = false;
+  bool x_backward = false;
+  bool x_forward = false;
+
   while (1)
   {
+#if 0    
+#endif
+    // 1, 2
+    //if(HAL_GPIO_ReadPin(ACTUATOR_BACKWARD_COM_PORT, ACTUATOR_BACKWARD_COM_PIN) == GPIO_PIN_SET)
+    {  
+      if(!actuator_backward)
+      {
+        actuator_backward = true;
+        cmd_send_32(0x00, 0x00 | (0x01 << DEC0), 0x00 | (0x01 << LIN_MOTOR_SP_1), 0x00 | (0x01 << DEC0) | (0x01 << DEC1));
+      }
+    }
+    //else
+    {
+      if(actuator_backward)
+      {
+        actuator_backward = false;
+        cmd_send_16(0x00, 0x00 | (0x01 << DEC0) | (0x01 << DEC1));
+      }
+    }
+
+    // 3, 4
+    //if(HAL_GPIO_ReadPin(ACTUATOR_FORWARD_COM_PORT, ACTUATOR_FORWARD_COM_PIN) == GPIO_PIN_SET)
+    {  
+      if(!actuator_forward)
+      {
+        actuator_forward = true;
+        cmd_send_32(0x00, 0x00 | (1 << DIR_MOTOR_SP_1) | (1 << DEC0), 0x00 | (1 << LIN_MOTOR_SP_1), 0x00 | (1 << DEC0) | (1 << DEC1));
+      }
+    }
+    //else
+    {
+      if(actuator_forward)
+      {
+        actuator_forward = false;
+        cmd_send_16(0x00 ,0x00 | (1 << DEC0) | (1 << DEC1));
+      }
+    }
+    
+    // 5, 6
+    //if(HAL_GPIO_ReadPin(ROTATE_Z_CW_COM_PORT, ROTATE_Z_CW_COM_PIN) == GPIO_PIN_SET)
+    {  
+      if(!rotate_z_cw)
+      {
+        rotate_z_cw = true;
+        cmd_send_32(0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC1));
+      }
+    }
+    //else
+    {
+      if(rotate_z_cw)
+      {
+        rotate_z_cw = false;
+        cmd_send_16(0x00, 0x00 | (1 << DEC1));
+      }
+    }
+    
+    // 7, 8
+    //if(HAL_GPIO_ReadPin(ROTATE_Z_CCW_COM_PORT, ROTATE_Z_CCW_COM_PIN) == GPIO_PIN_SET)
+    {  
+      if(!rotate_z_ccw)
+      {
+        rotate_z_ccw = true;
+        cmd_send_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC1));
+      }
+    }
+    //else
+    {
+      if(rotate_z_ccw)
+      {
+        rotate_z_ccw = false;
+        cmd_send_16(0x00, 0x00 | (1 << DEC1));
+      }
+    }
+    
+    // 9, 10
+    //if(HAL_GPIO_ReadPin(TILT_CCW_COM_PORT, TILT_CCW_COM_PIN) == GPIO_PIN_SET)
+    {  
+      if(!tilt_ccw)
+      {
+        tilt_ccw = true;
+        cmd_send_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_TILT), 0x00 | (1 << DEC1));
+      }
+    }
+    //else
+    {
+      if(tilt_ccw)
+      {
+        tilt_ccw = false;
+        cmd_send_16(0x00, 0x00 | (1 << DEC1));
+      }
+    }
+    
+    // 11, 12
+    //if(HAL_GPIO_ReadPin(TILT_CW_COM_PORT, TILT_CW_COM_PIN) == GPIO_PIN_SET)
+    {  
+      if(!tilt_cw)
+      {
+        tilt_cw = true;
+        cmd_send_32(0x00 | (1 << DIR_MOTOR_TILT), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_TILT), 0x00 | (1 << DEC1));
+      }
+    }
+    //else
+    {
+      if(tilt_cw)
+      {
+        tilt_cw = false;
+        cmd_send_16(0x00, 0x00 | (1 << DEC1));
+      }
+    }
+    // 13, 14
+    //if(HAL_GPIO_ReadPin(MOTOR_Z_DOWN_COM_PORT, MOTOR_Z_DOWN_COM_PIN) == GPIO_PIN_SET)
+    {  
+      if(!motor_z_down)
+      {
+        motor_z_down = true;
+        cmd_send_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_Z), 0x00 | (1 << DEC1));
+      }
+    }
+    //else
+    {
+      if(motor_z_down)
+      {
+        motor_z_down = false;
+        cmd_send_16(0x00, 0x00 | (1 << DEC1));
+      }
+    }
+    
+    // 15, 16
+    //if(HAL_GPIO_ReadPin(MOTOR_Z_UP_COM_PORT, MOTOR_Z_UP_COM_PIN) == GPIO_PIN_SET)
+    {  
+      if(!motor_z_up)
+      {
+        motor_z_up = true;
+        cmd_send_32(0x00 | (1 << DIR_MOTOR_Z), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_Z), 0x00 | (1 << DEC1));
+      }
+    }
+    //else
+    {
+      if(motor_z_up)
+      {
+        motor_z_up = false;
+        cmd_send_16(0x00, 0x00 | (1 << DEC1));
+      }
+    }
+    
+    // 17, 18
+    //if(HAL_GPIO_ReadPin(ACTUATOR_Y_BACKWARD_COM_PORT, ACTUATOR_Y_BACKWARD_COM_PIN) == GPIO_PIN_SET)
+    {  
+      if(!actuator_y_backward)
+      {
+        actuator_y_backward = true;
+        cmd_send_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << LIN_MOTOR_Y), 0x00 | (1 << DEC0) | (1 << DEC1));
+      }
+    }
+    //else
+    {
+      if(actuator_y_backward)
+      {
+        actuator_y_backward = false;
+        cmd_send_16(0x00, 0x00 | (1 << DEC0) | (1 << DEC1));
+      }
+    }
+    
+    // 19, 20
+    //if(HAL_GPIO_ReadPin(ACTUATOR_Y_FORWARD_COM_PORT, ACTUATOR_Y_FORWARD_COM_PIN) == GPIO_PIN_SET)
+    {  
+      if(!actuator_y_forward)
+      {
+        actuator_y_forward = true;
+        cmd_send_32(0x00 | (1 << DIR_MOTOR_Y), 0x00 | (1 << DEC0), 0x00 | (1 << LIN_MOTOR_Y), 0x00 | (1 << DEC0) | (1 << DEC1));
+      }
+    }
+    //else
+    {
+      if(actuator_y_forward)
+      {
+        actuator_y_forward = false;
+        cmd_send_16(0x00, 0x00 | (1 << DEC0) | (1 << DEC1));
+      }
+    }
+
+    // 21, 22
+    //if(HAL_GPIO_ReadPin(X_BACKWARD_COM_PORT, X_BACKWARD_COM_PIN) == GPIO_PIN_SET)
+    {  
+      if(!x_backward)
+      {
+        x_backward = true;
+        cmd_send_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC1));
+      }
+    }
+    //else
+    {
+      if(x_backward)
+      {
+        x_backward = false;
+        cmd_send_16(0x00, 0x00 | (1 << DEC1));
+      }
+    }
+
+    // 23, 24
+    //if(HAL_GPIO_ReadPin(X_FORWARD_COM_PORT, X_FORWARD_COM_PIN) == GPIO_PIN_SET)
+    {  
+      if(!x_forward)
+      {
+        x_forward = true;
+        cmd_send_32(0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC1));
+      }
+    }
+    //else
+    {
+      if(x_forward)
+      {
+        x_forward = false;
+        cmd_send_16(0x00, 0x00 | (1 << DEC1));
+      }
+    }
+    for(int i = 0; i < 1000; i++);
+    
+#if 0
+
+    // Working
+    {
+      memset(pDataRx, 0, sizeof(pDataRx));
+      for(int i = 0; i < 10; i++)
+      {
+        HAL_UART_Transmit(&huart1, &pDataTx[i], 1, 500);
+        HAL_UART_Receive(&huart1, &pDataRx[i], 1, 500);
+      }
+      
+      memset(pDataRx, 0, sizeof(pDataRx));
+      for(int i = 0; i < 10; i++)
+      {
+        HAL_UART_Transmit(&huart3, &pDataTx[i], 1, 500);
+        HAL_UART_Receive(&huart3, &pDataRx[i], 1, 500);
+      }
+      
+      memset(pDataRx, 0, sizeof(pDataRx));
+      HAL_SPI_TransmitReceive(&hspi2, pDataTx, pDataRx, sizeof(pDataTx), 500);
+    }
+#endif    
+    //Not working
+    //{
+    //  memset(pDataRx, 0, sizeof(pDataRx));
+    //  for(int i = 0; i < 10; i++)
+    //  {
+    //    HAL_SPI_Transmit(&hspi2, &pDataTx[i], 1, 500);
+    //    HAL_SPI_Receive(&hspi2, &pDataRx[i], 1, 500);
+    //  }
+    //  
+    //  memset(pDataRx, 0, sizeof(pDataRx));
+    //  HAL_SPI_Transmit(&hspi2, pDataTx, sizeof(pDataTx), 500);
+    //  HAL_SPI_Receive(&hspi2, pDataRx, sizeof(pDataRx), 500);
+    //
+    //  memset(pDataRx, 0, sizeof(pDataRx));
+    //  HAL_UART_Transmit(&huart1, pDataTx, sizeof(pDataTx), 500);
+    //  HAL_UART_Receive(&huart1, pDataRx, sizeof(pDataRx), 500);
+    //  
+    //  memset(pDataRx, 0, sizeof(pDataRx));
+    //  HAL_UART_Transmit(&huart3, pDataTx, sizeof(pDataTx), 500);
+    //  HAL_UART_Receive(&huart3, pDataRx, sizeof(pDataRx), 500);
+    //}
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -262,11 +629,11 @@ static void MX_SPI2_Init(void)
   hspi2.Instance = SPI2;
   hspi2.Init.Mode = SPI_MODE_MASTER;
   hspi2.Init.Direction = SPI_DIRECTION_2LINES;
-  hspi2.Init.DataSize = SPI_DATASIZE_4BIT;
+  hspi2.Init.DataSize = SPI_DATASIZE_8BIT;
   hspi2.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi2.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi2.Init.NSS = SPI_NSS_SOFT;
-  hspi2.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
+  hspi2.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_4;
   hspi2.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi2.Init.TIMode = SPI_TIMODE_DISABLE;
   hspi2.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
@@ -313,7 +680,7 @@ static void MX_TIM1_Init(void)
   htim1.Instance = TIM1;
   htim1.Init.Prescaler = 0;
   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim1.Init.Period = 65535;
+  htim1.Init.Period = 64000;
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim1.Init.RepetitionCounter = 0;
   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
@@ -329,7 +696,7 @@ static void MX_TIM1_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 0;
+  sConfigOC.Pulse = 32000;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   sConfigOC.OCIdleState = TIM_OCIDLESTATE_RESET;
@@ -381,7 +748,7 @@ static void MX_TIM2_Init(void)
   htim2.Instance = TIM2;
   htim2.Init.Prescaler = 0;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 4294967295;
+  htim2.Init.Period = 640000;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_PWM_Init(&htim2) != HAL_OK)
@@ -395,7 +762,7 @@ static void MX_TIM2_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 0;
+  sConfigOC.Pulse = 320000;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4) != HAL_OK)
