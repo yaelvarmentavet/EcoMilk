@@ -36,7 +36,9 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
-#define DEBUG_CMD       1
+#define ECOMILK_DEBUG           1
+#define ECOMILK_DEBUG_TIMEOUT   10
+#define ECOMILK_TIMEOUT         ECOMILK_DEBUG_TIMEOUT
 
 /* USER CODE END PD */
 
@@ -119,6 +121,14 @@ UART_HandleTypeDef huart3;
 /* USER CODE BEGIN PV */
 
 int a_encoder_z_sp_drive = 0;
+int b_encoder_z_sp_drive = 0;
+int a_encoder_x_sp_drive = 0;
+int b_encoder_x_sp_drive = 0;
+
+int b_encoder_tilt_sp_drive = 0;
+int a_encoder_rotate_sp_drive = 0;
+int b_encoder_rotate_sp_drive = 0;
+int a_encoder_tilt_sp_drive = 0;
 
 /* USER CODE END PV */
 
@@ -143,13 +153,33 @@ static void MX_USART3_UART_Init(void);
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
   if(htim->Instance == TIM3)
-    a_encoder_z_sp_drive++;
+  {
+    if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1)
+      a_encoder_z_sp_drive++;
+    else if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2)
+      b_encoder_z_sp_drive++;
+    else if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_3)
+      a_encoder_x_sp_drive++;
+    else if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_4)
+      b_encoder_x_sp_drive++;
+  }
+  if(htim->Instance == TIM4)
+  {
+    if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1)
+      b_encoder_tilt_sp_drive++;
+    else if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2)
+      a_encoder_rotate_sp_drive++;
+    else if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_3)
+      b_encoder_rotate_sp_drive++;
+    else if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_4)
+      a_encoder_tilt_sp_drive++;
+  }
 }
 
 void cmd_send_32(uint8_t dir_0, uint8_t dir_1, uint8_t cmd_0, uint8_t cmd_1)
 {
   uint8_t data[4];
-#if DEBUG_CMD == 1
+#if ECOMILK_DEBUG == 1
   uint8_t rdata[4];
 #endif  
   memset(data, 0, sizeof(data));
@@ -158,10 +188,10 @@ void cmd_send_32(uint8_t dir_0, uint8_t dir_1, uint8_t cmd_0, uint8_t cmd_1)
   data[2] = cmd_1;
   data[3] = cmd_0;
   HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_RESET);
-#if DEBUG_CMD == 1
-  HAL_SPI_TransmitReceive(&hspi2, data, rdata, sizeof(data), 500);
+#if ECOMILK_DEBUG == 1
+  HAL_SPI_TransmitReceive(&hspi2, data, rdata, sizeof(data), ECOMILK_TIMEOUT);
 #else  
-  HAL_SPI_Transmit(&hspi2, data, sizeof(data), 500);
+  HAL_SPI_Transmit(&hspi2, data, sizeof(data), ECOMILK_TIMEOUT);
 #endif  
   HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
 }
@@ -169,17 +199,17 @@ void cmd_send_32(uint8_t dir_0, uint8_t dir_1, uint8_t cmd_0, uint8_t cmd_1)
 void cmd_send_16(uint8_t cmd_0, uint8_t cmd_1)
 {
   uint8_t data[2];
-#if DEBUG_CMD == 1
+#if ECOMILK_DEBUG == 1
   uint8_t rdata[2];
 #endif  
   memset(data, 0, sizeof(data));
   data[0] = cmd_1;
   data[1] = cmd_0;
   HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_RESET);
-#if DEBUG_CMD == 1
-  HAL_SPI_TransmitReceive(&hspi2, data, rdata, sizeof(data), 500);
+#if ECOMILK_DEBUG == 1
+  HAL_SPI_TransmitReceive(&hspi2, data, rdata, sizeof(data), ECOMILK_TIMEOUT);
 #else  
-  HAL_SPI_Transmit(&hspi2, data, sizeof(data), 500);
+  HAL_SPI_Transmit(&hspi2, data, sizeof(data), ECOMILK_TIMEOUT);
 #endif  
   HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
 }
@@ -225,14 +255,26 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
-  a_encoder_z_sp_drive = 0;
   HAL_TIM_IC_Start_IT(&htim3, TIM_CHANNEL_1);
+  HAL_TIM_IC_Start_IT(&htim3, TIM_CHANNEL_2);
+  HAL_TIM_IC_Start_IT(&htim3, TIM_CHANNEL_3);
+  HAL_TIM_IC_Start_IT(&htim3, TIM_CHANNEL_4);
+  HAL_TIM_IC_Start_IT(&htim4, TIM_CHANNEL_1);
+  HAL_TIM_IC_Start_IT(&htim4, TIM_CHANNEL_2);
+  HAL_TIM_IC_Start_IT(&htim4, TIM_CHANNEL_3);
+  HAL_TIM_IC_Start_IT(&htim4, TIM_CHANNEL_4);
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 
-#if DEBUG_CMD == 1
-  uint8_t pDataTx[] = {0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99};
+#if ECOMILK_DEBUG == 1
+  uint8_t pDataTx[] = {'x', 'f', '0', '\r', '\n', '5', '6', '7', '\r', '\n'};
   uint8_t pDataRx[10];
+  char rx_pool[10];
+  int idx = 0;
+
+  memset(rx_pool, 0, sizeof(rx_pool));
+  HAL_UART_Transmit(&huart1, pDataTx, sizeof(pDataTx), ECOMILK_TIMEOUT);
+  
 #endif  
 
   /* USER CODE END 2 */
@@ -256,7 +298,7 @@ int main(void)
   while (1)
   {
     // 1, 2
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     if(HAL_GPIO_ReadPin(ACTUATOR_BACKWARD_COM_PORT, ACTUATOR_BACKWARD_COM_PIN) == GPIO_PIN_SET)
 #endif
     {  
@@ -266,7 +308,7 @@ int main(void)
         cmd_send_32(0x00, 0x00 | (0x01 << DEC0), 0x00 | (0x01 << LIN_MOTOR_SP_1), 0x00 | (0x01 << DEC0) | (0x01 << DEC1));
       }
     }
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     else
 #endif
     {
@@ -278,7 +320,7 @@ int main(void)
     }
 
     // 3, 4
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     if(HAL_GPIO_ReadPin(ACTUATOR_FORWARD_COM_PORT, ACTUATOR_FORWARD_COM_PIN) == GPIO_PIN_SET)
 #endif
     {  
@@ -288,7 +330,7 @@ int main(void)
         cmd_send_32(0x00, 0x00 | (1 << DIR_MOTOR_SP_1) | (1 << DEC0), 0x00 | (1 << LIN_MOTOR_SP_1), 0x00 | (1 << DEC0) | (1 << DEC1));
       }
     }
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     else
 #endif
     {
@@ -300,7 +342,7 @@ int main(void)
     }
     
     // 5, 6
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     if(HAL_GPIO_ReadPin(ROTATE_Z_CW_COM_PORT, ROTATE_Z_CW_COM_PIN) == GPIO_PIN_SET)
 #endif
     {  
@@ -310,7 +352,7 @@ int main(void)
         cmd_send_32(0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC1));
       }
     }
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     else
 #endif
     {
@@ -322,7 +364,7 @@ int main(void)
     }
     
     // 7, 8
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     if(HAL_GPIO_ReadPin(ROTATE_Z_CCW_COM_PORT, ROTATE_Z_CCW_COM_PIN) == GPIO_PIN_SET)
 #endif
     {  
@@ -332,7 +374,7 @@ int main(void)
         cmd_send_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC1));
       }
     }
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     else
 #endif
     {
@@ -344,7 +386,7 @@ int main(void)
     }
     
     // 9, 10
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     if(HAL_GPIO_ReadPin(TILT_CCW_COM_PORT, TILT_CCW_COM_PIN) == GPIO_PIN_SET)
 #endif
     {  
@@ -354,7 +396,7 @@ int main(void)
         cmd_send_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_TILT), 0x00 | (1 << DEC1));
       }
     }
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     else
 #endif
     {
@@ -366,7 +408,7 @@ int main(void)
     }
     
     // 11, 12
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     if(HAL_GPIO_ReadPin(TILT_CW_COM_PORT, TILT_CW_COM_PIN) == GPIO_PIN_SET)
 #endif
     {  
@@ -376,7 +418,7 @@ int main(void)
         cmd_send_32(0x00 | (1 << DIR_MOTOR_TILT), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_TILT), 0x00 | (1 << DEC1));
       }
     }
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     else
 #endif
     {
@@ -387,7 +429,7 @@ int main(void)
       }
     }
     // 13, 14
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     if(HAL_GPIO_ReadPin(MOTOR_Z_DOWN_COM_PORT, MOTOR_Z_DOWN_COM_PIN) == GPIO_PIN_SET)
 #endif
     {  
@@ -397,7 +439,7 @@ int main(void)
         cmd_send_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_Z), 0x00 | (1 << DEC1));
       }
     }
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     else
 #endif
     {
@@ -409,7 +451,7 @@ int main(void)
     }
     
     // 15, 16
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     if(HAL_GPIO_ReadPin(MOTOR_Z_UP_COM_PORT, MOTOR_Z_UP_COM_PIN) == GPIO_PIN_SET)
 #endif
     {  
@@ -419,7 +461,7 @@ int main(void)
         cmd_send_32(0x00 | (1 << DIR_MOTOR_Z), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_Z), 0x00 | (1 << DEC1));
       }
     }
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     else
 #endif
     {
@@ -431,7 +473,7 @@ int main(void)
     }
     
     // 17, 18
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     if(HAL_GPIO_ReadPin(ACTUATOR_Y_BACKWARD_COM_PORT, ACTUATOR_Y_BACKWARD_COM_PIN) == GPIO_PIN_SET)
 #endif
     {  
@@ -441,7 +483,7 @@ int main(void)
         cmd_send_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << LIN_MOTOR_Y), 0x00 | (1 << DEC0) | (1 << DEC1));
       }
     }
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     else
 #endif
     {
@@ -453,7 +495,7 @@ int main(void)
     }
     
     // 19, 20
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     if(HAL_GPIO_ReadPin(ACTUATOR_Y_FORWARD_COM_PORT, ACTUATOR_Y_FORWARD_COM_PIN) == GPIO_PIN_SET)
 #endif
     {  
@@ -463,7 +505,7 @@ int main(void)
         cmd_send_32(0x00 | (1 << DIR_MOTOR_Y), 0x00 | (1 << DEC0), 0x00 | (1 << LIN_MOTOR_Y), 0x00 | (1 << DEC0) | (1 << DEC1));
       }
     }
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     else
 #endif
     {
@@ -475,7 +517,7 @@ int main(void)
     }
 
     // 21, 22
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     if(HAL_GPIO_ReadPin(X_BACKWARD_COM_PORT, X_BACKWARD_COM_PIN) == GPIO_PIN_SET)
 #endif
     {  
@@ -485,7 +527,7 @@ int main(void)
         cmd_send_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC1));
       }
     }
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     else
 #endif
     {
@@ -497,7 +539,7 @@ int main(void)
     }
 
     // 23, 24
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     if(HAL_GPIO_ReadPin(X_FORWARD_COM_PORT, X_FORWARD_COM_PIN) == GPIO_PIN_SET)
 #endif
     {  
@@ -507,7 +549,7 @@ int main(void)
         cmd_send_32(0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC1));
       }
     }
-#if DEBUG_CMD == 0
+#if ECOMILK_DEBUG == 0
     else
 #endif
     {
@@ -519,26 +561,43 @@ int main(void)
     }
     for(int i = 0; i < 1000; i++);
     
-#if DEBUG_CMD == 1
+#if ECOMILK_DEBUG == 1
 
     // Working
     {
+      uint8_t ch = 0;
+      HAL_StatusTypeDef status;
+      //HAL_UART_Transmit(&huart1, &pDataTx[idx], 1, ECOMILK_TIMEOUT);
+      status = HAL_UART_Receive(&huart1, &ch, 1, ECOMILK_TIMEOUT);
+      if(status == HAL_OK)
+      {
+        rx_pool[idx] = ch;
+        if(ch == '\r')
+        {
+          rx_pool[idx] = '\0';
+          if(strcmp(rx_pool, "xf1") == 0)
+            cmd_send_32(0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC1));
+          if(strcmp(rx_pool, "xf0") == 0)
+            cmd_send_16(0x00, 0x00 | (1 << DEC1));
+          idx = 0;
+          memset(rx_pool, 0, sizeof(rx_pool));
+        }
+        else
+        {
+          idx++;
+          if(idx >= sizeof(rx_pool))
+            idx = 0;
+        }
+      }
       memset(pDataRx, 0, sizeof(pDataRx));
       for(int i = 0; i < 10; i++)
       {
-        HAL_UART_Transmit(&huart1, &pDataTx[i], 1, 500);
-        HAL_UART_Receive(&huart1, &pDataRx[i], 1, 500);
+        HAL_UART_Transmit(&huart3, &pDataTx[i], 1, ECOMILK_TIMEOUT);
+        HAL_UART_Receive(&huart3, &pDataRx[i], 1, ECOMILK_TIMEOUT);
       }
       
       memset(pDataRx, 0, sizeof(pDataRx));
-      for(int i = 0; i < 10; i++)
-      {
-        HAL_UART_Transmit(&huart3, &pDataTx[i], 1, 500);
-        HAL_UART_Receive(&huart3, &pDataRx[i], 1, 500);
-      }
-      
-      memset(pDataRx, 0, sizeof(pDataRx));
-      HAL_SPI_TransmitReceive(&hspi2, pDataTx, pDataRx, sizeof(pDataTx), 500);
+      HAL_SPI_TransmitReceive(&hspi2, pDataTx, pDataRx, sizeof(pDataTx), ECOMILK_TIMEOUT);
     }
 #endif    
     //Not working
@@ -546,21 +605,21 @@ int main(void)
     //  memset(pDataRx, 0, sizeof(pDataRx));
     //  for(int i = 0; i < 10; i++)
     //  {
-    //    HAL_SPI_Transmit(&hspi2, &pDataTx[i], 1, 500);
-    //    HAL_SPI_Receive(&hspi2, &pDataRx[i], 1, 500);
+    //    HAL_SPI_Transmit(&hspi2, &pDataTx[i], 1, ECOMILK_TIMEOUT);
+    //    HAL_SPI_Receive(&hspi2, &pDataRx[i], 1, ECOMILK_TIMEOUT);
     //  }
     //  
     //  memset(pDataRx, 0, sizeof(pDataRx));
-    //  HAL_SPI_Transmit(&hspi2, pDataTx, sizeof(pDataTx), 500);
-    //  HAL_SPI_Receive(&hspi2, pDataRx, sizeof(pDataRx), 500);
+    //  HAL_SPI_Transmit(&hspi2, pDataTx, sizeof(pDataTx), ECOMILK_TIMEOUT);
+    //  HAL_SPI_Receive(&hspi2, pDataRx, sizeof(pDataRx), ECOMILK_TIMEOUT);
     //
     //  memset(pDataRx, 0, sizeof(pDataRx));
-    //  HAL_UART_Transmit(&huart1, pDataTx, sizeof(pDataTx), 500);
-    //  HAL_UART_Receive(&huart1, pDataRx, sizeof(pDataRx), 500);
+    //  HAL_UART_Transmit(&huart1, pDataTx, sizeof(pDataTx), ECOMILK_TIMEOUT);
+    //  HAL_UART_Receive(&huart1, pDataRx, sizeof(pDataRx), ECOMILK_TIMEOUT);
     //  
     //  memset(pDataRx, 0, sizeof(pDataRx));
-    //  HAL_UART_Transmit(&huart3, pDataTx, sizeof(pDataTx), 500);
-    //  HAL_UART_Receive(&huart3, pDataRx, sizeof(pDataRx), 500);
+    //  HAL_UART_Transmit(&huart3, pDataTx, sizeof(pDataTx), ECOMILK_TIMEOUT);
+    //  HAL_UART_Receive(&huart3, pDataRx, sizeof(pDataRx), ECOMILK_TIMEOUT);
     //}
 
     /* USER CODE END WHILE */
