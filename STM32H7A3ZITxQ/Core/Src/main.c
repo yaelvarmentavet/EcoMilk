@@ -39,6 +39,8 @@
 #define ECOMILK_DEBUG           1
 #define ECOMILK_DEBUG_TIMEOUT   10
 #define ECOMILK_TIMEOUT         ECOMILK_DEBUG_TIMEOUT
+#define ECOMILK_CMD_ON          1
+#define ECOMILK_CMD_OFF         0
 
 /* USER CODE END PD */
 
@@ -130,6 +132,9 @@ int a_encoder_rotate_sp_drive = 0;
 int b_encoder_rotate_sp_drive = 0;
 int a_encoder_tilt_sp_drive = 0;
 
+char pool_rx[10];
+int pool_rx_idx = 0;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -144,6 +149,22 @@ static void MX_TIM4_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_USART3_UART_Init(void);
 /* USER CODE BEGIN PFP */
+
+static void Cmd_UART_Rx();
+static void Cmd_SPI_Tx_32(uint8_t dir_0, uint8_t dir_1, uint8_t cmd_0, uint8_t cmd_1);
+static void Cmd_SPI_Tx_16(uint8_t cmd_0, uint8_t cmd_1);
+static void Cmd_Actuator_Backward(bool state);
+static void Cmd_Actuator_Forward(bool state);
+static void Cmd_Rotate_Z_CW(bool state);
+static void Cmd_Rotate_Z_CCW(bool state);
+static void Cmd_Tilt_CCW(bool state);
+static void Cmd_Tilt_CW(bool state);
+static void Cmd_Motor_Z_Down(bool state);
+static void Cmd_Motor_Z_Up(bool state);
+static void Cmd_Actuator_Y_Backward(bool state);
+static void Cmd_Actuator_Y_Forward(bool state);
+static void Cmd_X_Backward(bool state);
+static void Cmd_X_Forward(bool state);
 
 /* USER CODE END PFP */
 
@@ -176,7 +197,103 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
   }
 }
 
-void cmd_send_32(uint8_t dir_0, uint8_t dir_1, uint8_t cmd_0, uint8_t cmd_1)
+static void Cmd_Actuator_Backward(bool state)
+{
+  if(state)
+    Cmd_SPI_Tx_32(0x00, 0x00 | (0x01 << DEC0), 0x00 | (0x01 << LIN_MOTOR_SP_1), 0x00 | (0x01 << DEC0) | (0x01 << DEC1));
+  else
+    Cmd_SPI_Tx_16(0x00, 0x00 | (0x01 << DEC0) | (0x01 << DEC1));
+}
+
+static void Cmd_Actuator_Forward(bool state)
+{
+  if(state)
+    Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DIR_MOTOR_SP_1) | (1 << DEC0), 0x00 | (1 << LIN_MOTOR_SP_1), 0x00 | (1 << DEC0) | (1 << DEC1));
+  else
+    Cmd_SPI_Tx_16(0x00 ,0x00 | (1 << DEC0) | (1 << DEC1));
+}
+
+static void Cmd_Rotate_Z_CW(bool state)
+{
+  if(state)
+    Cmd_SPI_Tx_32(0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC1));
+  else
+    Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+}
+
+static void Cmd_Rotate_Z_CCW(bool state)
+{
+  if(state)
+    Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC1));
+  else
+    Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+}
+
+static void Cmd_Tilt_CCW(bool state)
+{
+  if(state)
+    Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_TILT), 0x00 | (1 << DEC1));
+  else
+    Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+}
+
+static void Cmd_Tilt_CW(bool state)
+{
+  if(state)
+    Cmd_SPI_Tx_32(0x00 | (1 << DIR_MOTOR_TILT), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_TILT), 0x00 | (1 << DEC1));
+  else
+    Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+}
+
+static void Cmd_Motor_Z_Down(bool state)
+{
+  if(state)
+    Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_Z), 0x00 | (1 << DEC1));
+  else
+    Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+}
+
+static void Cmd_Motor_Z_Up(bool state)
+{
+  if(state)
+    Cmd_SPI_Tx_32(0x00 | (1 << DIR_MOTOR_Z), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_Z), 0x00 | (1 << DEC1));
+  else
+    Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+}
+
+static void Cmd_Actuator_Y_Backward(bool state)
+{
+  if(state)
+    Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << LIN_MOTOR_Y), 0x00 | (1 << DEC0) | (1 << DEC1));
+  else
+    Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC0) | (1 << DEC1));
+}
+
+static void Cmd_Actuator_Y_Forward(bool state)
+{
+  if(state)
+    Cmd_SPI_Tx_32(0x00 | (1 << DIR_MOTOR_Y), 0x00 | (1 << DEC0), 0x00 | (1 << LIN_MOTOR_Y), 0x00 | (1 << DEC0) | (1 << DEC1));
+  else
+    Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC0) | (1 << DEC1));
+}
+
+static void Cmd_X_Backward(bool state)
+{
+  if(state)
+    Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC1));
+  else
+    Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+}
+
+static void Cmd_X_Forward(bool state)
+{
+  if(state)
+    Cmd_SPI_Tx_32(0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC1));
+  else
+    Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+}
+
+static void Cmd_SPI_Tx_32(uint8_t dir_0, uint8_t dir_1, uint8_t cmd_0, uint8_t cmd_1)
 {
   uint8_t data[4];
 #if ECOMILK_DEBUG == 1
@@ -196,7 +313,7 @@ void cmd_send_32(uint8_t dir_0, uint8_t dir_1, uint8_t cmd_0, uint8_t cmd_1)
   HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
 }
 
-void cmd_send_16(uint8_t cmd_0, uint8_t cmd_1)
+static void Cmd_SPI_Tx_16(uint8_t cmd_0, uint8_t cmd_1)
 {
   uint8_t data[2];
 #if ECOMILK_DEBUG == 1
@@ -212,6 +329,44 @@ void cmd_send_16(uint8_t cmd_0, uint8_t cmd_1)
   HAL_SPI_Transmit(&hspi2, data, sizeof(data), ECOMILK_TIMEOUT);
 #endif  
   HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
+}
+
+static void Cmd_UART_Rx()
+{
+  uint8_t ch = 0;
+  HAL_StatusTypeDef status;
+  //HAL_UART_Transmit(&huart1, &pDataTx[pool_rx_idx], 1, ECOMILK_TIMEOUT);
+  status = HAL_UART_Receive(&huart1, &ch, 1, ECOMILK_TIMEOUT);
+  if(status == HAL_OK)
+  {
+    pool_rx[pool_rx_idx] = ch;
+    if(ch == '\b')
+    {
+      pool_rx[pool_rx_idx] = '\0';
+      pool_rx_idx--;
+      if(pool_rx_idx < 0)
+        pool_rx_idx = 0;
+      pool_rx[pool_rx_idx] = '\0';
+    }
+    else if(ch == '\r')
+    {
+      ch = '\n';
+      HAL_UART_Transmit(&huart1, &ch, 1, ECOMILK_TIMEOUT);
+      pool_rx[pool_rx_idx] = '\0';
+      if(strcmp(pool_rx, "xf 1") == 0)
+        Cmd_X_Forward(1);
+      if(strcmp(pool_rx, "xf 0") == 0)
+        Cmd_X_Forward(0);
+      pool_rx_idx = 0;
+      memset(pool_rx, 0, sizeof(pool_rx));
+    }
+    else
+    {
+      pool_rx_idx++;
+      if(pool_rx_idx >= sizeof(pool_rx))
+        pool_rx_idx = 0;
+    }
+  }
 }
 
 /* USER CODE END 0 */
@@ -254,6 +409,20 @@ int main(void)
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
 
+#if ECOMILK_DEBUG == 1
+
+  uint8_t pDataTx[] = {'E', 'C', 'O', 'M', 'I', 'L', 'K', ' ', 'r', 'u', 'l', 'e', 's', '\r', '\n'};
+  //uint8_t pDataRx[10];
+
+  HAL_UART_ReceiverTimeout_Config(&huart1, 100);
+  HAL_UART_EnableReceiverTimeout(&huart1);
+
+  memset(pool_rx, 0, sizeof(pool_rx));
+  HAL_UART_Transmit(&huart1, pDataTx, sizeof(pDataTx), ECOMILK_TIMEOUT);
+
+#endif  
+
+  
   HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
   HAL_TIM_IC_Start_IT(&htim3, TIM_CHANNEL_1);
   HAL_TIM_IC_Start_IT(&htim3, TIM_CHANNEL_2);
@@ -265,17 +434,6 @@ int main(void)
   HAL_TIM_IC_Start_IT(&htim4, TIM_CHANNEL_4);
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
-
-#if ECOMILK_DEBUG == 1
-  uint8_t pDataTx[] = {'x', 'f', '0', '\r', '\n', '5', '6', '7', '\r', '\n'};
-  uint8_t pDataRx[10];
-  char rx_pool[10];
-  int idx = 0;
-
-  memset(rx_pool, 0, sizeof(rx_pool));
-  HAL_UART_Transmit(&huart1, pDataTx, sizeof(pDataTx), ECOMILK_TIMEOUT);
-  
-#endif  
 
   /* USER CODE END 2 */
 
@@ -297,6 +455,10 @@ int main(void)
 
   while (1)
   {
+#if ECOMILK_DEBUG == 1
+    Cmd_UART_Rx();
+#endif
+
     // 1, 2
 #if ECOMILK_DEBUG == 0
     if(HAL_GPIO_ReadPin(ACTUATOR_BACKWARD_COM_PORT, ACTUATOR_BACKWARD_COM_PIN) == GPIO_PIN_SET)
@@ -305,7 +467,8 @@ int main(void)
       if(!actuator_backward)
       {
         actuator_backward = true;
-        cmd_send_32(0x00, 0x00 | (0x01 << DEC0), 0x00 | (0x01 << LIN_MOTOR_SP_1), 0x00 | (0x01 << DEC0) | (0x01 << DEC1));
+        //Cmd_SPI_Tx_32(0x00, 0x00 | (0x01 << DEC0), 0x00 | (0x01 << LIN_MOTOR_SP_1), 0x00 | (0x01 << DEC0) | (0x01 << DEC1));
+        Cmd_Actuator_Backward(ECOMILK_CMD_ON);
       }
     }
 #if ECOMILK_DEBUG == 0
@@ -315,7 +478,8 @@ int main(void)
       if(actuator_backward)
       {
         actuator_backward = false;
-        cmd_send_16(0x00, 0x00 | (0x01 << DEC0) | (0x01 << DEC1));
+        //Cmd_SPI_Tx_16(0x00, 0x00 | (0x01 << DEC0) | (0x01 << DEC1));
+        Cmd_Actuator_Backward(ECOMILK_CMD_OFF);
       }
     }
 
@@ -327,7 +491,8 @@ int main(void)
       if(!actuator_forward)
       {
         actuator_forward = true;
-        cmd_send_32(0x00, 0x00 | (1 << DIR_MOTOR_SP_1) | (1 << DEC0), 0x00 | (1 << LIN_MOTOR_SP_1), 0x00 | (1 << DEC0) | (1 << DEC1));
+        //Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DIR_MOTOR_SP_1) | (1 << DEC0), 0x00 | (1 << LIN_MOTOR_SP_1), 0x00 | (1 << DEC0) | (1 << DEC1));
+        Cmd_Actuator_Forward(ECOMILK_CMD_ON);
       }
     }
 #if ECOMILK_DEBUG == 0
@@ -337,7 +502,8 @@ int main(void)
       if(actuator_forward)
       {
         actuator_forward = false;
-        cmd_send_16(0x00 ,0x00 | (1 << DEC0) | (1 << DEC1));
+        //Cmd_SPI_Tx_16(0x00 ,0x00 | (1 << DEC0) | (1 << DEC1));
+        Cmd_Actuator_Forward(ECOMILK_CMD_OFF);
       }
     }
     
@@ -349,7 +515,8 @@ int main(void)
       if(!rotate_z_cw)
       {
         rotate_z_cw = true;
-        cmd_send_32(0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC1));
+        //Cmd_SPI_Tx_32(0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC1));
+        Cmd_Rotate_Z_CW(ECOMILK_CMD_ON);
       }
     }
 #if ECOMILK_DEBUG == 0
@@ -359,7 +526,8 @@ int main(void)
       if(rotate_z_cw)
       {
         rotate_z_cw = false;
-        cmd_send_16(0x00, 0x00 | (1 << DEC1));
+        //Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+        Cmd_Rotate_Z_CW(ECOMILK_CMD_OFF);
       }
     }
     
@@ -371,7 +539,8 @@ int main(void)
       if(!rotate_z_ccw)
       {
         rotate_z_ccw = true;
-        cmd_send_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC1));
+        //Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC1));
+        Cmd_Rotate_Z_CCW(ECOMILK_CMD_ON);
       }
     }
 #if ECOMILK_DEBUG == 0
@@ -381,7 +550,8 @@ int main(void)
       if(rotate_z_ccw)
       {
         rotate_z_ccw = false;
-        cmd_send_16(0x00, 0x00 | (1 << DEC1));
+        //Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+        Cmd_Rotate_Z_CCW(ECOMILK_CMD_OFF);
       }
     }
     
@@ -393,7 +563,8 @@ int main(void)
       if(!tilt_ccw)
       {
         tilt_ccw = true;
-        cmd_send_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_TILT), 0x00 | (1 << DEC1));
+        //Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_TILT), 0x00 | (1 << DEC1));
+        Cmd_Tilt_CCW(ECOMILK_CMD_ON);
       }
     }
 #if ECOMILK_DEBUG == 0
@@ -403,7 +574,8 @@ int main(void)
       if(tilt_ccw)
       {
         tilt_ccw = false;
-        cmd_send_16(0x00, 0x00 | (1 << DEC1));
+        //Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+        Cmd_Tilt_CCW(ECOMILK_CMD_OFF);
       }
     }
     
@@ -415,7 +587,8 @@ int main(void)
       if(!tilt_cw)
       {
         tilt_cw = true;
-        cmd_send_32(0x00 | (1 << DIR_MOTOR_TILT), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_TILT), 0x00 | (1 << DEC1));
+        //Cmd_SPI_Tx_32(0x00 | (1 << DIR_MOTOR_TILT), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_TILT), 0x00 | (1 << DEC1));
+        Cmd_Tilt_CW(ECOMILK_CMD_ON);
       }
     }
 #if ECOMILK_DEBUG == 0
@@ -425,7 +598,8 @@ int main(void)
       if(tilt_cw)
       {
         tilt_cw = false;
-        cmd_send_16(0x00, 0x00 | (1 << DEC1));
+        //Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+        Cmd_Tilt_CW(ECOMILK_CMD_OFF);
       }
     }
     // 13, 14
@@ -436,7 +610,8 @@ int main(void)
       if(!motor_z_down)
       {
         motor_z_down = true;
-        cmd_send_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_Z), 0x00 | (1 << DEC1));
+        //Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_Z), 0x00 | (1 << DEC1));
+        Cmd_Motor_Z_Down(ECOMILK_CMD_ON);
       }
     }
 #if ECOMILK_DEBUG == 0
@@ -446,7 +621,8 @@ int main(void)
       if(motor_z_down)
       {
         motor_z_down = false;
-        cmd_send_16(0x00, 0x00 | (1 << DEC1));
+        //Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+        Cmd_Motor_Z_Down(ECOMILK_CMD_OFF);
       }
     }
     
@@ -458,7 +634,8 @@ int main(void)
       if(!motor_z_up)
       {
         motor_z_up = true;
-        cmd_send_32(0x00 | (1 << DIR_MOTOR_Z), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_Z), 0x00 | (1 << DEC1));
+        //Cmd_SPI_Tx_32(0x00 | (1 << DIR_MOTOR_Z), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_Z), 0x00 | (1 << DEC1));
+        Cmd_Motor_Z_Up(ECOMILK_CMD_ON);
       }
     }
 #if ECOMILK_DEBUG == 0
@@ -468,7 +645,8 @@ int main(void)
       if(motor_z_up)
       {
         motor_z_up = false;
-        cmd_send_16(0x00, 0x00 | (1 << DEC1));
+        //Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+        Cmd_Motor_Z_Up(ECOMILK_CMD_OFF);
       }
     }
     
@@ -480,7 +658,8 @@ int main(void)
       if(!actuator_y_backward)
       {
         actuator_y_backward = true;
-        cmd_send_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << LIN_MOTOR_Y), 0x00 | (1 << DEC0) | (1 << DEC1));
+        //Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << LIN_MOTOR_Y), 0x00 | (1 << DEC0) | (1 << DEC1));
+        Cmd_Actuator_Y_Backward(ECOMILK_CMD_ON);
       }
     }
 #if ECOMILK_DEBUG == 0
@@ -490,7 +669,8 @@ int main(void)
       if(actuator_y_backward)
       {
         actuator_y_backward = false;
-        cmd_send_16(0x00, 0x00 | (1 << DEC0) | (1 << DEC1));
+        //Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC0) | (1 << DEC1));
+        Cmd_Actuator_Y_Backward(ECOMILK_CMD_OFF);
       }
     }
     
@@ -502,7 +682,8 @@ int main(void)
       if(!actuator_y_forward)
       {
         actuator_y_forward = true;
-        cmd_send_32(0x00 | (1 << DIR_MOTOR_Y), 0x00 | (1 << DEC0), 0x00 | (1 << LIN_MOTOR_Y), 0x00 | (1 << DEC0) | (1 << DEC1));
+        //Cmd_SPI_Tx_32(0x00 | (1 << DIR_MOTOR_Y), 0x00 | (1 << DEC0), 0x00 | (1 << LIN_MOTOR_Y), 0x00 | (1 << DEC0) | (1 << DEC1));
+        Cmd_Actuator_Y_Forward(ECOMILK_CMD_ON);
       }
     }
 #if ECOMILK_DEBUG == 0
@@ -512,7 +693,8 @@ int main(void)
       if(actuator_y_forward)
       {
         actuator_y_forward = false;
-        cmd_send_16(0x00, 0x00 | (1 << DEC0) | (1 << DEC1));
+        //Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC0) | (1 << DEC1));
+        Cmd_Actuator_Y_Forward(ECOMILK_CMD_OFF);
       }
     }
 
@@ -524,7 +706,8 @@ int main(void)
       if(!x_backward)
       {
         x_backward = true;
-        cmd_send_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC1));
+        //Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC1));
+        Cmd_X_Backward(ECOMILK_CMD_ON);
       }
     }
 #if ECOMILK_DEBUG == 0
@@ -534,7 +717,8 @@ int main(void)
       if(x_backward)
       {
         x_backward = false;
-        cmd_send_16(0x00, 0x00 | (1 << DEC1));
+        //Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+        Cmd_X_Backward(ECOMILK_CMD_OFF);
       }
     }
 
@@ -546,7 +730,8 @@ int main(void)
       if(!x_forward)
       {
         x_forward = true;
-        cmd_send_32(0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC1));
+        //Cmd_SPI_Tx_32(0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC1));
+        Cmd_X_Forward(ECOMILK_CMD_ON);
       }
     }
 #if ECOMILK_DEBUG == 0
@@ -556,50 +741,27 @@ int main(void)
       if(x_forward)
       {
         x_forward = false;
-        cmd_send_16(0x00, 0x00 | (1 << DEC1));
+        //Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+        Cmd_X_Forward(ECOMILK_CMD_OFF);
       }
     }
-    for(int i = 0; i < 1000; i++);
     
 #if ECOMILK_DEBUG == 1
-
+    for(int i = 0; i < 1000; i++);
+    
     // Working
-    {
-      uint8_t ch = 0;
-      HAL_StatusTypeDef status;
-      //HAL_UART_Transmit(&huart1, &pDataTx[idx], 1, ECOMILK_TIMEOUT);
-      status = HAL_UART_Receive(&huart1, &ch, 1, ECOMILK_TIMEOUT);
-      if(status == HAL_OK)
-      {
-        rx_pool[idx] = ch;
-        if(ch == '\r')
-        {
-          rx_pool[idx] = '\0';
-          if(strcmp(rx_pool, "xf1") == 0)
-            cmd_send_32(0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC1));
-          if(strcmp(rx_pool, "xf0") == 0)
-            cmd_send_16(0x00, 0x00 | (1 << DEC1));
-          idx = 0;
-          memset(rx_pool, 0, sizeof(rx_pool));
-        }
-        else
-        {
-          idx++;
-          if(idx >= sizeof(rx_pool))
-            idx = 0;
-        }
-      }
-      memset(pDataRx, 0, sizeof(pDataRx));
-      for(int i = 0; i < 10; i++)
-      {
-        HAL_UART_Transmit(&huart3, &pDataTx[i], 1, ECOMILK_TIMEOUT);
-        HAL_UART_Receive(&huart3, &pDataRx[i], 1, ECOMILK_TIMEOUT);
-      }
-      
-      memset(pDataRx, 0, sizeof(pDataRx));
-      HAL_SPI_TransmitReceive(&hspi2, pDataTx, pDataRx, sizeof(pDataTx), ECOMILK_TIMEOUT);
-    }
-#endif    
+    //{
+    //  memset(pDataRx, 0, sizeof(pDataRx));
+    //  for(int i = 0; i < 10; i++)
+    //  {
+    //    HAL_UART_Transmit(&huart3, &pDataTx[i], 1, ECOMILK_TIMEOUT);
+    //    HAL_UART_Receive(&huart3, &pDataRx[i], 1, ECOMILK_TIMEOUT);
+    //  }
+    //  
+    //  memset(pDataRx, 0, sizeof(pDataRx));
+    //  HAL_SPI_TransmitReceive(&hspi2, pDataTx, pDataRx, sizeof(pDataTx), ECOMILK_TIMEOUT);
+    //}
+
     //Not working
     //{
     //  memset(pDataRx, 0, sizeof(pDataRx));
@@ -621,6 +783,7 @@ int main(void)
     //  HAL_UART_Transmit(&huart3, pDataTx, sizeof(pDataTx), ECOMILK_TIMEOUT);
     //  HAL_UART_Receive(&huart3, pDataRx, sizeof(pDataRx), ECOMILK_TIMEOUT);
     //}
+#endif
 
     /* USER CODE END WHILE */
 

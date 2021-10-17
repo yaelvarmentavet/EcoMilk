@@ -5,6 +5,8 @@
     <configuration>
         <name>STM32H7A3ZITxQ</name>
         <outputs>
+            <file>$PROJ_DIR$\..\..\arm\9.10.1\ST\STM32F0xx\stm32f0xx_stdperiph_lib\Project\STM32F0xx_StdPeriph_Examples\USART\USART_TwoBoards\DataExchangeDMA\main.c</file>
+            <file>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_timebase_tim_template.c</file>
             <file>$PROJ_DIR$\..\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h7a3xxq.h</file>
             <file>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_dma_ex.h</file>
             <file>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_tim.h</file>
@@ -132,7 +134,7 @@
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 84 35</file>
+                    <file> 86 37</file>
                 </tool>
             </outputs>
         </file>
@@ -141,7 +143,7 @@
             <inputs>
                 <tool>
                     <name>OBJCOPY</name>
-                    <file> 84</file>
+                    <file> 86</file>
                 </tool>
             </inputs>
         </file>
@@ -150,13 +152,13 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 20</file>
+                    <file> 22</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 96 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 98 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
                 </tool>
             </inputs>
         </file>
@@ -165,408 +167,18 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 75</file>
+                    <file> 77</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
                 </tool>
             </inputs>
         </file>
         <file>
             <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_rcc.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 39</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_hsem.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 83</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_flash.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 95</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\startup_stm32h7a3xxq.s</name>
-            <outputs>
-                <tool>
-                    <name>AARM</name>
-                    <file> 120</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>AARM</name>
-                    <file> 101</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_flash_ex.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 34</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_rcc_ex.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 43</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_dma.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 23</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_adc_ex.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 85</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_dma_ex.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 11</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_pwr.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 105</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_cortex.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 111</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 31</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_i2c_ex.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 90</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_exti.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 103</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_spi_ex.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 81</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_spi.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 118</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_tim.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 86</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_tim_ex.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 117</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Core\Src\stm32h7xx_it.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 92</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 96 26 109 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_uart.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 70</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_uart_ex.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 93</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Core\Src\system_stm32h7xx.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 38</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Core\Src\main.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 5</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 100 36 17 73 115 6 16 78 12 10 8 30 96 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_pwr_ex.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 87</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_i2c.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 98</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_adc.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 94</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_mdma.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
@@ -576,7 +188,397 @@
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 113 91 15 36 17 73 6 16 10 8 30 26 0 107 88 116 21 106 97 37 76 45 9 13 110 89 40 1 19 14 102 114 62 27 112 119 4 29 25 28 104 77 22 2 3 7 18 32</file>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_hsem.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 85</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_flash.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 97</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\startup_stm32h7a3xxq.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 122</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 103</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_flash_ex.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 36</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_rcc_ex.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 45</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_dma.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 25</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_adc_ex.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 87</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_dma_ex.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 13</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_pwr.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 107</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_cortex.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 113</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 33</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_i2c_ex.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 92</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_exti.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 105</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_spi_ex.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 83</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_spi.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 120</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_tim.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 88</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_tim_ex.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 119</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Core\Src\stm32h7xx_it.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 94</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 98 28 111 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_uart.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 72</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_uart_ex.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 95</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Core\Src\system_stm32h7xx.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 40</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Core\Src\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 7</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 102 38 19 75 117 8 18 80 14 12 10 32 98 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_pwr_ex.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 89</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_i2c.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 100</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_adc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 96</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_mdma.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 43</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 93 17 38 19 75 8 18 12 10 32 28 2 109 90 118 23 108 99 39 78 47 11 15 112 91 42 3 21 16 104 116 64 29 114 121 6 31 27 30 106 79 24 4 5 9 20 34</file>
                 </tool>
             </inputs>
         </file>
@@ -585,17 +587,17 @@
             <outputs>
                 <tool>
                     <name>OBJCOPY</name>
-                    <file> 24</file>
+                    <file> 26</file>
                 </tool>
                 <tool>
                     <name>ILINK</name>
-                    <file> 35</file>
+                    <file> 37</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 33 42 108 99 44 120 5 20 92 38 31 94 85 111 23 11 103 95 34 75 83 98 90 41 105 87 39 43 118 81 86 117 70 93</file>
+                    <file> 35 44 110 101 46 122 7 22 94 40 33 96 87 113 25 13 105 97 36 77 85 100 92 43 107 89 41 45 120 83 88 119 72 95</file>
                 </tool>
             </inputs>
         </file>
