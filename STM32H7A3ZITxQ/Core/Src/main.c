@@ -351,6 +351,8 @@ static void Cmd_SPI_Tx_16(uint16_t cmd)
   HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_RESET);
 #if ECOMILK_DEBUG == 1
   HAL_SPI_TransmitReceive(&hspi2, (uint8_t*)&data, (uint8_t*)&rdata, 1, ECOMILK_TIMEOUT);
+  if(rdata != data)
+    printf("SPI not recieved\n");
 #else  
   HAL_SPI_Transmit(&hspi2, (uint8_t*)&data, 1, ECOMILK_TIMEOUT);
 #endif  
@@ -957,7 +959,7 @@ static void MX_SPI2_Init(void)
   hspi2.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi2.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi2.Init.NSS = SPI_NSS_SOFT;
-  hspi2.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_4;
+  hspi2.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_16;
   hspi2.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi2.Init.TIMode = SPI_TIMODE_DISABLE;
   hspi2.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
