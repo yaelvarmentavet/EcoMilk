@@ -374,7 +374,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "App/1.0.0": {
+      "EcoMilk/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -382,10 +382,10 @@
           "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
-          "bin/placeholder/App.dll": {}
+          "bin/placeholder/EcoMilk.dll": {}
         },
         "runtime": {
-          "bin/placeholder/App.dll": {}
+          "bin/placeholder/EcoMilk.dll": {}
         }
       }
     },
@@ -930,7 +930,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "App/1.0.0": {
+      "EcoMilk/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -938,10 +938,10 @@
           "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
-          "bin/placeholder/App.dll": {}
+          "bin/placeholder/EcoMilk.dll": {}
         },
         "runtime": {
-          "bin/placeholder/App.dll": {}
+          "bin/placeholder/EcoMilk.dll": {}
         }
       }
     },
@@ -1487,7 +1487,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "App/1.0.0": {
+      "EcoMilk/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -1495,10 +1495,10 @@
           "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
-          "bin/placeholder/App.dll": {}
+          "bin/placeholder/EcoMilk.dll": {}
         },
         "runtime": {
-          "bin/placeholder/App.dll": {}
+          "bin/placeholder/EcoMilk.dll": {}
         }
       }
     },
@@ -2041,7 +2041,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "App/1.0.0": {
+      "EcoMilk/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -2049,10 +2049,10 @@
           "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
-          "bin/placeholder/App.dll": {}
+          "bin/placeholder/EcoMilk.dll": {}
         },
         "runtime": {
-          "bin/placeholder/App.dll": {}
+          "bin/placeholder/EcoMilk.dll": {}
         }
       }
     },
@@ -2597,7 +2597,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "App/1.0.0": {
+      "EcoMilk/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -2605,10 +2605,10 @@
           "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
-          "bin/placeholder/App.dll": {}
+          "bin/placeholder/EcoMilk.dll": {}
         },
         "runtime": {
-          "bin/placeholder/App.dll": {}
+          "bin/placeholder/EcoMilk.dll": {}
         }
       }
     },
@@ -3154,7 +3154,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "App/1.0.0": {
+      "EcoMilk/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -3162,10 +3162,10 @@
           "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
-          "bin/placeholder/App.dll": {}
+          "bin/placeholder/EcoMilk.dll": {}
         },
         "runtime": {
-          "bin/placeholder/App.dll": {}
+          "bin/placeholder/EcoMilk.dll": {}
         }
       }
     },
@@ -3710,7 +3710,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "App/1.0.0": {
+      "EcoMilk/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -3718,10 +3718,10 @@
           "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
-          "bin/placeholder/App.dll": {}
+          "bin/placeholder/EcoMilk.dll": {}
         },
         "runtime": {
-          "bin/placeholder/App.dll": {}
+          "bin/placeholder/EcoMilk.dll": {}
         }
       }
     },
@@ -4267,7 +4267,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "App/1.0.0": {
+      "EcoMilk/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -4275,10 +4275,10 @@
           "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
-          "bin/placeholder/App.dll": {}
+          "bin/placeholder/EcoMilk.dll": {}
         },
         "runtime": {
-          "bin/placeholder/App.dll": {}
+          "bin/placeholder/EcoMilk.dll": {}
         }
       }
     }
@@ -9038,15 +9038,15 @@
         "xamarin.forms.nuspec"
       ]
     },
-    "App/1.0.0": {
+    "EcoMilk/1.0.0": {
       "type": "project",
-      "path": "../App/App.csproj",
-      "msbuildProject": "../App/App.csproj"
+      "path": "../App/EcoMilk.csproj",
+      "msbuildProject": "../App/EcoMilk.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "UAP,Version=v10.0.16299": [
-      "App >= 1.0.0",
+      "EcoMilk >= 1.0.0",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 6.2.12",
       "Xamarin.Essentials >= 1.6.1",
       "Xamarin.Forms >= 5.0.0.2012"
@@ -9061,9 +9061,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App.UWP\\App.UWP.csproj",
-      "projectName": "App.UWP",
-      "projectPath": "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App.UWP\\App.UWP.csproj",
+      "projectUniqueName": "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App.UWP\\EcoMilk.UWP.csproj",
+      "projectName": "EcoMilk.UWP",
+      "projectPath": "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App.UWP\\EcoMilk.UWP.csproj",
       "packagesPath": "C:\\Users\\yael\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App.UWP\\obj\\",
       "projectStyle": "PackageReference",
@@ -9089,8 +9089,8 @@
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App\\App.csproj": {
-              "projectPath": "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App\\App.csproj"
+            "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App\\EcoMilk.csproj": {
+              "projectPath": "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App\\EcoMilk.csproj"
             }
           }
         }

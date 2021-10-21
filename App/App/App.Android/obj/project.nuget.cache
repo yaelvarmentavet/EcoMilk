@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Qfog/FsDz3syoHf95Xdw+cXzG7FkYrpnkT6WqFkPbixIpFt/j/47aDOzk60ExdZG2xH3KDTk3WUEo1DmIUzwSw==",
+  "dgSpecHash": "jx2bYb/WA0t7NIwFsTbHQMXuzDJN+Co5wonVzdlxNK7fWxqg7pQ2SizUqKX1t5NQhnia2li5TRBINNMIgUVW4A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App.Android\\App.Android.csproj",
+  "projectFilePath": "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App.Android\\EcoMilk.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yael\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.androidx.activity\\1.1.0.5\\xamarin.androidx.activity.1.1.0.5.nupkg.sha512",

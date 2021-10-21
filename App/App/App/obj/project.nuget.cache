@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n8ktfvSUOzXOmkV/riHmXgoHXe9z+AScaKFRGvYxOkAJRwp25tNdgrt8DeCDIGlpHI57oRYtZh7mNtkAZIciVA==",
+  "dgSpecHash": "2KPjQoCvi+6AAiyowyXGNnAtiS9ccf2/CPKijuyfB/J1Ib2KjPjKBHFLJZHI3mUO6T1rtOwlVgBUrgjxDr+8Ug==",
   "success": true,
-  "projectFilePath": "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App\\App.csproj",
+  "projectFilePath": "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App\\EcoMilk.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yael\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\yael\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

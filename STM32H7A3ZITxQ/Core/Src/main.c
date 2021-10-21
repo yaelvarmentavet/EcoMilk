@@ -36,7 +36,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
-#define ECOMILK_DEBUG           1
+#define ECOMILK_DEBUG           0
 #define ECOMILK_DEBUG_TIMEOUT   10
 #define ECOMILK_TIMEOUT         ECOMILK_DEBUG_TIMEOUT
 #define ECOMILK_CMD_ON          1
@@ -83,27 +83,27 @@
 #define	MOT_M0_PORT                     GPIOD
 #define	MOT_M0_PIN                      GPIO_PIN_5
 
-#define DIR_MOTOR_Z                             1
-#define DIR_MOTOR_TILT                          2
-#define DIR_MOTOR_ROTATE                        3
-#define DIR_MOTOR_X                             4
-#define DIR_MOTOR_1                             5
-#define DIR_MOTOR_2                             6
-#define DIR_MOTOR_Y                             7
-#define DIR_MOTOR_SP_1                          0
-#define DIR_MOTOR_END_AFFECTO                   1
-#define DIR_MOTOR_END_AFFECTO_A_1_2_3_4         2
+#define DIR_MOTOR_Z                             0
+#define DIR_MOTOR_TILT                          1
+#define DIR_MOTOR_ROTATE                        2
+#define DIR_MOTOR_X                             3
+#define DIR_MOTOR_1                             4
+#define DIR_MOTOR_2                             5
+#define DIR_MOTOR_Y                             6
+#define DIR_MOTOR_SP_1                          7
+#define DIR_MOTOR_END_AFFECTO                   8
+#define DIR_MOTOR_END_AFFECTO_A_1_2_3_4         9
 
-#define LIN_MOTOR_Y                             1
-#define LIN_MOTOR_SP_1                          2
-#define LIN_MOTOR_END_AFFECTO                   3
-#define LIN_MOTOR_END_AFFECTO_2                 4
-#define LIN_MOTOR_END_AFFECTO_3                 5
-#define LIN_MOTOR_END_AFFECTO_4                 6
+#define LIN_MOTOR_Y                             0
+#define LIN_MOTOR_SP_1                          1
+#define LIN_MOTOR_END_AFFECTO                   2
+#define LIN_MOTOR_END_AFFECTO_2                 3
+#define LIN_MOTOR_END_AFFECTO_3                 4
+#define LIN_MOTOR_END_AFFECTO_4                 5
 
-#define DEC0                                    5
-#define DEC1                                    6
-#define DEC2                                    7
+#define DEC0                                    12
+#define DEC1                                    13
+#define DEC2                                    14
 
 /* USER CODE END PM */
 
@@ -151,8 +151,7 @@ static void MX_USART3_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
 static void Cmd_UART_Rx();
-static void Cmd_SPI_Tx_32(uint8_t dir_0, uint8_t dir_1, uint8_t cmd_0, uint8_t cmd_1);
-static void Cmd_SPI_Tx_16(uint8_t cmd_0, uint8_t cmd_1);
+static void Cmd_SPI_Tx_16(uint16_t cmd);
 static void Cmd_Actuator_Backward(bool state);
 static void Cmd_Actuator_Forward(bool state);
 static void Cmd_Rotate_Z_CW(bool state);
@@ -200,133 +199,160 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 static void Cmd_Actuator_Backward(bool state)
 {
   if(state)
-    Cmd_SPI_Tx_32(0x00, 0x00 | (0x01 << DEC0), 0x00 | (0x01 << LIN_MOTOR_SP_1), 0x00 | (0x01 << DEC0) | (0x01 << DEC1));
+  {
+    Cmd_SPI_Tx_16(0x00 | (0x01 << DEC0));
+    Cmd_SPI_Tx_16(0x00 | (0x01 << LIN_MOTOR_SP_1) | (0x01 << DEC0) | (0x01 << DEC1));
+  }
+    //Cmd_SPI_Tx_32(0x00, 0x00 | (0x01 << DEC0), 0x00 | (0x01 << LIN_MOTOR_SP_1), 0x00 | (0x01 << DEC0) | (0x01 << DEC1));
   else
-    Cmd_SPI_Tx_16(0x00, 0x00 | (0x01 << DEC0) | (0x01 << DEC1));
+    Cmd_SPI_Tx_16(0x00 | (0x01 << DEC0) | (0x01 << DEC1));
 }
 
 static void Cmd_Actuator_Forward(bool state)
 {
   if(state)
-    Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DIR_MOTOR_SP_1) | (1 << DEC0), 0x00 | (1 << LIN_MOTOR_SP_1), 0x00 | (1 << DEC0) | (1 << DEC1));
+  {
+    Cmd_SPI_Tx_16(0x00 | (1 << DIR_MOTOR_SP_1) | (1 << DEC0));
+    Cmd_SPI_Tx_16(0x00 | (1 << LIN_MOTOR_SP_1) | (1 << DEC0) | (1 << DEC1));
+  }
+    //Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DIR_MOTOR_SP_1) | (0x01 << DEC0), 0x00 | (0x01 << LIN_MOTOR_SP_1), 0x00 | (0x01 << DEC0) | (0x01 << DEC1));
   else
-    Cmd_SPI_Tx_16(0x00 ,0x00 | (1 << DEC0) | (1 << DEC1));
+    Cmd_SPI_Tx_16(0x00 | (1 << DEC0) | (1 << DEC1));
 }
 
 static void Cmd_Rotate_Z_CW(bool state)
 {
   if(state)
-    Cmd_SPI_Tx_32(0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC1));
+  {
+    Cmd_SPI_Tx_16(0x00 | (1 << DIR_MOTOR_ROTATE) | (1 << DEC0));
+    Cmd_SPI_Tx_16(0x00 | (1 << DIR_MOTOR_ROTATE) | (1 << DEC1));
+  }
+    //Cmd_SPI_Tx_32(0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC1));
   else
-    Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+    Cmd_SPI_Tx_16(0x00 | (1 << DEC1));
 }
 
 static void Cmd_Rotate_Z_CCW(bool state)
 {
   if(state)
-    Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC1));
+  {
+    Cmd_SPI_Tx_16(0x00 | (1 << DEC0));
+    Cmd_SPI_Tx_16(0x00 | (1 << DIR_MOTOR_ROTATE) | (1 << DEC1));
+  }
+    //Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC1));
   else
-    Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+    Cmd_SPI_Tx_16(0x00 | (1 << DEC1));
 }
 
 static void Cmd_Tilt_CCW(bool state)
 {
   if(state)
-    Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_TILT), 0x00 | (1 << DEC1));
+  {
+    Cmd_SPI_Tx_16(0x00 | (1 << DEC0));
+    Cmd_SPI_Tx_16(0x00 | (1 << DIR_MOTOR_TILT) | (1 << DEC1));
+  }
+    //Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_TILT), 0x00 | (1 << DEC1));
   else
-    Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+    Cmd_SPI_Tx_16(0x00 | (1 << DEC1));
 }
 
 static void Cmd_Tilt_CW(bool state)
 {
   if(state)
-    Cmd_SPI_Tx_32(0x00 | (1 << DIR_MOTOR_TILT), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_TILT), 0x00 | (1 << DEC1));
+  {
+    Cmd_SPI_Tx_16(0x00 | (1 << DIR_MOTOR_TILT) | (1 << DEC0));
+    Cmd_SPI_Tx_16(0x00 | (1 << DIR_MOTOR_TILT) | (1 << DEC1));
+  }
+    //Cmd_SPI_Tx_32(0x00 | (1 << DIR_MOTOR_TILT), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_TILT), 0x00 | (1 << DEC1));
   else
-    Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+    Cmd_SPI_Tx_16(0x00 | (1 << DEC1));
 }
 
 static void Cmd_Motor_Z_Down(bool state)
 {
   if(state)
-    Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_Z), 0x00 | (1 << DEC1));
+  {
+    Cmd_SPI_Tx_16(0x00 | (1 << DEC0));
+    Cmd_SPI_Tx_16(0x00 | (1 << DIR_MOTOR_Z) | (1 << DEC1));
+  }
+    //Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_Z), 0x00 | (1 << DEC1));
   else
-    Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+    Cmd_SPI_Tx_16(0x00 | (1 << DEC1));
 }
 
 static void Cmd_Motor_Z_Up(bool state)
 {
   if(state)
-    Cmd_SPI_Tx_32(0x00 | (1 << DIR_MOTOR_Z), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_Z), 0x00 | (1 << DEC1));
+  {
+    Cmd_SPI_Tx_16(0x00 | (1 << DIR_MOTOR_Z) | (1 << DEC0));
+    Cmd_SPI_Tx_16(0x00 | (1 << DIR_MOTOR_Z) | (1 << DEC1));
+  }
+    //Cmd_SPI_Tx_32(0x00 | (1 << DIR_MOTOR_Z), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_Z), 0x00 | (1 << DEC1));
   else
-    Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+    Cmd_SPI_Tx_16(0x00 | (1 << DEC1));
 }
 
 static void Cmd_Actuator_Y_Backward(bool state)
 {
   if(state)
-    Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << LIN_MOTOR_Y), 0x00 | (1 << DEC0) | (1 << DEC1));
+  {
+    Cmd_SPI_Tx_16(0x00 | (1 << DEC0));
+    Cmd_SPI_Tx_16(0x00 | (1 << LIN_MOTOR_Y) | (1 << DEC0) | (1 << DEC1));
+  }
+    //Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << LIN_MOTOR_Y), 0x00 | (1 << DEC0) | (1 << DEC1));
   else
-    Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC0) | (1 << DEC1));
+    Cmd_SPI_Tx_16(0x00 | (1 << DEC0) | (1 << DEC1));
 }
 
 static void Cmd_Actuator_Y_Forward(bool state)
 {
   if(state)
-    Cmd_SPI_Tx_32(0x00 | (1 << DIR_MOTOR_Y), 0x00 | (1 << DEC0), 0x00 | (1 << LIN_MOTOR_Y), 0x00 | (1 << DEC0) | (1 << DEC1));
+  {
+    Cmd_SPI_Tx_16(0x00 | (1 << DIR_MOTOR_Y) | (1 << DEC0));
+    Cmd_SPI_Tx_16(0x00 | (1 << LIN_MOTOR_Y) | (1 << DEC0) | (1 << DEC1));
+  }
+    //Cmd_SPI_Tx_32(0x00 | (1 << DIR_MOTOR_Y), 0x00 | (1 << DEC0), 0x00 | (1 << LIN_MOTOR_Y), 0x00 | (1 << DEC0) | (1 << DEC1));
   else
-    Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC0) | (1 << DEC1));
+    Cmd_SPI_Tx_16(0x00 | (1 << DEC0) | (1 << DEC1));
 }
 
 static void Cmd_X_Backward(bool state)
 {
   if(state)
-    Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC1));
+  {
+    Cmd_SPI_Tx_16(0x00 | (1 << DEC0));
+    Cmd_SPI_Tx_16(0x00 | (1 << DIR_MOTOR_X) | (1 << DEC1));
+  }
+    //Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC1));
   else
-    Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+    Cmd_SPI_Tx_16(0x00 | (1 << DEC1));
 }
 
 static void Cmd_X_Forward(bool state)
 {
   if(state)
-    Cmd_SPI_Tx_32(0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC1));
+  {
+    Cmd_SPI_Tx_16(0x00 | (1 << DIR_MOTOR_X) | (1 << DEC0));
+    Cmd_SPI_Tx_16(0x00 | (1 << DIR_MOTOR_X) | (1 << DEC1));
+  }
+    //Cmd_SPI_Tx_32(0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_X), 0x00 | (1 << DEC1));
   else
-    Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
+    Cmd_SPI_Tx_16(0x00 | (1 << DEC1));
 }
 
-static void Cmd_SPI_Tx_32(uint8_t dir_0, uint8_t dir_1, uint8_t cmd_0, uint8_t cmd_1)
+static void Cmd_SPI_Tx_16(uint16_t cmd)
 {
-  uint8_t data[4];
+  uint16_t data = 0;
 #if ECOMILK_DEBUG == 1
-  uint8_t rdata[4];
+  uint16_t rdata = 0;
 #endif  
-  memset(data, 0, sizeof(data));
-  data[0] = dir_1;
-  data[1] = dir_0;
-  data[2] = cmd_1;
-  data[3] = cmd_0;
+  //data = (((0x00ff & cmd) << 8) | ((0xff00 & cmd) >> 8));
+  data = cmd;
   HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_RESET);
 #if ECOMILK_DEBUG == 1
-  HAL_SPI_TransmitReceive(&hspi2, data, rdata, sizeof(data), ECOMILK_TIMEOUT);
+  HAL_SPI_TransmitReceive(&hspi2, (uint8_t*)&data, (uint8_t*)&rdata, 1, ECOMILK_TIMEOUT);
 #else  
-  HAL_SPI_Transmit(&hspi2, data, sizeof(data), ECOMILK_TIMEOUT);
-#endif  
-  HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
-}
-
-static void Cmd_SPI_Tx_16(uint8_t cmd_0, uint8_t cmd_1)
-{
-  uint8_t data[2];
-#if ECOMILK_DEBUG == 1
-  uint8_t rdata[2];
-#endif  
-  memset(data, 0, sizeof(data));
-  data[0] = cmd_1;
-  data[1] = cmd_0;
-  HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_RESET);
-#if ECOMILK_DEBUG == 1
-  HAL_SPI_TransmitReceive(&hspi2, data, rdata, sizeof(data), ECOMILK_TIMEOUT);
-#else  
-  HAL_SPI_Transmit(&hspi2, data, sizeof(data), ECOMILK_TIMEOUT);
+  HAL_SPI_Transmit(&hspi2, (uint8_t*)&data, 1, ECOMILK_TIMEOUT);
 #endif  
   HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
 }
@@ -506,7 +532,7 @@ int main(void)
         Cmd_Actuator_Forward(ECOMILK_CMD_OFF);
       }
     }
-    
+
     // 5, 6
 #if ECOMILK_DEBUG == 0
     if(HAL_GPIO_ReadPin(ROTATE_Z_CW_COM_PORT, ROTATE_Z_CW_COM_PIN) == GPIO_PIN_SET)
@@ -745,7 +771,7 @@ int main(void)
         Cmd_X_Forward(ECOMILK_CMD_OFF);
       }
     }
-    
+  
 #if ECOMILK_DEBUG == 1
     for(int i = 0; i < 1000; i++);
     
@@ -927,7 +953,7 @@ static void MX_SPI2_Init(void)
   hspi2.Instance = SPI2;
   hspi2.Init.Mode = SPI_MODE_MASTER;
   hspi2.Init.Direction = SPI_DIRECTION_2LINES;
-  hspi2.Init.DataSize = SPI_DATASIZE_8BIT;
+  hspi2.Init.DataSize = SPI_DATASIZE_15BIT;
   hspi2.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi2.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi2.Init.NSS = SPI_NSS_SOFT;

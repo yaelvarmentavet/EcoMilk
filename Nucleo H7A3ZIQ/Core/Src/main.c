@@ -103,11 +103,16 @@ TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 TIM_HandleTypeDef htim4;
+TIM_HandleTypeDef htim8;
 
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart3;
 
 /* USER CODE BEGIN PV */
+
+static volatile int tim8_falling = 0;
+static volatile int tim8_rising = 0;
+static volatile int tim8_delta = 0;
 
 /* USER CODE END PV */
 
@@ -122,6 +127,7 @@ static void MX_TIM2_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_TIM4_Init(void);
 static void MX_USART3_UART_Init(void);
+static void MX_TIM8_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -155,6 +161,20 @@ void cmd_send_16(uint8_t cmd_0, uint8_t cmd_1)
   HAL_SPI_TransmitReceive(&hspi2, data, rdata, sizeof(data), 500);
   //HAL_SPI_Transmit(&hspi2, data, sizeof(data), 500);
   HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
+}
+
+void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
+{
+  if(htim->Instance == TIM8)
+  {
+    if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1)
+      tim8_falling = READ_REG(htim->Instance->CCR1);
+    else if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2)
+      tim8_rising = READ_REG(htim->Instance->CCR2);
+    
+    if(tim8_falling > tim8_rising)
+      tim8_delta = tim8_falling - tim8_rising;
+  }
 }
 
 /* USER CODE END 0 */
@@ -195,12 +215,15 @@ int main(void)
   MX_TIM3_Init();
   MX_TIM4_Init();
   MX_USART3_UART_Init();
+  MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
+  HAL_TIM_IC_Start_IT(&htim8, TIM_CHANNEL_1);
+  HAL_TIM_IC_Start_IT(&htim8, TIM_CHANNEL_2);
 
-  //uint8_t pDataTx[] = {0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99};
-  //uint8_t pDataRx[10];
+  uint8_t pDataTx[] = {0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99, 0xaa};
+  uint8_t pDataRx[10];
 
   /* USER CODE END 2 */
 
@@ -221,8 +244,7 @@ int main(void)
   
   while (1)
   {
-#if 0    
-#endif
+
     // 1, 2
     //if(HAL_GPIO_ReadPin(ACTUATOR_BACKWARD_COM_PORT, ACTUATOR_BACKWARD_COM_PIN) == GPIO_PIN_SET)
     {  
@@ -437,58 +459,62 @@ int main(void)
         cmd_send_16(0x00, 0x00 | (1 << DEC1));
       }
     }
+    
     for(int i = 0; i < 1000; i++);
     
+    // Working
+     
+    memset(pDataRx, 0, sizeof(pDataRx));
+    for(int i = 0; i < 10; i++)
+    {
+      HAL_UART_Transmit(&huart1, &pDataTx[i], 1, 10);
+      HAL_UART_Receive(&huart1, &pDataRx[i], 1, 10);
+    }
     
+    memset(pDataRx, 0, sizeof(pDataRx));
+    HAL_UART_Transmit(&huart1, pDataTx, sizeof(pDataTx), 10);
+    HAL_UART_Receive(&huart1, pDataRx, sizeof(pDataRx), 10);
+  
+    memset(pDataRx, 0, sizeof(pDataRx));
+    HAL_SPI_TransmitReceive(&hspi2, pDataTx, pDataRx, sizeof(pDataTx), 10);
     
-    for(int i = 0; i < 2000; i++);
+    memset(pDataRx, 0, sizeof(pDataRx));
+    HAL_SPI_Transmit(&hspi2, pDataTx, sizeof(pDataTx), 10);
+    HAL_SPI_Receive(&hspi2, pDataRx, sizeof(pDataRx), 10);
     
+    memset(pDataRx, 0, sizeof(pDataRx));
+    for(int i = 0; i < 10; i++)
+    {
+      HAL_SPI_Transmit(&hspi2, &pDataTx[i], 1, 10);
+      HAL_SPI_Receive(&hspi2, &pDataRx[i], 1, 10);
+    }
+      
+    for(int i = 0; i < 1000; i++);
+
 #if 0
 
     // Working
+     
     {
-      memset(pDataRx, 0, sizeof(pDataRx));
-      for(int i = 0; i < 10; i++)
-      {
-        HAL_UART_Transmit(&huart1, &pDataTx[i], 1, 500);
-        HAL_UART_Receive(&huart1, &pDataRx[i], 1, 500);
-      }
-      
       memset(pDataRx, 0, sizeof(pDataRx));
       for(int i = 0; i < 10; i++)
       {
         HAL_UART_Transmit(&huart3, &pDataTx[i], 1, 500);
         HAL_UART_Receive(&huart3, &pDataRx[i], 1, 500);
       }
-      
-      memset(pDataRx, 0, sizeof(pDataRx));
-      HAL_SPI_TransmitReceive(&hspi2, pDataTx, pDataRx, sizeof(pDataTx), 500);
     }
-#endif    
+    
     //Not working
-    //{
-    //  memset(pDataRx, 0, sizeof(pDataRx));
-    //  for(int i = 0; i < 10; i++)
-    //  {
-    //    HAL_SPI_Transmit(&hspi2, &pDataTx[i], 1, 500);
-    //    HAL_SPI_Receive(&hspi2, &pDataRx[i], 1, 500);
-    //  }
-    //  
-    //  memset(pDataRx, 0, sizeof(pDataRx));
-    //  HAL_SPI_Transmit(&hspi2, pDataTx, sizeof(pDataTx), 500);
-    //  HAL_SPI_Receive(&hspi2, pDataRx, sizeof(pDataRx), 500);
-    //
-    //  memset(pDataRx, 0, sizeof(pDataRx));
-    //  HAL_UART_Transmit(&huart1, pDataTx, sizeof(pDataTx), 500);
-    //  HAL_UART_Receive(&huart1, pDataRx, sizeof(pDataRx), 500);
-    //  
-    //  memset(pDataRx, 0, sizeof(pDataRx));
-    //  HAL_UART_Transmit(&huart3, pDataTx, sizeof(pDataTx), 500);
-    //  HAL_UART_Receive(&huart3, pDataRx, sizeof(pDataRx), 500);
-    //}
+    {
+      memset(pDataRx, 0, sizeof(pDataRx));
+      HAL_UART_Transmit(&huart3, pDataTx, sizeof(pDataTx), 500);
+      HAL_UART_Receive(&huart3, pDataRx, sizeof(pDataRx), 500);
+    }
+
+#endif    
 
     /* USER CODE END WHILE */
-    
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -897,6 +923,62 @@ static void MX_TIM4_Init(void)
 }
 
 /**
+  * @brief TIM8 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM8_Init(void)
+{
+
+  /* USER CODE BEGIN TIM8_Init 0 */
+
+  /* USER CODE END TIM8_Init 0 */
+
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_IC_InitTypeDef sConfigIC = {0};
+
+  /* USER CODE BEGIN TIM8_Init 1 */
+
+  /* USER CODE END TIM8_Init 1 */
+  htim8.Instance = TIM8;
+  htim8.Init.Prescaler = 0;
+  htim8.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim8.Init.Period = 65535;
+  htim8.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim8.Init.RepetitionCounter = 0;
+  htim8.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_IC_Init(&htim8) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterOutputTrigger2 = TIM_TRGO2_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim8, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_FALLING;
+  sConfigIC.ICSelection = TIM_ICSELECTION_INDIRECTTI;
+  sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
+  sConfigIC.ICFilter = 0;
+  if (HAL_TIM_IC_ConfigChannel(&htim8, &sConfigIC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
+  sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
+  if (HAL_TIM_IC_ConfigChannel(&htim8, &sConfigIC, TIM_CHANNEL_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM8_Init 2 */
+
+  /* USER CODE END TIM8_Init 2 */
+
+}
+
+/**
   * @brief USART1 Initialization Function
   * @param None
   * @retval None
@@ -934,7 +1016,7 @@ static void MX_USART1_UART_Init(void)
   {
     Error_Handler();
   }
-  if (HAL_UARTEx_DisableFifoMode(&huart1) != HAL_OK)
+  if (HAL_UARTEx_EnableFifoMode(&huart1) != HAL_OK)
   {
     Error_Handler();
   }
@@ -982,7 +1064,7 @@ static void MX_USART3_UART_Init(void)
   {
     Error_Handler();
   }
-  if (HAL_UARTEx_DisableFifoMode(&huart3) != HAL_OK)
+  if (HAL_UARTEx_EnableFifoMode(&huart3) != HAL_OK)
   {
     Error_Handler();
   }

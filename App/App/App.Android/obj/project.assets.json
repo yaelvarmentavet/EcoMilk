@@ -971,7 +971,7 @@
           "buildTransitive/monoandroid50/Xamarin.Google.Guava.ListenableFuture.targets": {}
         }
       },
-      "App/1.0.0": {
+      "EcoMilk/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -979,10 +979,10 @@
           "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
-          "bin/placeholder/App.dll": {}
+          "bin/placeholder/EcoMilk.dll": {}
         },
         "runtime": {
-          "bin/placeholder/App.dll": {}
+          "bin/placeholder/EcoMilk.dll": {}
         }
       }
     }
@@ -2128,15 +2128,15 @@
         "xamarin.google.guava.listenablefuture.nuspec"
       ]
     },
-    "App/1.0.0": {
+    "EcoMilk/1.0.0": {
       "type": "project",
-      "path": "../App/App.csproj",
-      "msbuildProject": "../App/App.csproj"
+      "path": "../App/EcoMilk.csproj",
+      "msbuildProject": "../App/EcoMilk.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v11.0": [
-      "App >= 1.0.0",
+      "EcoMilk >= 1.0.0",
       "Xamarin.Essentials >= 1.6.1",
       "Xamarin.Forms >= 5.0.0.2012"
     ]
@@ -2149,9 +2149,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App.Android\\App.Android.csproj",
-      "projectName": "App.Android",
-      "projectPath": "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App.Android\\App.Android.csproj",
+      "projectUniqueName": "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App.Android\\EcoMilk.Android.csproj",
+      "projectName": "EcoMilk.Android",
+      "projectPath": "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App.Android\\EcoMilk.Android.csproj",
       "packagesPath": "C:\\Users\\yael\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App.Android\\obj\\",
       "projectStyle": "PackageReference",
@@ -2176,8 +2176,8 @@
       "frameworks": {
         "monoandroid11.0": {
           "projectReferences": {
-            "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App\\App.csproj": {
-              "projectPath": "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App\\App.csproj"
+            "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App\\EcoMilk.csproj": {
+              "projectPath": "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App\\EcoMilk.csproj"
             }
           }
         }

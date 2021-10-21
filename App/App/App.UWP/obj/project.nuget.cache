@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ssk5kOGZNxnFQKAmbMKDO308J3e+KcsbW/3Zw/IHstVzlBcUx2xJf9Vrsgti8PqQZujjQ/if/sf7kT0ll4GPjA==",
+  "dgSpecHash": "kC2YcPdHV1nJSB/I+IVBmcX4rcUcca+z1xjDi6sZiocxfbvrrgoq5a39fBVfHexob0el6uk0oHBsPHFR960h8A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App.UWP\\App.UWP.csproj",
+  "projectFilePath": "C:\\Users\\yael\\source\\repos\\EcoMilk\\App\\App\\App.UWP\\EcoMilk.UWP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yael\\.nuget\\packages\\microsoft.net.native.compiler\\2.2.10-rel-29722-00\\microsoft.net.native.compiler.2.2.10-rel-29722-00.nupkg.sha512",
     "C:\\Users\\yael\\.nuget\\packages\\microsoft.net.uwpcoreruntimesdk\\2.2.12\\microsoft.net.uwpcoreruntimesdk.2.2.12.nupkg.sha512",
