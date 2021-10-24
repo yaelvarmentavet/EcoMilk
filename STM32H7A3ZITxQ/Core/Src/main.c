@@ -82,6 +82,8 @@
 #define	MOT_M1_PIN                      GPIO_PIN_6
 #define	MOT_M0_PORT                     GPIOD
 #define	MOT_M0_PIN                      GPIO_PIN_5
+#define	RST2FPGA_PORT                   GPIOE
+#define	RST2FPGA_PIN                    GPIO_PIN_15
 
 #define DIR_MOTOR_Z                             0
 #define DIR_MOTOR_TILT                          1
@@ -116,6 +118,7 @@ TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 TIM_HandleTypeDef htim4;
+TIM_HandleTypeDef htim6;
 
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart3;
@@ -148,9 +151,12 @@ static void MX_TIM3_Init(void);
 static void MX_TIM4_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_USART3_UART_Init(void);
+static void MX_TIM6_Init(void);
 /* USER CODE BEGIN PFP */
 
+#if ECOMILK_DEBUG == 1
 static void Cmd_UART_Rx();
+#endif
 static void Cmd_SPI_Tx_16(uint16_t cmd);
 static void Cmd_Actuator_Backward(bool state);
 static void Cmd_Actuator_Forward(bool state);
@@ -359,6 +365,7 @@ static void Cmd_SPI_Tx_16(uint16_t cmd)
   HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
 }
 
+#if ECOMILK_DEBUG == 1
 static void Cmd_UART_Rx()
 {
   uint8_t ch = 0;
@@ -396,6 +403,7 @@ static void Cmd_UART_Rx()
     }
   }
 }
+#endif  
 
 /* USER CODE END 0 */
 
@@ -435,6 +443,7 @@ int main(void)
   MX_TIM4_Init();
   MX_USART1_UART_Init();
   MX_USART3_UART_Init();
+  MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
 
 #if ECOMILK_DEBUG == 1
@@ -462,12 +471,16 @@ int main(void)
   HAL_TIM_IC_Start_IT(&htim4, TIM_CHANNEL_4);
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
+  HAL_TIM_Base_Start(&htim6);
+  HAL_GPIO_WritePin(RST2FPGA_PORT, RST2FPGA_PIN, GPIO_PIN_SET);
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
+  int cnt_begin = htim6.Instance->CNT;
+  bool cnt_read = true;
   bool actuator_backward = false;
   bool actuator_forward = false;
   bool rotate_z_cw = false;
@@ -483,10 +496,17 @@ int main(void)
 
   while (1)
   {
-#if ECOMILK_DEBUG == 1
-    Cmd_UART_Rx();
-#endif
-
+    if(cnt_read)
+    {
+      int cnt_current = htim6.Instance->CNT;
+      if((cnt_current - cnt_begin) > 64000)
+      {
+        cnt_read = false;
+        HAL_TIM_Base_Stop(&htim6);
+        HAL_GPIO_WritePin(RST2FPGA_PORT, RST2FPGA_PIN, GPIO_PIN_RESET);
+      }
+    }
+    
     // 1, 2
 #if ECOMILK_DEBUG == 0
     if(HAL_GPIO_ReadPin(ACTUATOR_BACKWARD_COM_PORT, ACTUATOR_BACKWARD_COM_PIN) == GPIO_PIN_SET)
@@ -775,7 +795,10 @@ int main(void)
     }
   
 #if ECOMILK_DEBUG == 1
+
     for(int i = 0; i < 1000; i++);
+    
+    Cmd_UART_Rx();
     
     // Working
     //{
@@ -1219,6 +1242,44 @@ static void MX_TIM4_Init(void)
   /* USER CODE BEGIN TIM4_Init 2 */
 
   /* USER CODE END TIM4_Init 2 */
+
+}
+
+/**
+  * @brief TIM6 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM6_Init(void)
+{
+
+  /* USER CODE BEGIN TIM6_Init 0 */
+
+  /* USER CODE END TIM6_Init 0 */
+
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM6_Init 1 */
+
+  /* USER CODE END TIM6_Init 1 */
+  htim6.Instance = TIM6;
+  htim6.Init.Prescaler = 0;
+  htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim6.Init.Period = 65535;
+  htim6.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim6) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim6, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM6_Init 2 */
+
+  /* USER CODE END TIM6_Init 2 */
 
 }
 
