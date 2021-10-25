@@ -501,6 +501,8 @@ int main(void)
   {
     if(HAL_GPIO_ReadPin(MOTOR_FAILURE_PORT, MOTOR_FAILURE_PIN) == GPIO_PIN_RESET)
       HAL_GPIO_WritePin(NSLEEP_RESET_PORT, NSLEEP_RESET_PIN, GPIO_PIN_RESET);
+    else
+      HAL_GPIO_WritePin(NSLEEP_RESET_PORT, NSLEEP_RESET_PIN, GPIO_PIN_SET);
 
     if(cnt_read)
     {
