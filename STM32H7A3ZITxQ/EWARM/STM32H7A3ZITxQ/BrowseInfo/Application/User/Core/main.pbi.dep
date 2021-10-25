@@ -17,7 +17,7 @@ C:\Users\yael\source\repos\EcoMilk\STM32H7A3ZITxQ\EWARM\STM32H7A3ZITxQ\BrowseInf
   C:\Users\yael\source\repos\EcoMilk\STM32H7A3ZITxQ\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h \
   C:\Users\yael\source\repos\EcoMilk\STM32H7A3ZITxQ\EWARM/../Drivers/CMSIS/Device/ST/STM32H7xx/Include\stm32h7xx.h \
   C:\Users\yael\source\repos\EcoMilk\STM32H7A3ZITxQ\EWARM/../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7a3xxq.h \
-  C:\Users\yael\source\repos\EcoMilk\STM32H7A3ZITxQ\EWARM/../Drivers/CMSIS/Include\core_cm7.h \
+  C:\Users\yael\source\repos\EcoMilk\STM32H7A3ZITxQ\EWARM\..\Drivers\CMSIS\Include\core_cm7.h \
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdint.h \
   C:\Users\yael\source\repos\EcoMilk\STM32H7A3ZITxQ\EWARM/../Drivers/CMSIS/Include/cmsis_version.h \
   C:\Users\yael\source\repos\EcoMilk\STM32H7A3ZITxQ\EWARM/../Drivers/CMSIS/Include/cmsis_compiler.h \
@@ -38,7 +38,7 @@ C:\Users\yael\source\repos\EcoMilk\STM32H7A3ZITxQ\EWARM\STM32H7A3ZITxQ\BrowseInf
   C:\Users\yael\source\repos\EcoMilk\STM32H7A3ZITxQ\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_exti.h \
   C:\Users\yael\source\repos\EcoMilk\STM32H7A3ZITxQ\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_cortex.h \
   C:\Users\yael\source\repos\EcoMilk\STM32H7A3ZITxQ\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_adc.h \
-  C:\Users\yael\source\repos\EcoMilk\STM32H7A3ZITxQ\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h \
+  C:\Users\yael\source\repos\EcoMilk\STM32H7A3ZITxQ\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_adc.h \
   C:\Users\yael\source\repos\EcoMilk\STM32H7A3ZITxQ\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc_ex.h \
   C:\Users\yael\source\repos\EcoMilk\STM32H7A3ZITxQ\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_flash.h \
   C:\Users\yael\source\repos\EcoMilk\STM32H7A3ZITxQ\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h \

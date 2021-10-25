@@ -72,6 +72,8 @@
 #define	X_BACKWARD_COM_PIN              GPIO_PIN_2
 #define	X_FORWARD_COM_PORT              GPIOE
 #define	X_FORWARD_COM_PIN               GPIO_PIN_1
+#define	MOTOR_FAILURE_PORT              GPIOE
+#define	MOTOR_FAILURE_PIN               GPIO_PIN_0
 
 //Outputs
 #define	CS_N_PORT                       GPIOB
@@ -472,6 +474,7 @@ int main(void)
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
   HAL_TIM_Base_Start(&htim6);
+  HAL_GPIO_WritePin(NSLEEP_RESET_PORT, NSLEEP_RESET_PIN, GPIO_PIN_SET);
   HAL_GPIO_WritePin(RST2FPGA_PORT, RST2FPGA_PIN, GPIO_PIN_SET);
 
   /* USER CODE END 2 */
@@ -496,6 +499,9 @@ int main(void)
 
   while (1)
   {
+    if(HAL_GPIO_ReadPin(MOTOR_FAILURE_PORT, MOTOR_FAILURE_PIN) == GPIO_PIN_RESET)
+      HAL_GPIO_WritePin(NSLEEP_RESET_PORT, NSLEEP_RESET_PIN, GPIO_PIN_RESET);
+
     if(cnt_read)
     {
       int cnt_current = htim6.Instance->CNT;
