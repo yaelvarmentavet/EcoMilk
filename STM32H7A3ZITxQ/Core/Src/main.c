@@ -86,10 +86,10 @@
 #define	MOT_M0_PIN                      GPIO_PIN_5
 #define	RST2FPGA_PORT                   GPIOE
 #define	RST2FPGA_PIN                    GPIO_PIN_15
-#define	MOT_M1_PORT                     GPIOD
-#define	MOT_M1_PIN                      GPIO_PIN_6
-#define	MOT_M0_PORT                     GPIOD
-#define	MOT_M0_PIN                      GPIO_PIN_5
+//#define	MOT_M1_PORT                     GPIOD
+//#define	MOT_M1_PIN                      GPIO_PIN_6
+//#define	MOT_M0_PORT                     GPIOD
+//#define	MOT_M0_PIN                      GPIO_PIN_5
 
 #define DIR_MOTOR_Z                             0
 #define DIR_MOTOR_TILT                          1
@@ -480,8 +480,8 @@ int main(void)
   HAL_TIM_Base_Start(&htim6);
   HAL_GPIO_WritePin(NSLEEP_RESET_PORT, NSLEEP_RESET_PIN, GPIO_PIN_SET);
   HAL_GPIO_WritePin(RST2FPGA_PORT, RST2FPGA_PIN, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(MOT_M1_PORT, MOT_M1_PIN, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(MOT_M0_PORT, MOT_M0_PIN, GPIO_PIN_SET);
+  //HAL_GPIO_WritePin(MOT_M1_PORT, MOT_M1_PIN, GPIO_PIN_SET);
+  //HAL_GPIO_WritePin(MOT_M0_PORT, MOT_M0_PIN, GPIO_PIN_SET);
 
   /* USER CODE END 2 */
 
@@ -1415,9 +1415,6 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_15, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_5|GPIO_PIN_6, GPIO_PIN_RESET);
-
   /*Configure GPIO pins : PE2 PE3 PE4 PE5
                            PE6 PE7 PE8 PE9
                            PE10 PE11 PE12 PE0
@@ -1458,17 +1455,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PD3 PD4 */
-  GPIO_InitStruct.Pin = GPIO_PIN_3|GPIO_PIN_4;
+  /*Configure GPIO pins : PD3 PD4 PD5 PD6 */
+  GPIO_InitStruct.Pin = GPIO_PIN_3|GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
-
-  /*Configure GPIO pins : PD5 PD6 */
-  GPIO_InitStruct.Pin = GPIO_PIN_5|GPIO_PIN_6;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PB3 PB4 PB5 PB6
