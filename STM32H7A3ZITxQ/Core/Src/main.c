@@ -86,6 +86,10 @@
 #define	MOT_M0_PIN                      GPIO_PIN_5
 #define	RST2FPGA_PORT                   GPIOE
 #define	RST2FPGA_PIN                    GPIO_PIN_15
+#define	MOT_M1_PORT                     GPIOD
+#define	MOT_M1_PIN                      GPIO_PIN_6
+#define	MOT_M0_PORT                     GPIOD
+#define	MOT_M0_PIN                      GPIO_PIN_5
 
 #define DIR_MOTOR_Z                             0
 #define DIR_MOTOR_TILT                          1
@@ -476,6 +480,8 @@ int main(void)
   HAL_TIM_Base_Start(&htim6);
   HAL_GPIO_WritePin(NSLEEP_RESET_PORT, NSLEEP_RESET_PIN, GPIO_PIN_SET);
   HAL_GPIO_WritePin(RST2FPGA_PORT, RST2FPGA_PIN, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(MOT_M1_PORT, MOT_M1_PIN, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(MOT_M0_PORT, MOT_M0_PIN, GPIO_PIN_SET);
 
   /* USER CODE END 2 */
 

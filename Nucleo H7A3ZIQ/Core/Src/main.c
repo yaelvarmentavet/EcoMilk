@@ -69,6 +69,8 @@
 //Outputs
 #define	CS_N_PORT                       GPIOB
 #define	CS_N_PIN                        GPIO_PIN_8
+#define	MOT_M1_PORT                     GPIOD
+#define	MOT_M1_PIN                      GPIO_PIN_6
 
 #define DIR_MOTOR_Z                             1
 #define DIR_MOTOR_TILT                          2
