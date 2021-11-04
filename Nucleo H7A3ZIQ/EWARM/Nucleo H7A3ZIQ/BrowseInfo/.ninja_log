@@ -1,117 +1,138 @@
 # ninja log v5
-11524	12905	6565151875095580	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+45958	48105	6577320297456524	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
 3823	4126	6438074030000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_spi_ex.xcl	c2ccf618a560b15
 9	370	6438073910000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_dma.xcl	dcee1203a35706c4
-3682	7197	6565151608863910	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_hsem.pbi	f37e70444c8af570
+23442	27889	6577320095223726	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_hsem.pbi	f37e70444c8af570
 28	323	6438073910000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_dma_ex.xcl	3fb7566dce9d14a5
-34	3689	6565151573732106	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_exti.pbi	a66c9ea85cc48701
+5635	13398	6577319950231823	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_exti.pbi	a66c9ea85cc48701
 1260	1717	6438073920000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_rcc.xcl	8eea7f1702cc5dff
 754	1148	6438073920000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_i2c.xcl	57606614b649fdc0
 22	280	6438073910000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal.xcl	aa9f9a5f4d4318a2
 317	661	6438073910000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_exti.xcl	f875f44d53dcfcb
 6	208	6443312690000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_adc_ex.xcl	d5b341f766230bb1
-3568	9106	6565151342088040	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_adc_ex.pbi	8e1e1403fa72b100
+13237	18927	6577320005643478	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_adc_ex.pbi	8e1e1403fa72b100
 1200	1590	6438073920000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_mdma.xcl	ff1d458922cf73ed
 16	239	6438073910000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/CMSIS/system_stm32h7xx.xcl	cd0d53815c834c4
 274	614	6438073910000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_cortex.xcl	d3957d190b06eefd
-3709	7245	6565151609343910	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_mdma.pbi	3a7ae8dc4df53869
+23279	27663	6577320092893786	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_mdma.pbi	3a7ae8dc4df53869
 1322	1772	6438073920000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_rcc_ex.xcl	6e0369811c8f82fc
 703	1209	6438073920000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_flash_ex.xcl	cfeca35d71397e65
 21	182	6443312690000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_adc.xcl	99a488edbcf7224e
 364	710	6438073910000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_hsem.xcl	1c56846e8a5593c8
 411	761	6438073910000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_gpio.xcl	b348fd0304c94c1f
 655	1076	6438073920000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_flash.xcl	e0504f6c6273b594
-184	3543	6565151286421966	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_flash.pbi	9b518494548587e3
+13343	18954	6577320005923493	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_flash.pbi	9b518494548587e3
 1645	2075	6438073930000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_pwr_ex.xcl	b0f52c3cccf8de2f
 807	1269	6438073920000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_i2c_ex.xcl	5c1b360b0b026c20
-4242	9075	6565151836645246	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+33413	38636	6577320202688034	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
 1129	1654	6438073920000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_pwr.xcl	a38933ec96bb0432
-3648	9804	6565151348838045	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_adc.pbi	f751510059191b84
+13419	18986	6577320006253451	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_adc.pbi	f751510059191b84
 4547	4856	6438074040000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_uart.xcl	d3c9442e643d9092
 3066	3393	6438074020000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.xcl	1d44f965f14e1129
 3182	3495	6438074030000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/stm32h7xx_hal_msp.xcl	f07accf2ce31db5f
-3735	7339	6565151610283906	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_flash_ex.pbi	75a88f3caf1f5a24
+19005	23424	6577320050617628	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_flash_ex.pbi	75a88f3caf1f5a24
 3325	3649	6438074030000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/stm32h7xx_it.xcl	b85fbc3ffda2605c
-7262	11352	6565151650421759	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_i2c.pbi	1a4280383012aca
-7212	10883	6565151645700476	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_gpio.pbi	4daf3e20ef792fa0
+18945	23837	6577320054747630	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_i2c.pbi	1a4280383012aca
+23618	28289	6577320098143773	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_gpio.pbi	4daf3e20ef792fa0
 4182	4490	6438074040000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_tim.xcl	36fd45665dd7e187
-4945	9605	6565151842097591	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part3.pbi	975eb76916c63144
-7287	10933	6565151646220506	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_i2c_ex.pbi	dcee319ba127bf75
+38210	42754	6577320243930752	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part3.pbi	975eb76916c63144
+18973	23258	6577320048947030	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_i2c_ex.pbi	dcee319ba127bf75
 3472	3772	6438074030000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_spi.xcl	faef08afc79f41b2
 4910	5238	6438074040000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_uart_ex.xcl	81dba43e6da1526d
-8727	11502	6565151861074820	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part1.pbi	6e8f2848dc695a84
+37948	42416	6577320240570041	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part1.pbi	6e8f2848dc695a84
 5296	5621	6438074050000000	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_tim_ex.xcl	76c4adda2b9a1b7f
-7	3130	6565151282320380	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/CMSIS/system_stm32h7xx.pbi	51519c8eff63c250
-22	3716	6565151573842131	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/stm32h7xx_hal_msp.pbi	fb943b1ca65d9ae7
-4628	9418	6565151840197687	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part4.pbi	52419b4607573cab
-14	3385	6565151284881049	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal.pbi	7ad1737689fb9200
-12	3845	6565151575322118	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-23	4224	6565151788215130	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_uart_ex.pbi	17b8cad02a17dd11
-28	3664	6565151573512145	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_cortex.pbi	d9a69d65116428
-164	3631	6565151287291994	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/stm32h7xx_it.pbi	23f152fb4bd24d94
-3142	8860	6565151339582532	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_dma.pbi	fe3ab34326fdc785
-3405	8934	6565151340308033	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_dma_ex.pbi	e96dd580285c988c
-3863	7269	6565151609563918	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_pwr.pbi	49946b58c6cc6289
-11147	14579	6565151682663457	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_pwr_ex.pbi	99f892299295cdc
-9107	10946	6565151855499929	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part5.pbi	d37c57f92623adde
-10904	14471	6565151681573469	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_rcc_ex.pbi	55726a7d6f3b8dc2
-11370	14870	6565151685578787	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_tim_ex.pbi	49cf228340865e88
-14	4451	6565151790480461	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_spi.pbi	f061f7a72a5900a3
-7361	11130	6565151648195881	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_rcc.pbi	2018a3527a5e05c7
-4468	8710	6565151833105267	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_uart.pbi	ad148dcdaea9194f
-10952	14286	6565151679723450	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_spi_ex.pbi	cc0bc2779194da57
-8	4612	6565151792120450	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_tim.pbi	f58ca545931a90a7
-18	4908	6565151795068075	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part2.pbi	ef424c7173629b24
-12927	18387	6565151928728988	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-23	4187	6565153082164721	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/stm32h7xx_it.pbi	23f152fb4bd24d94
-9	4278	6565153082784778	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/CMSIS/system_stm32h7xx.pbi	51519c8eff63c250
-19	4463	6565153084804720	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal.pbi	7ad1737689fb9200
-15	4671	6565153086550116	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/stm32h7xx_hal_msp.pbi	fb943b1ca65d9ae7
-4204	11661	6565153156893645	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-4297	11945	6565153159750893	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_cortex.pbi	d9a69d65116428
-4480	12038	6565153160690867	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_flash.pbi	9b518494548587e3
-4690	12826	6565153168537885	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_adc_ex.pbi	8e1e1403fa72b100
-11682	16569	6565153206022567	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_exti.pbi	a66c9ea85cc48701
-12061	16755	6565153207892697	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_dma_ex.pbi	e96dd580285c988c
-11967	16883	6565153209069925	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_dma.pbi	fe3ab34326fdc785
-12849	17754	6565153217788997	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_adc.pbi	f751510059191b84
-16590	21306	6565153253380087	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_pwr.pbi	49946b58c6cc6289
-16780	21479	6565153255090126	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_i2c_ex.pbi	dcee319ba127bf75
-16908	21588	6565153256220779	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_flash_ex.pbi	75a88f3caf1f5a24
-18	3762	6565153410035720	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_gpio.pbi	4daf3e20ef792fa0
-24	3827	6565153410695633	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_mdma.pbi	3a7ae8dc4df53869
-29	3850	6565153410765637	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_hsem.pbi	f37e70444c8af570
-12	4192	6565153414327245	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_i2c.pbi	1a4280383012aca
-3778	7057	6565153442985772	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_pwr_ex.pbi	99f892299295cdc
-3843	7252	6565153444951654	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_spi.pbi	f061f7a72a5900a3
-4211	7450	6565153446931657	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_tim_ex.pbi	49cf228340865e88
-3869	7476	6565153447001671	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_tim.pbi	f58ca545931a90a7
-7072	10680	6565153479226526	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_rcc_ex.pbi	55726a7d6f3b8dc2
-7269	10784	6565153480246642	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_rcc.pbi	2018a3527a5e05c7
-7468	10949	6565153481866562	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_spi_ex.pbi	cc0bc2779194da57
-7495	10989	6565153482296528	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_uart_ex.pbi	17b8cad02a17dd11
-11006	14293	6565153515349886	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_uart.pbi	ad148dcdaea9194f
-10696	14598	6565153518409865	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part1.pbi	6e8f2848dc695a84
-10801	14738	6565153519799857	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part3.pbi	975eb76916c63144
-10967	14847	6565153520899890	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part2.pbi	ef424c7173629b24
-14311	16418	6565153536631233	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part5.pbi	d37c57f92623adde
-14	3049	6565153624131291	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-8	3079	6565153624381254	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part4.pbi	52419b4607573cab
-3108	4634	6565153639997097	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-7	7954	6565154019345287	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-5	956	6565159724929062	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-962	2768	6565159743016562	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-8	1939	6565159827772194	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-1971	10535	6565159912438432	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-9	3218	6569561326105825	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-3236	7610	6569561370203115	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-7646	10413	6569561398214778	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-10450	23009	6569561522648125	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-11	2121	6569561599230574	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-2137	4776	6569561625710430	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-4805	7198	6569561650057303	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-7230	18134	6569561757936190	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
-9	931	6569591602738243	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
-938	2089	6569591614360253	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
-2103	3065	6569591624111107	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
-13	8353	6569591844317739	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+43	5579	6577319872119795	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/CMSIS/system_stm32h7xx.pbi	51519c8eff63c250
+17	5526	6577319871609786	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/stm32h7xx_hal_msp.pbi	fb943b1ca65d9ae7
+38351	42935	6577320245770715	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part4.pbi	52419b4607573cab
+35	5616	6577319872510585	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal.pbi	7ad1737689fb9200
+28	5692	6577319873220591	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+33387	38193	6577320198282215	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_uart_ex.pbi	17b8cad02a17dd11
+5597	13322	6577319949416373	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_cortex.pbi	d9a69d65116428
+5545	13217	6577319948476367	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/stm32h7xx_it.pbi	23f152fb4bd24d94
+13783	19334	6577320009704045	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_dma.pbi	fe3ab34326fdc785
+5711	13759	6577319953841834	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_dma_ex.pbi	e96dd580285c988c
+19355	23600	6577320052367620	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_pwr.pbi	49946b58c6cc6289
+27908	33061	6577320146947306	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_pwr_ex.pbi	99f892299295cdc
+42536	44915	6577320265521898	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part5.pbi	d37c57f92623adde
+33053	37929	6577320195672212	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_rcc_ex.pbi	55726a7d6f3b8dc2
+28311	33393	6577320150247334	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_tim_ex.pbi	49cf228340865e88
+27681	33032	6577320146697343	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_spi.pbi	f061f7a72a5900a3
+28645	33369	6577320150047319	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_rcc.pbi	2018a3527a5e05c7
+38669	42519	6577320241570797	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_uart.pbi	ad148dcdaea9194f
+23857	28622	6577320102319190	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_spi_ex.pbi	cc0bc2779194da57
+33079	38333	6577320199702273	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_tim.pbi	f58ca545931a90a7
+42448	45931	6577320275742444	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part2.pbi	ef424c7173629b24
+2254	14132	6577307715191891	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+14	9708	6577320576429638	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+12	4798	6577323191061358	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/stm32h7xx_it.pbi	23f152fb4bd24d94
+19	4953	6577323192601401	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/stm32h7xx_hal_msp.pbi	fb943b1ca65d9ae7
+25	5062	6577323193707554	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/CMSIS/system_stm32h7xx.pbi	51519c8eff63c250
+30	5101	6577323194107557	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal.pbi	7ad1737689fb9200
+4974	10997	6577323252978031	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_cortex.pbi	d9a69d65116428
+4815	11047	6577323253548012	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+5118	11271	6577323255818833	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_exti.pbi	a66c9ea85cc48701
+5079	11605	6577323258278810	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_dma.pbi	fe3ab34326fdc785
+11016	17559	6577323318691115	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_flash.pbi	9b518494548587e3
+11063	17636	6577323319461161	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_adc_ex.pbi	8e1e1403fa72b100
+11289	17881	6577323321921973	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_adc.pbi	f751510059191b84
+11623	18021	6577323323321925	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_dma_ex.pbi	e96dd580285c988c
+17582	22300	6577323366111812	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_hsem.pbi	f37e70444c8af570
+17654	22478	6577323367841823	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_flash_ex.pbi	75a88f3caf1f5a24
+17905	22709	6577323370191843	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_gpio.pbi	4daf3e20ef792fa0
+18044	22740	6577323370281829	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_pwr.pbi	49946b58c6cc6289
+22498	30218	6577323445058886	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_mdma.pbi	3a7ae8dc4df53869
+22730	30361	6577323446618927	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_i2c_ex.pbi	dcee319ba127bf75
+22318	30776	6577323450794305	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_i2c.pbi	1a4280383012aca
+22760	30807	6577323450884322	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_spi.pbi	f061f7a72a5900a3
+37	4868	6577323602540885	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_rcc.pbi	2018a3527a5e05c7
+18	4968	6577323603580886	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_tim_ex.pbi	49cf228340865e88
+26	5049	6577323604350962	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_rcc_ex.pbi	55726a7d6f3b8dc2
+31	5454	6577323608342852	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_tim.pbi	f58ca545931a90a7
+16	5902	6577323745929290	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_spi_ex.pbi	cc0bc2779194da57
+24	6044	6577323747349275	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_pwr_ex.pbi	99f892299295cdc
+38	6496	6577323751859927	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part2.pbi	ef424c7173629b24
+31	6872	6577323752939923	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part1.pbi	6e8f2848dc695a84
+5920	11212	6577323799078653	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part4.pbi	52419b4607573cab
+6062	11261	6577323799538679	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+6909	11288	6577323799588688	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_uart.pbi	ad148dcdaea9194f
+6863	12027	6577323807159290	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part3.pbi	975eb76916c63144
+11245	14628	6577323833240445	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_uart_ex.pbi	17b8cad02a17dd11
+14645	16383	6577323850811019	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part5.pbi	d37c57f92623adde
+16408	18394	6577323870912923	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+11	9423	6577324030033474	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac
+11	5127	6577350751902616	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/CMSIS/system_stm32h7xx.pbi	51519c8eff63c250
+25	5264	6577350753322532	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/stm32h7xx_hal_msp.pbi	fb943b1ca65d9ae7
+30	5365	6577350754133273	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal.pbi	7ad1737689fb9200
+19	5461	6577350755253291	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/main.pbi	6aef16d7d1427bd7
+5144	10645	6577350807091231	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Application/User/Core/stm32h7xx_it.pbi	23f152fb4bd24d94
+5380	10961	6577350810241237	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_cortex.pbi	d9a69d65116428
+5280	11016	6577350810711263	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_adc_ex.pbi	8e1e1403fa72b100
+5480	11126	6577350811851298	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_dma_ex.pbi	e96dd580285c988c
+10662	17979	6577350880428888	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_dma.pbi	fe3ab34326fdc785
+10982	18155	6577350882188845	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_exti.pbi	a66c9ea85cc48701
+11036	18425	6577350884879695	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_flash.pbi	9b518494548587e3
+11149	18538	6577350885989658	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_adc.pbi	f751510059191b84
+17999	22298	6577350923657937	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_hsem.pbi	f37e70444c8af570
+18445	22891	6577350929454922	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_pwr.pbi	49946b58c6cc6289
+18561	23052	6577350931164916	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_mdma.pbi	3a7ae8dc4df53869
+18178	23390	6577350934556557	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_i2c.pbi	1a4280383012aca
+22320	27277	6577350973423970	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_i2c_ex.pbi	dcee319ba127bf75
+22910	27735	6577350977935570	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_flash_ex.pbi	75a88f3caf1f5a24
+23073	27815	6577350978751860	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_gpio.pbi	4daf3e20ef792fa0
+23411	28313	6577350983781874	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_tim_ex.pbi	49cf228340865e88
+27299	32532	6577351025922130	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_rcc_ex.pbi	55726a7d6f3b8dc2
+27757	33014	6577351030802947	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_rcc.pbi	2018a3527a5e05c7
+28336	33047	6577351031092996	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_spi_ex.pbi	cc0bc2779194da57
+27836	33075	6577351031242957	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_spi.pbi	f061f7a72a5900a3
+32552	36390	6577351064566392	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_tim.pbi	f58ca545931a90a7
+33038	36427	6577351064936400	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_pwr_ex.pbi	99f892299295cdc
+33094	37228	6577351072977020	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part2.pbi	ef424c7173629b24
+33067	37342	6577351074107027	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part1.pbi	6e8f2848dc695a84
+36443	40946	6577351110166065	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part3.pbi	975eb76916c63144
+37265	40982	6577351110206069	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_uart_ex.pbi	17b8cad02a17dd11
+36406	41072	6577351111426679	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part4.pbi	52419b4607573cab
+37377	41754	6577351118246692	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part0.pbi	ea07929214cb2b26
+40976	43570	6577351136398953	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_uart.pbi	ad148dcdaea9194f
+43586	45866	6577351159345902	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ_part5.pbi	d37c57f92623adde
+45890	48563	6577351186304246	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbd	baa9a5a21a0bad9
+19	9748	6577351452688560	C:/Users/yael/source/repos/EcoMilk/Nucleo H7A3ZIQ/EWARM/Nucleo H7A3ZIQ/BrowseInfo/Nucleo H7A3ZIQ.pbw	cc48801d58078ac

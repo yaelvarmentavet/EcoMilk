@@ -86,10 +86,10 @@
 #define	MOT_M0_PIN                      GPIO_PIN_5
 #define	RST2FPGA_PORT                   GPIOE
 #define	RST2FPGA_PIN                    GPIO_PIN_15
-//#define	MOT_M1_PORT                     GPIOD
-//#define	MOT_M1_PIN                      GPIO_PIN_6
-//#define	MOT_M0_PORT                     GPIOD
-//#define	MOT_M0_PIN                      GPIO_PIN_5
+#define	MOT_M1_PORT                     GPIOD
+#define	MOT_M1_PIN                      GPIO_PIN_6
+#define	MOT_M0_PORT                     GPIOD
+#define	MOT_M0_PIN                      GPIO_PIN_5
 
 #define DIR_MOTOR_Z                             0
 #define DIR_MOTOR_TILT                          1
@@ -476,12 +476,12 @@ int main(void)
   HAL_TIM_IC_Start_IT(&htim4, TIM_CHANNEL_3);
   HAL_TIM_IC_Start_IT(&htim4, TIM_CHANNEL_4);
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
-  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
   HAL_TIM_Base_Start(&htim6);
   HAL_GPIO_WritePin(NSLEEP_RESET_PORT, NSLEEP_RESET_PIN, GPIO_PIN_SET);
   HAL_GPIO_WritePin(RST2FPGA_PORT, RST2FPGA_PIN, GPIO_PIN_SET);
-  //HAL_GPIO_WritePin(MOT_M1_PORT, MOT_M1_PIN, GPIO_PIN_SET);
-  //HAL_GPIO_WritePin(MOT_M0_PORT, MOT_M0_PIN, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(MOT_M1_PORT, MOT_M1_PIN, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(MOT_M0_PORT, MOT_M0_PIN, GPIO_PIN_RESET);
 
   /* USER CODE END 2 */
 
@@ -1111,7 +1111,7 @@ static void MX_TIM2_Init(void)
   htim2.Instance = TIM2;
   htim2.Init.Prescaler = 0;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 640000;
+  htim2.Init.Period = 4000;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_PWM_Init(&htim2) != HAL_OK)
@@ -1125,10 +1125,10 @@ static void MX_TIM2_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 320000;
+  sConfigOC.Pulse = 2000;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
-  if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4) != HAL_OK)
+  if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
   {
     Error_Handler();
   }
@@ -1415,6 +1415,9 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_15, GPIO_PIN_RESET);
 
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_5|GPIO_PIN_6, GPIO_PIN_RESET);
+
   /*Configure GPIO pins : PE2 PE3 PE4 PE5
                            PE6 PE7 PE8 PE9
                            PE10 PE11 PE12 PE0
@@ -1455,10 +1458,17 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PD3 PD4 PD5 PD6 */
-  GPIO_InitStruct.Pin = GPIO_PIN_3|GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6;
+  /*Configure GPIO pins : PD3 PD4 */
+  GPIO_InitStruct.Pin = GPIO_PIN_3|GPIO_PIN_4;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PD5 PD6 */
+  GPIO_InitStruct.Pin = GPIO_PIN_5|GPIO_PIN_6;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PB3 PB4 PB5 PB6
