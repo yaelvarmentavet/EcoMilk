@@ -225,7 +225,8 @@ int main(void)
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
 
-  uint16_t pData_3_1[] = {0x1111, 0x2222, 0x3333, 0x4444, 0x5555, 0x6666, 0x7777, 0x8888};//, 0x9999, 0xaaaa};
+  volatile uint16_t pData_3_1[] = {0x1111, 0x2222};//, 0x3333, 0x4444, 0x5555, 0x6666, 0x7777, 0x8888};//, 0x9999, 0xaaaa};
+  int duty = 0;
   HAL_TIM_IC_Start_DMA(&htim3, TIM_CHANNEL_1, (uint32_t*)pData_3_1, sizeof(pData_3_1));
 
   HAL_TIM_IC_Start_IT(&htim8, TIM_CHANNEL_1);
@@ -251,9 +252,20 @@ int main(void)
   bool x_backward = false;
   bool x_forward = false;
   
+  if(__HAL_DMA_GET_FLAG(&hdma_tim3_ch1, DMA_FLAG_TCIF0_4) != 0U)
+    duty = pData_3_1[1] - pData_3_1[0];
   while (1)
   {
-
+    if(__HAL_DMA_GET_FLAG(&hdma_tim3_ch1, DMA_FLAG_TCIF0_4) != 0U)
+    {
+      int prev_duty = duty;
+      duty = pData_3_1[1] - pData_3_1[0];
+      if((duty <= 0) || ((duty > (prev_duty * 2))))
+        duty = prev_duty;
+    }
+    else
+      duty++;
+    
     // 1, 2
     //if(HAL_GPIO_ReadPin(ACTUATOR_BACKWARD_COM_PORT, ACTUATOR_BACKWARD_COM_PIN) == GPIO_PIN_SET)
     {  
@@ -783,7 +795,7 @@ static void MX_TIM2_Init(void)
   htim2.Instance = TIM2;
   htim2.Init.Prescaler = 0;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 4000;
+  htim2.Init.Period = 64;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_PWM_Init(&htim2) != HAL_OK)
@@ -797,7 +809,7 @@ static void MX_TIM2_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 2000;
+  sConfigOC.Pulse = 32;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
