@@ -110,6 +110,8 @@ DMA_HandleTypeDef hdma_tim3_ch1;
 
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart3;
+DMA_HandleTypeDef hdma_usart3_rx;
+DMA_HandleTypeDef hdma_usart3_tx;
 
 /* USER CODE BEGIN PV */
 
@@ -226,8 +228,8 @@ int main(void)
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
 
   volatile uint16_t pData_3_1[] = {0x1111, 0x2222};
-  volatile uint16_t* pData_3_1_0 = &pData_3_1[0];
-  volatile uint16_t* pData_3_1_1 = &pData_3_1[1];
+  //volatile uint16_t* pData_3_1_0 = &pData_3_1[0];
+  //volatile uint16_t* pData_3_1_1 = &pData_3_1[1];
   int period_measured = 0;
   int period = 0;
   HAL_TIM_IC_Start_DMA(&htim3, TIM_CHANNEL_1, (uint32_t*)pData_3_1, sizeof(pData_3_1));
@@ -237,7 +239,9 @@ int main(void)
 
   uint8_t pDataTx[] = {0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99, 0xaa};
   uint8_t pDataRx[10];
-
+  uint8_t pDataTx_USART3_DMA[] = {0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99, 0xaa};
+  uint8_t pDataRx_USART3_DMA[10];
+  
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -259,7 +263,8 @@ int main(void)
   {
     if(__HAL_DMA_GET_FLAG(&hdma_tim3_ch1, DMA_FLAG_TCIF0_4) != 0U)
     {
-      period_measured = *pData_3_1_1 - *pData_3_1_0;
+      //period_measured = *pData_3_1_1 - *pData_3_1_0;
+      period_measured = pData_3_1[1] - pData_3_1[0];
       if((period <= 0) || ((period_measured > 0) && (period_measured < (period * 2))))
         period = period_measured;
       printf("period %d\n", period);
@@ -484,6 +489,7 @@ int main(void)
     
     // Working
      
+    // USART1 Fifo enabled
     memset(pDataRx, 0, sizeof(pDataRx));
     for(int i = 0; i < 10; i++)
     {
@@ -509,6 +515,11 @@ int main(void)
       HAL_SPI_Receive(&hspi2, &pDataRx[i], 1, 10);
     }
       
+    // USART3 Fifo disabled
+    memset(pDataRx_USART3_DMA, 0, sizeof(pDataRx_USART3_DMA));
+    HAL_UART_Transmit_DMA(&huart3, pDataTx_USART3_DMA, sizeof(pDataTx_USART3_DMA));
+    HAL_UART_Receive_DMA(&huart3, pDataRx_USART3_DMA, sizeof(pDataRx_USART3_DMA));
+
     for(int i = 0; i < 1000; i++);
 
 #if 0
@@ -519,16 +530,16 @@ int main(void)
       memset(pDataRx, 0, sizeof(pDataRx));
       for(int i = 0; i < 10; i++)
       {
-        HAL_UART_Transmit(&huart3, &pDataTx[i], 1, 500);
-        HAL_UART_Receive(&huart3, &pDataRx[i], 1, 500);
+        HAL_UART_Transmit(&huart3, &pDataTx[i], 1, 10);
+        HAL_UART_Receive(&huart3, &pDataRx[i], 1, 10);
       }
     }
     
     //Not working
     {
       memset(pDataRx, 0, sizeof(pDataRx));
-      HAL_UART_Transmit(&huart3, pDataTx, sizeof(pDataTx), 500);
-      HAL_UART_Receive(&huart3, pDataRx, sizeof(pDataRx), 500);
+      HAL_UART_Transmit(&huart3, pDataTx, sizeof(pDataTx), 10);
+      HAL_UART_Receive(&huart3, pDataRx, sizeof(pDataRx), 10);
     }
 
 #endif    
@@ -794,7 +805,7 @@ static void MX_TIM2_Init(void)
   htim2.Instance = TIM2;
   htim2.Init.Prescaler = 0;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 64;
+  htim2.Init.Period = 4000;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_PWM_Init(&htim2) != HAL_OK)
@@ -808,7 +819,7 @@ static void MX_TIM2_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 32;
+  sConfigOC.Pulse = 2000;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
@@ -1084,7 +1095,7 @@ static void MX_USART3_UART_Init(void)
   {
     Error_Handler();
   }
-  if (HAL_UARTEx_EnableFifoMode(&huart3) != HAL_OK)
+  if (HAL_UARTEx_DisableFifoMode(&huart3) != HAL_OK)
   {
     Error_Handler();
   }
@@ -1107,6 +1118,12 @@ static void MX_DMA_Init(void)
   /* DMA1_Stream0_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Stream0_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream0_IRQn);
+  /* DMA1_Stream1_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream1_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream1_IRQn);
+  /* DMA1_Stream2_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream2_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream2_IRQn);
 
 }
 

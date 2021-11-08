@@ -1444,7 +1444,7 @@ HAL_StatusTypeDef HAL_UART_Transmit_DMA(UART_HandleTypeDef *huart, uint8_t *pDat
       huart->hdmatx->XferAbortCallback = NULL;
 
       /* Enable the UART transmit DMA channel */
-      if (HAL_DMA_Start_IT(huart->hdmatx, (uint32_t)huart->pTxBuffPtr, (uint32_t)&huart->Instance->TDR, Size) != HAL_OK)
+      if (HAL_DMA_Start(huart->hdmatx, (uint32_t)huart->pTxBuffPtr, (uint32_t)&huart->Instance->TDR, Size) != HAL_OK)
       {
         /* Set error code to DMA */
         huart->ErrorCode = HAL_UART_ERROR_DMA;
@@ -3549,7 +3549,7 @@ HAL_StatusTypeDef UART_Start_Receive_DMA(UART_HandleTypeDef *huart, uint8_t *pDa
     huart->hdmarx->XferAbortCallback = NULL;
 
     /* Enable the DMA channel */
-    if (HAL_DMA_Start_IT(huart->hdmarx, (uint32_t)&huart->Instance->RDR, (uint32_t)huart->pRxBuffPtr, Size) != HAL_OK)
+    if (HAL_DMA_Start(huart->hdmarx, (uint32_t)&huart->Instance->RDR, (uint32_t)huart->pRxBuffPtr, Size) != HAL_OK)
     {
       /* Set error code to DMA */
       huart->ErrorCode = HAL_UART_ERROR_DMA;
