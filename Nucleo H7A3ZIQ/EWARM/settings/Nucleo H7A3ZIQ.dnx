@@ -20,7 +20,7 @@
         <stlinkfoundProbes />
     </StLinkDriver>
     <DebugChecksum>
-        <Checksum>3259862446</Checksum>
+        <Checksum>3965026928</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -63,6 +63,10 @@
     <ArmDriver>
         <EnableCache>0</EnableCache>
     </ArmDriver>
+    <Registers>
+        <regBase0>R0 10</regBase0>
+        <regBase1>R1 10</regBase1>
+    </Registers>
     <struct_types>
         <Fmt0>DMA_HandleTypeDef-Instance	4	0</Fmt0>
         <Fmt1>DMA_HandleTypeDef-StreamBaseAddress	4	0</Fmt1>
@@ -125,9 +129,7 @@
         <mode>0</mode>
     </DisassembleMode>
     <Breakpoints2>
-        <Bp0>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Core\Src\main.c}.266.9" 0 0 1 "" 0 "" 0</Bp0>
-        <Bp1>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Core\Src\main.c}.274.7" 0 0 1 "" 0 "" 0</Bp1>
-        <Count>2</Count>
+        <Count>0</Count>
     </Breakpoints2>
     <LogFile>
         <LoggingEnabled>_ 0</LoggingEnabled>

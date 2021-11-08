@@ -225,8 +225,11 @@ int main(void)
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
 
-  volatile uint16_t pData_3_1[] = {0x1111, 0x2222};//, 0x3333, 0x4444, 0x5555, 0x6666, 0x7777, 0x8888};//, 0x9999, 0xaaaa};
-  int duty = 0;
+  volatile uint16_t pData_3_1[] = {0x1111, 0x2222};
+  volatile uint16_t* pData_3_1_0 = &pData_3_1[0];
+  volatile uint16_t* pData_3_1_1 = &pData_3_1[1];
+  int period_measured = 0;
+  int period = 0;
   HAL_TIM_IC_Start_DMA(&htim3, TIM_CHANNEL_1, (uint32_t*)pData_3_1, sizeof(pData_3_1));
 
   HAL_TIM_IC_Start_IT(&htim8, TIM_CHANNEL_1);
@@ -252,19 +255,15 @@ int main(void)
   bool x_backward = false;
   bool x_forward = false;
   
-  if(__HAL_DMA_GET_FLAG(&hdma_tim3_ch1, DMA_FLAG_TCIF0_4) != 0U)
-    duty = pData_3_1[1] - pData_3_1[0];
   while (1)
   {
     if(__HAL_DMA_GET_FLAG(&hdma_tim3_ch1, DMA_FLAG_TCIF0_4) != 0U)
     {
-      int prev_duty = duty;
-      duty = pData_3_1[1] - pData_3_1[0];
-      if((duty <= 0) || ((duty > (prev_duty * 2))))
-        duty = prev_duty;
+      period_measured = *pData_3_1_1 - *pData_3_1_0;
+      if((period <= 0) || ((period_measured > 0) && (period_measured < (period * 2))))
+        period = period_measured;
+      printf("period %d\n", period);
     }
-    else
-      duty++;
     
     // 1, 2
     //if(HAL_GPIO_ReadPin(ACTUATOR_BACKWARD_COM_PORT, ACTUATOR_BACKWARD_COM_PIN) == GPIO_PIN_SET)
