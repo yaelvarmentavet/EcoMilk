@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("App.App.xaml", "App.xaml", typeof(global::App.App))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("EcoMilk.App.xaml", "App.xaml", typeof(global::App.App))]
 
 namespace App {
     

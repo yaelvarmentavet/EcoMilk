@@ -36,7 +36,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
-#define ECOMILK_DEBUG           0
+#define ECOMILK_DEBUG           1
 #define ECOMILK_DEBUG_TIMEOUT   10
 #define ECOMILK_TIMEOUT         ECOMILK_DEBUG_TIMEOUT
 #define ECOMILK_CMD_ON          1
@@ -52,10 +52,10 @@
 #define	ACTUATOR_BACKWARD_COM_PIN       GPIO_PIN_12
 #define	ACTUATOR_FORWARD_COM_PORT       GPIOE
 #define	ACTUATOR_FORWARD_COM_PIN        GPIO_PIN_11
-#define	ROTATE_Z_CW_COM_PORT            GPIOE
-#define	ROTATE_Z_CW_COM_PIN             GPIO_PIN_10
-#define	ROTATE_Z_CCW_COM_PORT           GPIOE
-#define	ROTATE_Z_CCW_COM_PIN            GPIO_PIN_9
+#define	ROTATE_CW_COM_PORT              GPIOE
+#define	ROTATE_CW_COM_PIN               GPIO_PIN_10
+#define	ROTATE_CCW_COM_PORT             GPIOE
+#define	ROTATE_CCW_COM_PIN              GPIO_PIN_9
 #define	TILT_CCW_COM_PORT               GPIOE
 #define	TILT_CCW_COM_PIN                GPIO_PIN_8
 #define	TILT_CW_COM_PORT                GPIOE
@@ -141,7 +141,7 @@ int a_encoder_rotate_sp_drive = 0;
 int b_encoder_rotate_sp_drive = 0;
 int a_encoder_tilt_sp_drive = 0;
 
-char pool_rx[10];
+char pool_rx[20];
 int pool_rx_idx = 0;
 
 /* USER CODE END PV */
@@ -166,8 +166,8 @@ static void Cmd_UART_Rx();
 static void Cmd_SPI_Tx_16(uint16_t cmd);
 static void Cmd_Actuator_Backward(bool state);
 static void Cmd_Actuator_Forward(bool state);
-static void Cmd_Rotate_Z_CW(bool state);
-static void Cmd_Rotate_Z_CCW(bool state);
+static void Cmd_Rotate_CW(bool state);
+static void Cmd_Rotate_CCW(bool state);
 static void Cmd_Tilt_CCW(bool state);
 static void Cmd_Tilt_CW(bool state);
 static void Cmd_Motor_Z_Down(bool state);
@@ -232,7 +232,7 @@ static void Cmd_Actuator_Forward(bool state)
     Cmd_SPI_Tx_16(0x00 | (1 << DEC0) | (1 << DEC1));
 }
 
-static void Cmd_Rotate_Z_CW(bool state)
+static void Cmd_Rotate_CW(bool state)
 {
   if(state)
   {
@@ -244,7 +244,7 @@ static void Cmd_Rotate_Z_CW(bool state)
     Cmd_SPI_Tx_16(0x00 | (1 << DEC1));
 }
 
-static void Cmd_Rotate_Z_CCW(bool state)
+static void Cmd_Rotate_CCW(bool state)
 {
   if(state)
   {
@@ -394,10 +394,75 @@ static void Cmd_UART_Rx()
       ch = '\n';
       HAL_UART_Transmit(&huart1, &ch, 1, ECOMILK_TIMEOUT);
       pool_rx[pool_rx_idx] = '\0';
-      if(strcmp(pool_rx, "xf 1") == 0)
+      
+      uint8_t ecomilk[] = {'\r', '\n', 'E', 'C', 'O', 'M', 'I', 'L', 'K', '\r', '\n'};
+      if(strcmp(pool_rx, "getid,3#") == 0)
+        HAL_UART_Transmit(&huart1, ecomilk, sizeof(ecomilk), ECOMILK_TIMEOUT);
+      
+      if(strcmp(pool_rx, "ab 1") == 0)
+        Cmd_Actuator_Backward(1);
+      else if(strcmp(pool_rx, "ab 0") == 0)
+        Cmd_Actuator_Backward(0);
+
+      else if(strcmp(pool_rx, "af 1") == 0)
+        Cmd_Actuator_Forward(1);
+      else if(strcmp(pool_rx, "af 0") == 0)
+        Cmd_Actuator_Forward(0);
+      
+      else if(strcmp(pool_rx, "rcw 1") == 0)
+        Cmd_Rotate_CW(1);
+      else if(strcmp(pool_rx, "rcw 0") == 0)
+        Cmd_Rotate_CW(0);
+      
+      else if(strcmp(pool_rx, "rccw 1") == 0)
+        Cmd_Rotate_CCW(1);
+      else if(strcmp(pool_rx, "rccw 0") == 0)
+        Cmd_Rotate_CCW(0);
+      
+      else if(strcmp(pool_rx, "tccw 1") == 0)
+        Cmd_Tilt_CCW(1);
+      else if(strcmp(pool_rx, "tccw 0") == 0)
+        Cmd_Tilt_CCW(0);
+      
+      else if(strcmp(pool_rx, "tcw 1") == 0)
+        Cmd_Tilt_CW(1);
+      else if(strcmp(pool_rx, "tcw 0") == 0)
+        Cmd_Tilt_CW(0);
+      
+      else if(strcmp(pool_rx, "mzd 1") == 0)
+        Cmd_Motor_Z_Down(1);
+      else if(strcmp(pool_rx, "mzd 0") == 0)
+        Cmd_Motor_Z_Down(0);
+      
+      else if(strcmp(pool_rx, "mzu 1") == 0)
+        Cmd_Motor_Z_Up(1);
+      else if(strcmp(pool_rx, "mzu 0") == 0)
+        Cmd_Motor_Z_Up(0);
+      
+      if(strcmp(pool_rx, "ayb 1") == 0)
+        Cmd_Actuator_Y_Backward(1);
+      else if(strcmp(pool_rx, "ayb 0") == 0)
+        Cmd_Actuator_Y_Backward(0);
+
+      else if(strcmp(pool_rx, "ayf 1") == 0)
+        Cmd_Actuator_Y_Forward(1);
+      else if(strcmp(pool_rx, "ayf 0") == 0)
+        Cmd_Actuator_Y_Forward(0);
+      
+      else if(strcmp(pool_rx, "xb 1") == 0)
+        Cmd_X_Backward(1);
+      else if(strcmp(pool_rx, "xb 0") == 0)
+        Cmd_X_Backward(0);
+      
+      else if(strcmp(pool_rx, "xf 1") == 0)
         Cmd_X_Forward(1);
-      if(strcmp(pool_rx, "xf 0") == 0)
+      else if(strcmp(pool_rx, "xf 0") == 0)
         Cmd_X_Forward(0);
+      
+      HAL_UART_Transmit(&huart1, pool_rx, sizeof(pool_rx), ECOMILK_TIMEOUT);
+      uint8_t done[] = {' ', ' ', '.', '.', ' ', ' ', 'd', 'o', 'n', 'e', '\r', '\n'};
+      HAL_UART_Transmit(&huart1, done, sizeof(done), ECOMILK_TIMEOUT);
+
       pool_rx_idx = 0;
       memset(pool_rx, 0, sizeof(pool_rx));
     }
@@ -454,7 +519,7 @@ int main(void)
 
 #if ECOMILK_DEBUG == 1
 
-  uint8_t pDataTx[] = {'E', 'C', 'O', 'M', 'I', 'L', 'K', ' ', 'r', 'u', 'l', 'e', 's', '\r', '\n'};
+  uint8_t pDataTx[] = {'\r', '\n', 'E', 'C', 'O', 'M', 'I', 'L', 'K', '\r', '\n'};
   //uint8_t pDataRx[10];
 
   HAL_UART_ReceiverTimeout_Config(&huart1, 100);
@@ -492,8 +557,8 @@ int main(void)
   bool cnt_read = true;
   bool actuator_backward = false;
   bool actuator_forward = false;
-  bool rotate_z_cw = false;
-  bool rotate_z_ccw = false;
+  bool rotate_cw = false;
+  bool rotate_ccw = false;
   bool tilt_ccw = false;
   bool tilt_cw = false;
   bool motor_z_down = false;
@@ -571,49 +636,49 @@ int main(void)
 
     // 5, 6
 #if ECOMILK_DEBUG == 0
-    if(HAL_GPIO_ReadPin(ROTATE_Z_CW_COM_PORT, ROTATE_Z_CW_COM_PIN) == GPIO_PIN_SET)
+    if(HAL_GPIO_ReadPin(ROTATE_CW_COM_PORT, ROTATE_CW_COM_PIN) == GPIO_PIN_SET)
 #endif
     {  
-      if(!rotate_z_cw)
+      if(!rotate_cw)
       {
-        rotate_z_cw = true;
+        rotate_cw = true;
         //Cmd_SPI_Tx_32(0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC1));
-        Cmd_Rotate_Z_CW(ECOMILK_CMD_ON);
+        Cmd_Rotate_CW(ECOMILK_CMD_ON);
       }
     }
 #if ECOMILK_DEBUG == 0
     else
 #endif
     {
-      if(rotate_z_cw)
+      if(rotate_cw)
       {
-        rotate_z_cw = false;
+        rotate_cw = false;
         //Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
-        Cmd_Rotate_Z_CW(ECOMILK_CMD_OFF);
+        Cmd_Rotate_CW(ECOMILK_CMD_OFF);
       }
     }
     
     // 7, 8
 #if ECOMILK_DEBUG == 0
-    if(HAL_GPIO_ReadPin(ROTATE_Z_CCW_COM_PORT, ROTATE_Z_CCW_COM_PIN) == GPIO_PIN_SET)
+    if(HAL_GPIO_ReadPin(ROTATE_CCW_COM_PORT, ROTATE_CCW_COM_PIN) == GPIO_PIN_SET)
 #endif
     {  
-      if(!rotate_z_ccw)
+      if(!rotate_ccw)
       {
-        rotate_z_ccw = true;
+        rotate_ccw = true;
         //Cmd_SPI_Tx_32(0x00, 0x00 | (1 << DEC0), 0x00 | (1 << DIR_MOTOR_ROTATE), 0x00 | (1 << DEC1));
-        Cmd_Rotate_Z_CCW(ECOMILK_CMD_ON);
+        Cmd_Rotate_CCW(ECOMILK_CMD_ON);
       }
     }
 #if ECOMILK_DEBUG == 0
     else
 #endif
     {
-      if(rotate_z_ccw)
+      if(rotate_ccw)
       {
-        rotate_z_ccw = false;
+        rotate_ccw = false;
         //Cmd_SPI_Tx_16(0x00, 0x00 | (1 << DEC1));
-        Cmd_Rotate_Z_CCW(ECOMILK_CMD_OFF);
+        Cmd_Rotate_CCW(ECOMILK_CMD_OFF);
       }
     }
     
