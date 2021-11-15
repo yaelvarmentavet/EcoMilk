@@ -143,6 +143,7 @@ int a_encoder_tilt_sp_drive = 0;
 
 char pool_rx[20];
 int pool_rx_idx = 0;
+uint8_t ecomilk[] = {'\r', '\n', 'E', 'c', 'o', 'm', 'i', 'l', 'k', '\r', '\n'};
 
 /* USER CODE END PV */
 
@@ -372,10 +373,25 @@ static void Cmd_SPI_Tx_16(uint16_t cmd)
 }
 
 #if ECOMILK_DEBUG == 1
+
+static void pool_rx_init()
+{
+  //if(cmd != null)
+  //{
+  //  HAL_UART_Transmit(&huart1, (uint8_t*)cmd, sizeof(cmd), ECOMILK_TIMEOUT);
+  //  uint8_t done[] = {' ', ' ', ' ', '.', '.', '.', ' ', ' ', ' ', 'd', 'o', 'n', 'e', '\r', '\n'};
+  //  HAL_UART_Transmit(&huart1, done, sizeof(done), ECOMILK_TIMEOUT);
+  //}
+  pool_rx_idx = 0;
+  memset(pool_rx, 0, sizeof(pool_rx));
+}
+
 static void Cmd_UART_Rx()
 {
   uint8_t ch = 0;
   HAL_StatusTypeDef status;
+  static bool ucommand = false;
+
   //HAL_UART_Transmit(&huart1, &pDataTx[pool_rx_idx], 1, ECOMILK_TIMEOUT);
   status = HAL_UART_Receive(&huart1, &ch, 1, ECOMILK_TIMEOUT);
   if(status == HAL_OK)
@@ -394,12 +410,12 @@ static void Cmd_UART_Rx()
       ch = '\n';
       HAL_UART_Transmit(&huart1, &ch, 1, ECOMILK_TIMEOUT);
       pool_rx[pool_rx_idx] = '\0';
-      
-      uint8_t ecomilk[] = {'\r', '\n', 'E', 'C', 'O', 'M', 'I', 'L', 'K', '\r', '\n'};
+
+      ucommand = false;
       if(strcmp(pool_rx, "getid,3#") == 0)
         HAL_UART_Transmit(&huart1, ecomilk, sizeof(ecomilk), ECOMILK_TIMEOUT);
-      
-      if(strcmp(pool_rx, "ab 1") == 0)
+
+      else if(strcmp(pool_rx, "ab 1") == 0)
         Cmd_Actuator_Backward(1);
       else if(strcmp(pool_rx, "ab 0") == 0)
         Cmd_Actuator_Backward(0);
@@ -418,7 +434,7 @@ static void Cmd_UART_Rx()
         Cmd_Rotate_CCW(1);
       else if(strcmp(pool_rx, "rccw 0") == 0)
         Cmd_Rotate_CCW(0);
-      
+
       else if(strcmp(pool_rx, "tccw 1") == 0)
         Cmd_Tilt_CCW(1);
       else if(strcmp(pool_rx, "tccw 0") == 0)
@@ -439,7 +455,7 @@ static void Cmd_UART_Rx()
       else if(strcmp(pool_rx, "mzu 0") == 0)
         Cmd_Motor_Z_Up(0);
       
-      if(strcmp(pool_rx, "ayb 1") == 0)
+      else if(strcmp(pool_rx, "ayb 1") == 0)
         Cmd_Actuator_Y_Backward(1);
       else if(strcmp(pool_rx, "ayb 0") == 0)
         Cmd_Actuator_Y_Backward(0);
@@ -448,7 +464,7 @@ static void Cmd_UART_Rx()
         Cmd_Actuator_Y_Forward(1);
       else if(strcmp(pool_rx, "ayf 0") == 0)
         Cmd_Actuator_Y_Forward(0);
-      
+        
       else if(strcmp(pool_rx, "xb 1") == 0)
         Cmd_X_Backward(1);
       else if(strcmp(pool_rx, "xb 0") == 0)
@@ -458,13 +474,21 @@ static void Cmd_UART_Rx()
         Cmd_X_Forward(1);
       else if(strcmp(pool_rx, "xf 0") == 0)
         Cmd_X_Forward(0);
-      
-      HAL_UART_Transmit(&huart1, pool_rx, sizeof(pool_rx), ECOMILK_TIMEOUT);
-      uint8_t done[] = {' ', ' ', '.', '.', ' ', ' ', 'd', 'o', 'n', 'e', '\r', '\n'};
-      HAL_UART_Transmit(&huart1, done, sizeof(done), ECOMILK_TIMEOUT);
+      else
+      {
+        ucommand = true;
+        HAL_UART_Transmit(&huart1, (uint8_t*)pool_rx, sizeof(pool_rx), ECOMILK_TIMEOUT);
+        uint8_t unknown_command[] = {' ', ' ', ' ', '.', '.', '.', ' ', ' ', ' ', 'u', 'n', 'k', 'n', 'o', 'w', 'n', ' ', 'c', 'o', 'm', 'm', 'a', 'n', 'd', '\r', '\n'};
+        HAL_UART_Transmit(&huart1, unknown_command, sizeof(unknown_command), ECOMILK_TIMEOUT);
+      }
+      if(!ucommand)
+      {
+        HAL_UART_Transmit(&huart1, (uint8_t*)pool_rx, sizeof(pool_rx), ECOMILK_TIMEOUT);
+        uint8_t done[] = {' ', ' ', ' ', '.', '.', '.', ' ', ' ', ' ', 'd', 'o', 'n', 'e', '\r', '\n'};
+        HAL_UART_Transmit(&huart1, done, sizeof(done), ECOMILK_TIMEOUT);
+      }
 
-      pool_rx_idx = 0;
-      memset(pool_rx, 0, sizeof(pool_rx));
+      pool_rx_init();
     }
     else
     {
@@ -519,14 +543,16 @@ int main(void)
 
 #if ECOMILK_DEBUG == 1
 
-  uint8_t pDataTx[] = {'\r', '\n', 'E', 'C', 'O', 'M', 'I', 'L', 'K', '\r', '\n'};
+  //uint8_t pDataTx[] = {'\r', '\n', 'E', 'c', 'o', 'm', 'i', 'l', 'k', '\r', '\n'};
   //uint8_t pDataRx[10];
 
   HAL_UART_ReceiverTimeout_Config(&huart1, 100);
   HAL_UART_EnableReceiverTimeout(&huart1);
 
-  memset(pool_rx, 0, sizeof(pool_rx));
-  HAL_UART_Transmit(&huart1, pDataTx, sizeof(pDataTx), ECOMILK_TIMEOUT);
+  //memset(pool_rx, 0, sizeof(pool_rx));
+  //HAL_UART_Transmit(&huart1, pDataTx, sizeof(pDataTx), ECOMILK_TIMEOUT);
+  pool_rx_init();
+  HAL_UART_Transmit(&huart1, ecomilk, sizeof(ecomilk), ECOMILK_TIMEOUT);
 
 #endif  
 
@@ -1400,7 +1426,7 @@ static void MX_USART1_UART_Init(void)
   {
     Error_Handler();
   }
-  if (HAL_UARTEx_DisableFifoMode(&huart1) != HAL_OK)
+  if (HAL_UARTEx_EnableFifoMode(&huart1) != HAL_OK)
   {
     Error_Handler();
   }

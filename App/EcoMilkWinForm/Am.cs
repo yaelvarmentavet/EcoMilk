@@ -35,7 +35,7 @@ namespace EcoMilkWinForm
 
         private const int RD_TIMEOUT = 1000;
         private const int WR_TIMEOUT = 1000;
-        private const int MAX_TIMEOUT = 3000;
+        private const int MAX_TIMEOUT = 6000;
         private const uint ERROR = 0xFFFFFFFF;
         private const int ID_LENGTH = 3;
 
@@ -130,7 +130,7 @@ namespace EcoMilkWinForm
                 return errcode;
             }
             List<string> cmd = new List<string>();
-            cmd.Add("getid,3#");
+            cmd.Add("getid,3#\r");
             //cmd.Add("debug#");
 
             string dataRdStr = await serialReadWrite(cmd);
@@ -141,22 +141,21 @@ namespace EcoMilkWinForm
             {
                 dataRdStr = await serialReadWrite(cmd);
                 LogFile.logWrite(cmd, dataRdStr);
+                //parse data
+                errcode = amDataParseId(dataRdStr);
             }
-            //parse data
-            errcode = amDataParseId(dataRdStr);
-
-            if (dataRdStr.Contains("ECOMILK"))
+            else if (dataRdStr.Contains("Ecomilk"))
                 errcode = ErrCode.OK;
 
-            try
-            {
-                serialPort.Close();
-            }
-            catch (Exception e)
-            {
-                LogFile.logWrite(e.ToString());
-                return errcode;
-            }
+            //try
+            //{
+            //    serialPort.Close();
+            //}
+            //catch (Exception e)
+            //{
+            //    LogFile.logWrite(e.ToString());
+            //    return errcode;
+            //}
             return errcode;
         }
 
@@ -624,15 +623,15 @@ namespace EcoMilkWinForm
         public async Task<ErrCode> EcomilkCommand(string command)
         {
             ErrCode errcode = ErrCode.ERROR;
-            try
-            {
-                serialPort.Open();
-            }
-            catch (Exception e)
-            {
-                LogFile.logWrite(e.ToString());
-                return errcode;
-            }
+            //try
+            //{
+            //    serialPort.Open();
+            //}
+            //catch (Exception e)
+            //{
+            //    LogFile.logWrite(e.ToString());
+            //    return errcode;
+            //}
             
             List<string> cmd = new List<string>();
             cmd.Add(command);
@@ -640,15 +639,15 @@ namespace EcoMilkWinForm
             string dataRdStr = await serialReadWrite(cmd);
             //write to log
             LogFile.logWrite(cmd, dataRdStr);
-            try
-            {
-                serialPort.Close();
-            }
-            catch (Exception e)
-            {
-                LogFile.logWrite(e.ToString());
-                return errcode;
-            }
+            //try
+            //{
+            //    serialPort.Close();
+            //}
+            //catch (Exception e)
+            //{
+            //    LogFile.logWrite(e.ToString());
+            //    return errcode;
+            //}
             errcode = ErrCode.OK;
             return errcode;
         }

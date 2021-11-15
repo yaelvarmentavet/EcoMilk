@@ -61,117 +61,117 @@ namespace EcoMilkWinForm
 
         private void button_X_Forward_com_off_Click(object sender, EventArgs e)
         {
-            am.EcomilkCommand("xf 0");
+            am.EcomilkCommand("xf 0\r");
         }
 
         private void button_X_Forward_com_on_Click(object sender, EventArgs e)
         {
-            am.EcomilkCommand("xf 1");
+            am.EcomilkCommand("xf 1\r");
         }
 
         private void button_X_Backward_com_off_Click(object sender, EventArgs e)
         {
-            am.EcomilkCommand("xb 0");
+            am.EcomilkCommand("xb 0\r");
         }
 
         private void button_X_Backward_com_on_Click(object sender, EventArgs e)
         {
-            am.EcomilkCommand("xb 1");
+            am.EcomilkCommand("xb 1\r");
         }
 
         private void button_Actuator_Y_forward_com_on_Click(object sender, EventArgs e)
         {
-            am.EcomilkCommand("ayf 1");
+            am.EcomilkCommand("ayf 1\r");
         }
 
         private void button_Actuator_Y_forward_com_off_Click(object sender, EventArgs e)
         {
-            am.EcomilkCommand("ayf 0");
+            am.EcomilkCommand("ayf 0\r");
         }
 
         private void button_Actuator_Y_Backward_com_on_Click(object sender, EventArgs e)
         {
-            am.EcomilkCommand("ayb 1");
+            am.EcomilkCommand("ayb 1\r");
         }
 
         private void button_Motor_Z_up_com_off_Click(object sender, EventArgs e)
         {
-            am.EcomilkCommand("mzu 0");
+            am.EcomilkCommand("mzu 0\r");
         }
 
         private void button_Motor_Z_up_com_on_Click(object sender, EventArgs e)
         {
-            am.EcomilkCommand("mzu 1");
+            am.EcomilkCommand("mzu 1\r");
         }
 
         private void button_Motor_Z_Down_com_off_Click(object sender, EventArgs e)
         {
-            am.EcomilkCommand("mzd 0");
+            am.EcomilkCommand("mzd 0\r");
         }
 
         private void button_Motor_Z_Down_com_on_Click(object sender, EventArgs e)
         {
-            am.EcomilkCommand("mzd 1");
+            am.EcomilkCommand("mzd 1\r");
         }
 
         private void button_Tilt_CW_com_off_Click(object sender, EventArgs e)
         {
-            am.EcomilkCommand("tcw 0");
+            am.EcomilkCommand("tcw 0\r");
         }
 
         private void button_Tilt_CW_com_on_Click(object sender, EventArgs e)
         {
-            am.EcomilkCommand("tcw 1");
+            am.EcomilkCommand("tcw 1\r");
         }
 
         private void button_Tilt_CCW_com_off_Click(object sender, EventArgs e)
         {
-            am.EcomilkCommand("tccw 0");
+            am.EcomilkCommand("tccw 0\r");
         }
 
         private void button_Tilt_CCW_com_on_Click(object sender, EventArgs e)
         {
-            am.EcomilkCommand("tccw 1");
+            am.EcomilkCommand("tccw 1\r");
         }
 
         private void button_Rotate_CCW_com_off_Click(object sender, EventArgs e)
         {
-            am.EcomilkCommand("rccw 0");
+            am.EcomilkCommand("rccw 0\r");
         }
 
         private void button_Rotate_CCW_com_on_Click(object sender, EventArgs e)
         {
-            am.EcomilkCommand("rccw 1");
+            am.EcomilkCommand("rccw 1\r");
         }
 
         private void button_Rotate_CW_com_off_Click(object sender, EventArgs e)
         {
-            am.EcomilkCommand("rcw 0");
+            am.EcomilkCommand("rcw 0\r");
         }
 
         private void button_Rotate_CW_com_on_Click(object sender, EventArgs e)
         {
-            am.EcomilkCommand("rcw 1");
+            am.EcomilkCommand("rcw 1\r");
         }
 
         private void button_Actuator_Forward_com_off_Click(object sender, EventArgs e)
         {
-            am.EcomilkCommand("af 0");
+            am.EcomilkCommand("af 0\r");
         }
 
         private void button_Actuator_Forward_com_on_Click(object sender, EventArgs e)
         {
-            am.EcomilkCommand("af 1");
+            am.EcomilkCommand("af 1\r");
         }
 
         private void button_Actuator_Backward_com_off_Click(object sender, EventArgs e)
         {
-            am.EcomilkCommand("ab 0");
+            am.EcomilkCommand("ab 0\r");
         }
 
         private void button_Actuator_Backward_com_on_Click(object sender, EventArgs e)
         {
-            am.EcomilkCommand("ab 1");
+            am.EcomilkCommand("ab 1\r");
         }
 
         private void Form1_Load(object sender, EventArgs e)
