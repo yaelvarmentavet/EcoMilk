@@ -143,6 +143,7 @@ int a_encoder_tilt_sp_drive = 0;
 
 char pool_rx[20];
 int pool_rx_idx = 0;
+//volatile bool pool_rx_start = false;
 uint8_t ecomilk[] = {'\r', '\n', 'E', 'c', 'o', 'm', 'i', 'l', 'k', '\r', '\n'};
 
 /* USER CODE END PV */
@@ -374,6 +375,11 @@ static void Cmd_SPI_Tx_16(uint16_t cmd)
 
 #if ECOMILK_DEBUG == 1
 
+//void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+//{
+//  pool_rx_start = true;
+//}
+
 static void pool_rx_init()
 {
   //if(cmd != null)
@@ -384,6 +390,8 @@ static void pool_rx_init()
   //}
   pool_rx_idx = 0;
   memset(pool_rx, 0, sizeof(pool_rx));
+  //pool_rx_start = false;
+  //HAL_UART_Receive_DMA(&huart1, (uint8_t*)pool_rx, sizeof(pool_rx));
 }
 
 static void Cmd_UART_Rx()
@@ -391,12 +399,15 @@ static void Cmd_UART_Rx()
   uint8_t ch = 0;
   HAL_StatusTypeDef status;
   static bool ucommand = false;
-
   //HAL_UART_Transmit(&huart1, &pDataTx[pool_rx_idx], 1, ECOMILK_TIMEOUT);
   status = HAL_UART_Receive(&huart1, &ch, 1, ECOMILK_TIMEOUT);
   if(status == HAL_OK)
+  //if(pool_rx_start)
   {
     pool_rx[pool_rx_idx] = ch;
+    //while(true)
+    //{
+    //ch = pool_rx[pool_rx_idx];
     if(ch == '\b')
     {
       pool_rx[pool_rx_idx] = '\0';
@@ -494,8 +505,12 @@ static void Cmd_UART_Rx()
     {
       pool_rx_idx++;
       if(pool_rx_idx >= sizeof(pool_rx))
-        pool_rx_idx = 0;
+      {
+        pool_rx_init();
+        //break;
+      }
     }
+    //}
   }
 }
 #endif  
@@ -1418,11 +1433,11 @@ static void MX_USART1_UART_Init(void)
   {
     Error_Handler();
   }
-  if (HAL_UARTEx_SetTxFifoThreshold(&huart1, UART_TXFIFO_THRESHOLD_1_8) != HAL_OK)
+  if (HAL_UARTEx_SetTxFifoThreshold(&huart1, UART_TXFIFO_THRESHOLD_8_8) != HAL_OK)
   {
     Error_Handler();
   }
-  if (HAL_UARTEx_SetRxFifoThreshold(&huart1, UART_RXFIFO_THRESHOLD_1_8) != HAL_OK)
+  if (HAL_UARTEx_SetRxFifoThreshold(&huart1, UART_RXFIFO_THRESHOLD_8_8) != HAL_OK)
   {
     Error_Handler();
   }

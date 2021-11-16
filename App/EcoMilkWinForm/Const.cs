@@ -105,7 +105,8 @@ namespace EcoMilkWinForm
         ELENGTH = -6,
         SERROR = -7,
         EPARSE = -8,
-        EXPIRE = -9
+        EXPIRE = -9,
+        ECONNECT = -10
     }
 
     static class LogFile

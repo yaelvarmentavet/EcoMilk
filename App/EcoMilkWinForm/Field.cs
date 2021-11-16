@@ -7,14 +7,16 @@ namespace EcoMilkWinForm
 {
     public enum Place
     {
-        None,
-        Center, Start, End,
-        One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Eleven
+        None = -1,
+        Center = 2000, Start = 1000, End = 3000,
+        One = 1, Two = 2, Three = 3, Four = 4, Five = 5, Six = 6, Seven = 7, Eight = 8, Nine = 9, Ten = 10, Eleven = 11, Twelve = 12,
+        Zero = 0
     }
 
     class Field
     {
-        public const int DefaultWidth = 460;//390;
+        public const int DefaultWidthSmall = 180;
+        public const int DefaultWidth = 490;//460;//390;
         public const int DefaultWidthLarge = 1200;
         public const int DefaultWidthMedium = 900;
         public const int DefaultHeight = 60;
@@ -25,6 +27,7 @@ namespace EcoMilkWinForm
         public const float DeltaV = 100 * ScaleFactor;
         public const float DefaultFont = 24F * ScaleFactor;
         public const float DefaultFontLarge = 30F * ScaleFactor;
+        private const float BLANK = 10F * ScaleFactor;
 
         public ErrCode error;
         public string val;
@@ -218,7 +221,7 @@ namespace EcoMilkWinForm
             {
                 control = type.GetConstructor(new Type[] { }).Invoke(null) as Control;
                 thisForm.Controls.Add(control);
-                control.Anchor = (AnchorStyles.Top);// | (AnchorStyles.Left);
+                control.Anchor = (AnchorStyles.Top) | (AnchorStyles.Left);
                 control.Margin = new Padding(4);
                 control.Size = new Size(width, height);
                 control.Scale(new SizeF(ScaleFactor, ScaleFactor));
@@ -338,49 +341,65 @@ namespace EcoMilkWinForm
         public static Point placeCalc(Form thisForm,
                 Control control, Point location = new System.Drawing.Point(), Place placeh = Place.Center, Place placev = Place.Center)
         {
+            //if (placeh == Place.Center)
+            //    location.X = thisForm.Width / 2 - control.Width / 2;
+            //else if (placeh == Place.Start)
+            //    location.X = thisForm.Width / 2 - control.Width / 2 - control.Width * 2 - control.Width * 2 / 4;
+            //else if (placeh == Place.End)
+            //    location.X = thisForm.Width / 2 + control.Width / 2 + control.Width + control.Width * 2 / 4;
+            //else if (placeh == Place.One)
+            //    location.X = thisForm.Width / 2 + control.Width / 4 / 2;
+            //else if (placeh == Place.Two)
+            //    location.X = thisForm.Width / 2 + control.Width / 2 + control.Width / 4;
+            //else if (placeh == Place.Three)
+            //    location.X = thisForm.Width / 2 + control.Width + control.Width / 4 / 2 + control.Width / 4;
+            //else if (placeh == Place.Four)
+            //    location.X = thisForm.Width / 2 - control.Width * 2 - control.Width / 4 / 2 - control.Width / 4;
+            //else if (placeh == Place.Five)
+            //    location.X = thisForm.Width / 2 - control.Width / 2 - control.Width - control.Width / 4;
+            //else if (placeh == Place.Six)
+            //    location.X = thisForm.Width / 2 - control.Width - control.Width / 4 / 2;
+
+            //if (placev == Place.Zero)
+            //    location.Y = 0;
+            //if (placev == Place.One)
+            //    location.Y = 100;
+            //else if (placev == Place.Two)
+            //    location.Y = (int)(PlaceOne + 0 * DeltaV);//200;
+            //else if (placev == Place.Three)
+            //    location.Y = (int)(PlaceOne + 1 * DeltaV);//300;
+            //else if (placev == Place.Four)
+            //    location.Y = (int)(PlaceOne + 2 * DeltaV);//400;
+            //else if (placev == Place.Five)
+            //    location.Y = (int)(PlaceOne + 3 * DeltaV);//500;
+            //else if (placev == Place.Six)
+            //    location.Y = (int)(PlaceOne + 4 * DeltaV);//600;
+            //else if (placev == Place.Seven)
+            //    location.Y = (int)(PlaceOne + 5 * DeltaV);//700;
+            //else if (placev == Place.Eight)
+            //    location.Y = (int)(PlaceOne + 6 * DeltaV);//800;
+            //else if (placev == Place.Nine)
+            //    location.Y = (int)(PlaceOne + 7 * DeltaV);//900;
+            //else if (placev == Place.Ten)
+            //    location.Y = (int)(PlaceOne + 8 * DeltaV);//1000;
+            //else if (placev == Place.Eleven)
+            //    location.Y = (int)(PlaceOne + 9 * DeltaV);//1100;
+            //else if (placev == Place.End)
+            //    location.Y = (int)(PlaceOne + 10 * DeltaV);//1200;
+            float x = BLANK;
+            float y = BLANK;
+            for (int i = (int)Place.Zero; i < (int)Place.Twelve; i++)
+            {
+                if (i < (int)placeh)
+                    x += control.Width + BLANK;
+                if (i < (int)placev)
+                    y += control.Height + BLANK;
+            }
+            location.X = (int)x;
+            location.Y = (int)y;
+
             if (placeh == Place.Center)
                 location.X = thisForm.Width / 2 - control.Width / 2;
-            else if (placeh == Place.Start)
-                location.X = thisForm.Width / 2 - control.Width / 2 - control.Width * 2 - control.Width * 2 / 4;
-            else if (placeh == Place.End)
-                location.X = thisForm.Width / 2 + control.Width / 2 + control.Width + control.Width * 2 / 4;
-            else if (placeh == Place.One)
-                location.X = thisForm.Width / 2 + control.Width / 4 / 2;
-            else if (placeh == Place.Two)
-                location.X = thisForm.Width / 2 + control.Width / 2 + control.Width / 4;
-            else if (placeh == Place.Three)
-                location.X = thisForm.Width / 2 + control.Width + control.Width / 4 / 2 + control.Width / 4;
-            else if (placeh == Place.Four)
-                location.X = thisForm.Width / 2 - control.Width * 2 - control.Width / 4 / 2 - control.Width / 4;
-            else if (placeh == Place.Five)
-                location.X = thisForm.Width / 2 - control.Width / 2 - control.Width - control.Width / 4;
-            else if (placeh == Place.Six)
-                location.X = thisForm.Width / 2 - control.Width - control.Width / 4 / 2;
-
-            if (placev == Place.One)
-                location.Y = 30;
-            else if (placev == Place.Two)
-                location.Y = (int)(PlaceOne + 0 * DeltaV);//200;
-            else if (placev == Place.Three)
-                location.Y = (int)(PlaceOne + 1 * DeltaV);//300;
-            else if (placev == Place.Four)
-                location.Y = (int)(PlaceOne + 2 * DeltaV);//400;
-            else if (placev == Place.Five)
-                location.Y = (int)(PlaceOne + 3 * DeltaV);//500;
-            else if (placev == Place.Six)
-                location.Y = (int)(PlaceOne + 4 * DeltaV);//600;
-            else if (placev == Place.Seven)
-                location.Y = (int)(PlaceOne + 5 * DeltaV);//700;
-            else if (placev == Place.Eight)
-                location.Y = (int)(PlaceOne + 6 * DeltaV);//800;
-            else if (placev == Place.Nine)
-                location.Y = (int)(PlaceOne + 7 * DeltaV);//900;
-            else if (placev == Place.Ten)
-                location.Y = (int)(PlaceOne + 8 * DeltaV);//1000;
-            else if (placev == Place.Eleven)
-                location.Y = (int)(PlaceOne + 9 * DeltaV);//1100;
-            else if (placev == Place.End)
-                location.Y = (int)(PlaceOne + 10 * DeltaV);//1200;
 
             return location;
         }

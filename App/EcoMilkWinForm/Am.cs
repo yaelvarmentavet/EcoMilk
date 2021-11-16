@@ -30,7 +30,7 @@ namespace EcoMilkWinForm
 
     class Am
     {
-        private SerialPort serialPort;
+        public SerialPort serialPort;
         private const int serialPortBaudRate = 115200;
 
         private const int RD_TIMEOUT = 1000;
@@ -147,15 +147,15 @@ namespace EcoMilkWinForm
             else if (dataRdStr.Contains("Ecomilk"))
                 errcode = ErrCode.OK;
 
-            //try
-            //{
-            //    serialPort.Close();
-            //}
-            //catch (Exception e)
-            //{
-            //    LogFile.logWrite(e.ToString());
-            //    return errcode;
-            //}
+            try
+            {
+                serialPort.Close();
+            }
+            catch (Exception e)
+            {
+                LogFile.logWrite(e.ToString());
+                return errcode;
+            }
             return errcode;
         }
 
@@ -623,32 +623,43 @@ namespace EcoMilkWinForm
         public async Task<ErrCode> EcomilkCommand(string command)
         {
             ErrCode errcode = ErrCode.ERROR;
-            //try
-            //{
-            //    serialPort.Open();
-            //}
-            //catch (Exception e)
-            //{
-            //    LogFile.logWrite(e.ToString());
-            //    return errcode;
-            //}
-            
+            int time = 0;
+            while (time < MAX_TIMEOUT)
+            {
+                await Task.Delay(RD_TIMEOUT);
+                try
+                {
+                    serialPort.Open();
+                    break;
+                }
+                catch (Exception e)
+                {
+                    LogFile.logWrite(e.ToString());
+                    time += RD_TIMEOUT;
+                }
+            }
+            if (time >= MAX_TIMEOUT)
+                return errcode;
+
             List<string> cmd = new List<string>();
             cmd.Add(command);
 
             string dataRdStr = await serialReadWrite(cmd);
             //write to log
             LogFile.logWrite(cmd, dataRdStr);
-            //try
-            //{
-            //    serialPort.Close();
-            //}
-            //catch (Exception e)
-            //{
-            //    LogFile.logWrite(e.ToString());
-            //    return errcode;
-            //}
-            errcode = ErrCode.OK;
+            if (dataRdStr.Contains(new string(command.TakeWhile(c => c != '\r').ToArray())) && dataRdStr.Contains("   ...   done"))
+                errcode = ErrCode.OK;
+            else
+                errcode = ErrCode.EPARSE;
+            try
+            {
+                serialPort.Close();
+            }
+            catch (Exception e)
+            {
+                LogFile.logWrite(e.ToString());
+                return errcode;
+            }
             return errcode;
         }
 
