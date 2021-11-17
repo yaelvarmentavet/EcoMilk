@@ -20,7 +20,7 @@ namespace EcoMilkWinForm
         {
             InitializeComponent();
 
-            new Field(ltype: typeof(Label), ltext: "Ecomilk", font: 36F, width: Field.DefaultWidth, height: Field.DefaultHeightLarge, lplacev: Place.Zero).draw(this, true);
+            new Field(ltype: typeof(Label), ltext: "Ecomilk", autosize: false, font: 36F, width: Field.DefaultWidth, height: Field.DefaultHeightLarge, lplaceh: Place.Two, lplacev: Place.Zero).draw(this, true);
             button_Connect = new Field(ltype: typeof(Button), ltext: "Connect", width: Field.DefaultWidth, height: Field.DefaultHeightLarge, eventHandler: button_Connect_Click, lplaceh: Place.Two, lplacev: Place.One).draw(this, true) as Button;
 
             new Field(ltype: typeof(Label), ltext: "Actuator Backward com", autosize: false, width: Field.DefaultWidth, height: Field.DefaultHeightLarge, lplaceh: Place.Zero, lplacev: Place.Two).draw(this, true);
