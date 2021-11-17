@@ -20,7 +20,7 @@ namespace EcoMilkWinForm
         {
             InitializeComponent();
 
-            new Field(ltype: typeof(Label), ltext: "Ecomilk", autosize: false, font: 36F, width: Field.DefaultWidth, height: Field.DefaultHeightLarge, lplaceh: Place.Two, lplacev: Place.Zero).draw(this, true);
+            new Field(ltype: typeof(Label), ltext: "EcoMilk", autosize: false, font: 36F, width: Field.DefaultWidth, height: Field.DefaultHeightLarge, lplaceh: Place.Two, lplacev: Place.Zero).draw(this, true);
             button_Connect = new Field(ltype: typeof(Button), ltext: "Connect", width: Field.DefaultWidth, height: Field.DefaultHeightLarge, eventHandler: button_Connect_Click, lplaceh: Place.Two, lplacev: Place.One).draw(this, true) as Button;
 
             new Field(ltype: typeof(Label), ltext: "Actuator Backward com", autosize: false, width: Field.DefaultWidth, height: Field.DefaultHeightLarge, lplaceh: Place.Zero, lplacev: Place.Two).draw(this, true);
@@ -75,15 +75,15 @@ namespace EcoMilkWinForm
             //progress_bar.draw(this, true);
         }
 
-        //private async void button_Connect_to_Ecomilk_Click(object sender, EventArgs e)
+        //private async void button_Connect_to_EcoMilk_Click(object sender, EventArgs e)
         //{
         //    this.Enabled = false;
         //    am = new Am();
         //    ErrCode errcode = await am.AMDataCheckConnect();
         //    if (errcode == ErrCode.OK)
-        //        MessageBox.Show(string.Format("Ecomilk detected on {0}", am.serialPort.PortName));
+        //        MessageBox.Show(string.Format("EcoMilk detected on {0}", am.serialPort.PortName));
         //    else
-        //        MessageBox.Show("Ecomilk not found");
+        //        MessageBox.Show("EcoMilk not found");
         //    this.Enabled = true;
         //}
 
@@ -92,13 +92,13 @@ namespace EcoMilkWinForm
             ErrCode errcode = ErrCode.ERROR;
             this.Enabled = false;
             if (am != null)
-                errcode = await am.EcomilkCommand(command);
+                errcode = await am.EcoMilkCommand(command);
             else
                 errcode = ErrCode.ECONNECT;
             if (errcode == ErrCode.OK)
                 MessageBox.Show("Success");
             else if(errcode == ErrCode.ECONNECT)
-                MessageBox.Show("Ecomilk is not connected");
+                MessageBox.Show("EcoMilk is not connected");
             else
                 MessageBox.Show("Failed");
             this.Enabled = true;
@@ -113,7 +113,7 @@ namespace EcoMilkWinForm
         private async Task connect()
         {
             this.Enabled = false;
-            //Field progress = new Field(ltype: typeof(Label), ltext: "Connecting to Ecomilk, please wait ..", autosize: false, font: 24F, width: Field.DefaultWidthLarge, height: Field.DefaultHeightLarge, lplacev: Place.One);
+            //Field progress = new Field(ltype: typeof(Label), ltext: "Connecting to EcoMilk, please wait ..", autosize: false, font: 24F, width: Field.DefaultWidthLarge, height: Field.DefaultHeightLarge, lplacev: Place.One);
             //progress.draw(this, true);
             button_Connect.Text = "Connecting ..";
             am = new Am();
@@ -123,14 +123,14 @@ namespace EcoMilkWinForm
             //(progress_bar.lcontrol as ProgressBar).Value = 100;
             if (errcode == ErrCode.OK)
             {
-                MessageBox.Show(string.Format("Ecomilk detected on {0}", am.serialPort.PortName));
+                MessageBox.Show(string.Format("EcoMilk detected on {0}", am.serialPort.PortName));
                 button_Connect.Text = "Disconnect";
                 button_Connect.Click -= button_Connect_Click;
                 button_Connect.Click += button_Disconnect_Click;
             }
             else
             {
-                MessageBox.Show("Ecomilk not found");
+                MessageBox.Show("EcoMilk not found");
                 button_Connect.Text = "Connect";
             }
             //progress.lcontrol.Dispose();

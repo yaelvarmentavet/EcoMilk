@@ -144,7 +144,7 @@ int a_encoder_tilt_sp_drive = 0;
 char pool_rx[20];
 int pool_rx_idx = 0;
 //volatile bool pool_rx_start = false;
-uint8_t ecomilk[] = {'\r', '\n', 'E', 'c', 'o', 'm', 'i', 'l', 'k', '\r', '\n'};
+uint8_t ecomilk[] = {'\r', '\n', 'E', 'c', 'o', 'M', 'i', 'l', 'k', '\r', '\n'};
 
 /* USER CODE END PV */
 
@@ -558,7 +558,7 @@ int main(void)
 
 #if ECOMILK_DEBUG == 1
 
-  //uint8_t pDataTx[] = {'\r', '\n', 'E', 'c', 'o', 'm', 'i', 'l', 'k', '\r', '\n'};
+  //uint8_t pDataTx[] = {'\r', '\n', 'E', 'c', 'o', 'M', 'i', 'l', 'k', '\r', '\n'};
   //uint8_t pDataRx[10];
 
   HAL_UART_ReceiverTimeout_Config(&huart1, 100);

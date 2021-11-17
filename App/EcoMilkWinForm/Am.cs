@@ -144,7 +144,7 @@ namespace EcoMilkWinForm
                 //parse data
                 errcode = amDataParseId(dataRdStr);
             }
-            else if (dataRdStr.Contains("Ecomilk"))
+            else if (dataRdStr.Contains("EcoMilk"))
                 errcode = ErrCode.OK;
 
             try
@@ -620,7 +620,7 @@ namespace EcoMilkWinForm
             return dataRdStr;
         }
 
-        public async Task<ErrCode> EcomilkCommand(string command)
+        public async Task<ErrCode> EcoMilkCommand(string command)
         {
             ErrCode errcode = ErrCode.ERROR;
             int time = 0;
