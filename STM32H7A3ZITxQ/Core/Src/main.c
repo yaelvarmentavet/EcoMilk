@@ -41,7 +41,9 @@
 #define ECOMILK_TIMEOUT         ECOMILK_DEBUG_TIMEOUT
 #define ECOMILK_CMD_ON          1
 #define ECOMILK_CMD_OFF         0
-
+__EFF_NW1    __DEPREC_PRINTF int stub(char const *fmt, ...)
+{}
+#define printf                  stub
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -183,7 +185,31 @@ static void Cmd_X_Forward(bool state);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+/**
+  * @brief  PWM Pulse finished callback in non-blocking mode
+  * @param  htim TIM handle
+  * @retval None
+  */
+void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim)
+{
+  uint32_t ccr1 = TIM2->CCR1;
+  if(htim->Instance == TIM2)
+  {
+    if(ccr1 < 2000)
+      htim->Instance->CCR1 = ccr1 + 20;
+    else
+    {
+      HAL_TIM_PWM_Stop_IT(&htim2, TIM_CHANNEL_1);
+      HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+    }
+  }
+}
 
+/**
+  * @brief  Input Capture callback in non-blocking mode
+  * @param  htim TIM IC handle
+  * @retval None
+  */
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
   if(htim->Instance == TIM3)
@@ -582,7 +608,7 @@ int main(void)
   HAL_TIM_IC_Start_IT(&htim4, TIM_CHANNEL_3);
   HAL_TIM_IC_Start_IT(&htim4, TIM_CHANNEL_4);
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
-  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start_IT(&htim2, TIM_CHANNEL_1);
   HAL_TIM_Base_Start(&htim6);
   HAL_GPIO_WritePin(NSLEEP_RESET_PORT, NSLEEP_RESET_PIN, GPIO_PIN_SET);
   HAL_GPIO_WritePin(RST2FPGA_PORT, RST2FPGA_PIN, GPIO_PIN_SET);
@@ -916,7 +942,7 @@ int main(void)
   
 #if ECOMILK_DEBUG == 1
 
-    for(int i = 0; i < 1000; i++);
+    //for(int i = 0; i < 1000; i++);
     
     Cmd_UART_Rx();
     
@@ -1231,7 +1257,7 @@ static void MX_TIM2_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 2000;
+  sConfigOC.Pulse = 100;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
