@@ -36,14 +36,19 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
-#define ECOMILK_DEBUG           1
+#define ECOMILK_DEBUG           0
+#if ECOMILK_DEBUG == 1
+  #define DEBUG_PRINT           printf
+#else
+  #define DEBUG_PRINT
+#endif
 #define ECOMILK_DEBUG_TIMEOUT   10
 #define ECOMILK_TIMEOUT         ECOMILK_DEBUG_TIMEOUT
 #define ECOMILK_CMD_ON          1
 #define ECOMILK_CMD_OFF         0
-__EFF_NW1    __DEPREC_PRINTF int stub(char const *fmt, ...)
-{}
-#define printf                  stub
+//__EFF_NW1    __DEPREC_PRINTF int stub(char const *fmt, ...)
+//{}
+//#define printf                  stub
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -164,9 +169,9 @@ static void MX_USART3_UART_Init(void);
 static void MX_TIM6_Init(void);
 /* USER CODE BEGIN PFP */
 
-#if ECOMILK_DEBUG == 1
+//#if ECOMILK_DEBUG == 1
 static void Cmd_UART_Rx();
-#endif
+//#endif
 static void Cmd_SPI_Tx_16(uint16_t cmd);
 static void Cmd_Actuator_Backward(bool state);
 static void Cmd_Actuator_Forward(bool state);
@@ -392,15 +397,14 @@ static void Cmd_SPI_Tx_16(uint16_t cmd)
 #if ECOMILK_DEBUG == 1
   HAL_SPI_TransmitReceive(&hspi2, (uint8_t*)&data, (uint8_t*)&rdata, 1, ECOMILK_TIMEOUT);
   if(rdata != data)
-    printf("SPI not recieved\n");
+    DEBUG_PRINT("SPI not recieved\n");
 #else  
   HAL_SPI_Transmit(&hspi2, (uint8_t*)&data, 1, ECOMILK_TIMEOUT);
 #endif  
   HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
 }
 
-#if ECOMILK_DEBUG == 1
-
+//#if ECOMILK_DEBUG == 1
 //void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 //{
 //  pool_rx_start = true;
@@ -539,7 +543,7 @@ static void Cmd_UART_Rx()
     //}
   }
 }
-#endif  
+//#endif  
 
 /* USER CODE END 0 */
 
@@ -582,20 +586,18 @@ int main(void)
   MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
 
-#if ECOMILK_DEBUG == 1
-
+//#if ECOMILK_DEBUG == 1
   //uint8_t pDataTx[] = {'\r', '\n', 'E', 'c', 'o', 'M', 'i', 'l', 'k', '\r', '\n'};
   //uint8_t pDataRx[10];
 
-  HAL_UART_ReceiverTimeout_Config(&huart1, 100);
-  HAL_UART_EnableReceiverTimeout(&huart1);
+  //HAL_UART_ReceiverTimeout_Config(&huart1, ECOMILK_TIMEOUT);
+  //HAL_UART_EnableReceiverTimeout(&huart1);
 
   //memset(pool_rx, 0, sizeof(pool_rx));
   //HAL_UART_Transmit(&huart1, pDataTx, sizeof(pDataTx), ECOMILK_TIMEOUT);
   pool_rx_init();
   HAL_UART_Transmit(&huart1, ecomilk, sizeof(ecomilk), ECOMILK_TIMEOUT);
-
-#endif  
+//#endif  
 
   
   HAL_GPIO_WritePin(CS_N_PORT, CS_N_PIN, GPIO_PIN_SET);
@@ -940,11 +942,11 @@ int main(void)
       }
     }
   
+    Cmd_UART_Rx();
+    
 #if ECOMILK_DEBUG == 1
 
     //for(int i = 0; i < 1000; i++);
-    
-    Cmd_UART_Rx();
     
     // Working
     //{
