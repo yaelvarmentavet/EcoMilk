@@ -11,7 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoMilk.iOS", "App\App.iOS\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcoMilk", "App\App\EcoMilk.csproj", "{4AED1DE7-B380-4F52-9C4F-152D8A91740B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoMilkWinForm", "EcoMilkWinForm\EcoMilkWinForm.csproj", "{0BE4D323-31A5-4F83-B9F2-9A6C09FF1CA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcoMilkWinForm", "EcoMilkWinForm\EcoMilkWinForm.csproj", "{0BE4D323-31A5-4F83-B9F2-9A6C09FF1CA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp", "WpfApp\WpfApp.csproj", "{68751683-73EF-4214-8021-02095361AC2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -191,6 +193,30 @@ Global
 		{0BE4D323-31A5-4F83-B9F2-9A6C09FF1CA5}.Release|x64.Build.0 = Release|Any CPU
 		{0BE4D323-31A5-4F83-B9F2-9A6C09FF1CA5}.Release|x86.ActiveCfg = Release|Any CPU
 		{0BE4D323-31A5-4F83-B9F2-9A6C09FF1CA5}.Release|x86.Build.0 = Release|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Debug|ARM.Build.0 = Debug|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Debug|x64.Build.0 = Debug|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Debug|x86.Build.0 = Debug|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Release|ARM.ActiveCfg = Release|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Release|ARM.Build.0 = Release|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Release|iPhone.Build.0 = Release|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Release|x64.ActiveCfg = Release|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Release|x64.Build.0 = Release|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Release|x86.ActiveCfg = Release|Any CPU
+		{68751683-73EF-4214-8021-02095361AC2E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
