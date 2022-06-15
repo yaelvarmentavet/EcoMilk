@@ -10,6 +10,7 @@
         <Image Name="pic1" HorizontalAlignment="Left" Height="160" Margin="10,10,0,0" VerticalAlignment="Top" Width="240"/>
         <Image Name="pic2" HorizontalAlignment="Left" Height="160" Margin="260,10,0,0" VerticalAlignment="Top" Width="240"/>
         <Image Name="pic3" HorizontalAlignment="Left" Height="160" Margin="510,10,0,0" VerticalAlignment="Top" Width="240"/>
+        <WindowsFormsHost Name="host" HorizontalAlignment="Left" Margin="199,199,0,0" Width="362" RenderTransformOrigin="0.506,0.073"/>
 
     </Grid>
 </Window>

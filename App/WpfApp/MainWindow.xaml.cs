@@ -18,14 +18,24 @@ namespace WpfApp
         VideoCaptureDevice videoCaptureDevice1;
         VideoCaptureDevice videoCaptureDevice2;
         VideoCaptureDevice videoCaptureDevice3;
+        private AForge.Controls.VideoSourcePlayer videoSourcePlayer;
+
         public MainWindow()
         {
             InitializeComponent();
-
+            videoSourcePlayer = new AForge.Controls.VideoSourcePlayer();
+            videoSourcePlayer.Location = new System.Drawing.Point(8, 393);
+            videoSourcePlayer.Name = "videoSourcePlayer2";
+            videoSourcePlayer.Size = new System.Drawing.Size(359, 226);
+            videoSourcePlayer.TabIndex = 3;
+            videoSourcePlayer.Text = "videoSourcePlayer";
+            videoSourcePlayer.VideoSource = null;
+            host.Child = videoSourcePlayer;
             filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             if (filterInfoCollection.Count > 0)
             {
                 videoCaptureDevice1 = new VideoCaptureDevice(filterInfoCollection[0].MonikerString);
+                videoSourcePlayer.VideoSource = videoCaptureDevice1;
                 videoCaptureDevice1.NewFrame += VideoCaptureDevice_NewFrame1;
                 videoCaptureDevice1.Start();
             }
@@ -45,23 +55,25 @@ namespace WpfApp
 
         private void VideoCaptureDevice_NewFrame1(object sender, NewFrameEventArgs eventArgs)
         {
-            Dispatcher.BeginInvoke(new ThreadStart(delegate {
-                pic1.Source = Imaging.CreateBitmapSourceFromHBitmap(
-                     (eventArgs.Frame.Clone() as Bitmap).GetHbitmap(),
-                     IntPtr.Zero,
-                     Int32Rect.Empty,
-                     BitmapSizeOptions.FromEmptyOptions());
-            }));
+            //Dispatcher.BeginInvoke(new ThreadStart(delegate
+            //{
+            //    pic1.Source = Imaging.CreateBitmapSourceFromHBitmap(
+            //                                     (eventArgs.Frame.Clone() as Bitmap).GetHbitmap(),
+            //                                     IntPtr.Zero,
+            //                                     Int32Rect.Empty,
+            //                                     BitmapSizeOptions.FromEmptyOptions());
+            //}));
         }
 
         private void VideoCaptureDevice_NewFrame2(object sender, NewFrameEventArgs eventArgs)
         {
-            //Dispatcher.BeginInvoke(new ThreadStart(delegate {
+            //pic2.Dispatcher.BeginInvoke(new ThreadStart(delegate
+            //{
             //    pic2.Source = Imaging.CreateBitmapSourceFromHBitmap(
-            //         (eventArgs.Frame.Clone() as Bitmap).GetHbitmap(),
-            //         IntPtr.Zero,
-            //         Int32Rect.Empty,
-            //         BitmapSizeOptions.FromEmptyOptions());
+            //                                     (eventArgs.Frame.Clone() as Bitmap).GetHbitmap(),
+            //                                     IntPtr.Zero,
+            //                                     Int32Rect.Empty,
+            //                                     BitmapSizeOptions.FromEmptyOptions());
             //}));
         }
 

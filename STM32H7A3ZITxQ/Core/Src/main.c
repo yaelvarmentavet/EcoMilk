@@ -151,7 +151,7 @@ int a_encoder_tilt_sp_drive = 0;
 char pool_rx[20];
 int pool_rx_idx = 0;
 //volatile bool pool_rx_start = false;
-uint8_t ecomilk[] = {'\r', '\n', 'E', 'c', 'o', 'M', 'i', 'l', 'k', '\r', '\n'};
+uint8_t ecomilk[] = {'\r', '\n', 'E', 'C', 'O', 'M', 'I', 'L', 'K', '\r', '\n'};
 
 /* USER CODE END PV */
 
@@ -339,6 +339,7 @@ static void Cmd_Motor_Z_Up(bool state)
 
 static void Cmd_Actuator_Y_Backward(bool state)
 {
+  //HAL_GPIO_WritePin(RST2FPGA_PORT, RST2FPGA_PIN, GPIO_PIN_SET);
   if(state)
   {
     Cmd_SPI_Tx_16(0x00 | (1 << DEC0));
@@ -351,6 +352,7 @@ static void Cmd_Actuator_Y_Backward(bool state)
 
 static void Cmd_Actuator_Y_Forward(bool state)
 {
+  //HAL_GPIO_WritePin(RST2FPGA_PORT, RST2FPGA_PIN, GPIO_PIN_SET);
   if(state)
   {
     Cmd_SPI_Tx_16(0x00 | (1 << DIR_MOTOR_Y) | (1 << DEC0));
@@ -453,7 +455,7 @@ static void Cmd_UART_Rx()
       pool_rx[pool_rx_idx] = '\0';
 
       ucommand = false;
-      if(strcmp(pool_rx, "getid,3#") == 0)
+      if(strcmp(pool_rx, "ecomilkid") == 0)
         HAL_UART_Transmit(&huart1, ecomilk, sizeof(ecomilk), ECOMILK_TIMEOUT);
 
       else if(strcmp(pool_rx, "ab 1") == 0)
@@ -613,7 +615,7 @@ int main(void)
   HAL_TIM_PWM_Start_IT(&htim2, TIM_CHANNEL_1);
   HAL_TIM_Base_Start(&htim6);
   HAL_GPIO_WritePin(NSLEEP_RESET_PORT, NSLEEP_RESET_PIN, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(RST2FPGA_PORT, RST2FPGA_PIN, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(RST2FPGA_PORT, RST2FPGA_PIN, GPIO_PIN_RESET);
   HAL_GPIO_WritePin(MOT_M1_PORT, MOT_M1_PIN, GPIO_PIN_RESET);
   HAL_GPIO_WritePin(MOT_M0_PORT, MOT_M0_PIN, GPIO_PIN_RESET);
 
@@ -624,6 +626,7 @@ int main(void)
 
   int cnt_begin = htim6.Instance->CNT;
   bool cnt_read = true;
+  int cnt_current = htim6.Instance->CNT;
   bool actuator_backward = false;
   bool actuator_forward = false;
   bool rotate_cw = false;
@@ -646,11 +649,11 @@ int main(void)
 
     if(cnt_read)
     {
-      int cnt_current = htim6.Instance->CNT;
+      cnt_current = htim6.Instance->CNT;
       if((cnt_current - cnt_begin) > 64000)
       {
         cnt_read = false;
-        HAL_TIM_Base_Stop(&htim6);
+        //HAL_TIM_Base_Stop(&htim6);
         HAL_GPIO_WritePin(RST2FPGA_PORT, RST2FPGA_PIN, GPIO_PIN_RESET);
       }
     }
@@ -942,6 +945,13 @@ int main(void)
       }
     }
   
+    //cnt_current = htim6.Instance->CNT;
+    //int delta = cnt_current - cnt_begin;
+    //if(cnt_current <= cnt_begin)
+    //  delta += 65535;
+    //if(delta % 64000)
+    //  HAL_UART_Transmit(&huart1, ecomilk, sizeof(ecomilk), ECOMILK_TIMEOUT);
+
     Cmd_UART_Rx();
     
 #if ECOMILK_DEBUG == 1

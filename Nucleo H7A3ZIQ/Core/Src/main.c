@@ -35,6 +35,14 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define ECOMILK_DEBUG           0
+#if ECOMILK_DEBUG == 1
+  #define DEBUG_PRINT           printf
+#else
+  #define DEBUG_PRINT
+#endif
+#define ECOMILK_DEBUG_TIMEOUT   10
+#define ECOMILK_TIMEOUT         ECOMILK_DEBUG_TIMEOUT
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -119,6 +127,7 @@ static volatile int tim8_falling = 0;
 static volatile int tim8_rising = 0;
 static volatile int tim8_delta = 0;
 
+uint8_t ecomilk[] = {'\r', '\n', 'E', 'c', 'o', 'M', 'i', 'l', 'k', '\r', '\n'};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -489,6 +498,13 @@ int main(void)
     
     // Working
      
+    HAL_UART_Transmit(&huart1, ecomilk, sizeof(ecomilk), ECOMILK_TIMEOUT);
+    HAL_UART_Receive(&huart1, ecomilk, sizeof(ecomilk), ECOMILK_TIMEOUT);
+    for(int i = 0; i < sizeof(ecomilk); i++)
+      printf("%x ", ecomilk[i]);
+    printf("\n");
+
+   
     // USART1 Fifo enabled
     memset(pDataRx, 0, sizeof(pDataRx));
     for(int i = 0; i < 10; i++)
